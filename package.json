@@ -1,0 +1,37 @@
+{
+  "name": "tokenomy-ui",
+  "version": "1.0.0",
+  "description": "Tokenomy User Interface Kit provides you with guidelines, components and templates to boost the user experience of your products.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tokenomy/tokenomy-ui.git"
+  },
+  "keywords": [],
+  "author": "fe-devs@tokenomy.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tokenomy/tokenomy-ui/issues"
+  },
+  "homepage": "https://github.com/tokenomy/tokenomy-ui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack4": "^6.5.15",
+    "@storybook/manager-webpack4": "^6.5.15",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {}
+}
