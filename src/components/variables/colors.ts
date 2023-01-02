@@ -1,21 +1,4 @@
 const colors = {
-    // Primary colors
-    red50: '#F04B32',
-    black90: '#474955',
-    white: '#FFFFFF',
-  
-    // Secondary colors
-    black50: '#737580',
-    black30: '#B0B2BB',
-    grey70: '#DADCE5',
-    grey50: '#E9EBEF',
-    grey30: '#F2F4F7',
-  
-    // Tertiary colors
-    orange50: '#FFA000',
-    blue50: '#4F94FC',
-    green50: '#33CC59',
-  
     // Shades & Tint
     red90: '#84291B',
     red70: '#C03C28',

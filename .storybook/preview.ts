@@ -22,7 +22,7 @@ export const parameters = {
           'Guidelines',
           ['Recommended Libraries', 'Design Resources', 'Page Speed'],
           'Core',
-          ['Layout', 'Navigation', 'Colours', 'Typography', 'Communication'],
+          ['Layout', 'Navigation', 'Colors', 'Typography', 'Communication'],
         ],
         'Components',
         [
