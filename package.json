@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "build": "yarn clean && tsc",
     "chromatic": "npx chromatic --project-token=c8951ad60b3e",
-    "publish": "npm publish ./dist"
+    "publish": "yarn version && npm publish ./dist"
   },
   "repository": {
     "type": "git",
