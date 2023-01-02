@@ -1,6 +1,6 @@
 {
   "name": "tokenomy-ui",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Tokenomy User Interface Kit provides you with guidelines, components and templates to boost the user experience of your products.",
   "main": "index.js",
   "scripts": {
