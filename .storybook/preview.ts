@@ -12,7 +12,7 @@ export const parameters = {
         'Get Started',
         [
           'Introduction',
-          'Install',
+          'Installation',
           'Design Concepts',
           'Platforms Support',
           `Versions`,

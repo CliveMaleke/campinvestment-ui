@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "baseUrl": "src", //relative to where the tsconfig is
+      "paths": {
+        "*": ["./*"],
+        "stories/*": ["src/stories/*"],
+        "components/*": ["src/components/*"],
+      },
+      "strict": true,
+      "jsx": "react",
+      "declaration": true,
+      "esModuleInterop": true,
+      "outDir": "dist",
+      "target": "es6",
+      "module": "es6",
+      "moduleResolution": "node"
+    },
+    "include": ["src/components/**/*"],
+    "exclude": [
+      "node_modules"
+    ]
+  }

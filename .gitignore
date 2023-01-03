@@ -1,3 +1,11 @@
+# production
+/variables
+/inputs
+
+# storybook
+build-storybook.log
+/storybook-static
+
 # Logs
 logs
 *.log
