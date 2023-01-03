@@ -11,6 +11,7 @@ module.exports = {
     "@storybook/addon-interactions",
     '@storybook/addon-a11y',
     'storybook-addon-designs',
+    'storybook-addon-performance/register',
   ],
   framework: "@storybook/react",
   env: (config) => ({
