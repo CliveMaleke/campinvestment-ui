@@ -93,7 +93,15 @@ export const MuiTypographyTheme = {
     color: gray70,
     textTransform: 'uppercase' as const,
   },
-  button: undefined,
+  button: {
+    fontSize: '14px',
+    fontStyle: 'normal',
+    lineHeight: '16px',
+    letterSpacing: '0.15px',
+    fontWeight: 600,
+    color: gray70,
+    textTransform: 'inherit' as const,
+  },
 };
 
 export const MuiTypographyProps = {
