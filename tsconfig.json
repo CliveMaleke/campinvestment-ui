@@ -10,10 +10,10 @@
       "jsx": "react",
       "declaration": true,
       "esModuleInterop": true,
-      "outDir": "dist",
+      "outDir": ".",
       "target": "es6",
       "module": "es6",
-      "moduleResolution": "node"
+      "moduleResolution": "node",
     },
     "include": ["src/components/**/*"],
     "exclude": [

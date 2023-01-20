@@ -17,5 +17,6 @@ module.exports = {
   env: (config) => ({
     ...config,
     STORYBOOK_APP_NAME: 'Tokenomy UI',
+    STORYBOOK_APP_URL: 'https://develop--63b2d35155965648145b7f9e.chromatic.com',
   }),
 }

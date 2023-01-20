@@ -14,16 +14,23 @@
     h4,
     h5,
     h6,
-    div,
     table,
     a,
+    div,
     p,
-    ul li {
+    ul li, ol li {
+      font-family: 'Montserrat', sans-serif;
+    }
+    code {
       font-family: 'Montserrat', sans-serif !important;
+    }
+    pre, .language-jsx {
+      font-family: ui-monospace,Menlo,Monaco,"Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Droid Sans Mono","Courier New",monospace;
+      -webkit-font-smoothing: antialiased;
     }
   
     p {
-      line-height: 25px !important;
+      line-height: 25px;
     }
   
     table {
@@ -34,7 +41,25 @@
       margin-bottom: 30px !important;
     }
 
+    .sbdocs-title {
+      font-size: 30px;
+    }
+    .sbdocs-subtitle, .sbdocs-h3 {
+      font-size: 18px;
+    }
+    .sbdocs, .sbdocs-title, .sbdocs-subtitle {
+      font-family: 'Montserrat', sans-serif;
+    }
+
     .sidebar-item span {
       display: none;
+    }
+
+    .prop-table td div, .prop-name, .prop-type, .prop-default {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 14px;
+    }
+    .prop-type {
+      color: #A31515;
     }
   </style>

@@ -4,13 +4,13 @@
   "description": "Tokenomy User Interface Kit provides you with guidelines, components and templates to boost the user experience of your products.",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "yarn clean && start-storybook -p 6006",
+    "build-storybook": "yarn clean && build-storybook",
     "start": "build-storybook && npx http-server ./storybook-static",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf variables layout inputs navigation surfaces feedback data-display utils lab",
     "build": "yarn clean && tsc",
-    "chromatic": "npx chromatic --project-token=c8951ad60b3e",
-    "publish": "yarn version && npm publish ./dist",
+    "chromatic": "npx chromatic --project-token",
+    "publish": "yarn version && npm publish",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
@@ -20,13 +20,16 @@
   },
   "keywords": [],
   "author": {
-    "name": "fe-devs@tokenomy.com"
+    "name": "frontend-devs@tokenomy.com"
   },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tokenomy/tokenomy-ui/issues"
   },
   "homepage": "https://github.com/tokenomy/tokenomy-ui#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.12.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@storybook/addon-a11y": "^6.5.15",
@@ -48,18 +51,16 @@
     "eslint-plugin-prettier": "^4.2.1",
     "http-server": "^14.1.1",
     "prettier": "^2.8.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "storybook-addon-designs": "^6.3.1",
     "storybook-addon-performance": "^0.16.1",
     "storybook-dark-mode": "^2.0.4",
     "typescript": "^4.9.4"
   },
-  "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "babel": {
     "presets": [

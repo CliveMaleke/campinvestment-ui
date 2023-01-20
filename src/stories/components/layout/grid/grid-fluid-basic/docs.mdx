@@ -1,0 +1,30 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import GridFluidBasic from './index';
+
+<Title>Fluid basic</Title>
+<Subtitle>
+  Fluid grids use columns that scale and resize content. A fluid grid’s layout
+  can use breakpoints to determine if the layout needs to change dramatically.
+  The column widths apply at all breakpoints (i.e. xs and up).
+</Subtitle>
+
+### Import
+
+```jsx
+import Grid from 'tokenomy-ui/layout/Grid';
+```
+
+<h3 style={{ marginBottom: 25 }}>Usage</h3>
+
+<GridFluidBasic />
+
+```jsx
+<Grid container spacing={3}>
+  <Grid item xs={6}>
+    xs=6
+  </Grid>
+  <Grid item xs={6}>
+    xs=6
+  </Grid>
+</Grid>
+```

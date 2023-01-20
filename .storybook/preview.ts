@@ -18,7 +18,8 @@ export const parameters = {
           'Installation',
           'Design Concepts',
           'Platforms Support',
-          `Versions`,
+          'Versions',
+          'Credits',
         ],
         'Documentation',
         [

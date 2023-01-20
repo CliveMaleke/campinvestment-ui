@@ -1,0 +1,35 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import GridFluidBasic from './index';
+
+<Title>Auto Layout</Title>
+<Subtitle>
+  The Auto-layout makes the items equitably share the available space. That also
+  means you can set the width of one item and the others will automatically
+  resize around it.
+</Subtitle>
+
+### Import
+
+```jsx
+import Grid from 'tokenomy-ui/layout/Grid';
+```
+
+<h3 style={{ marginBottom: 25 }}>Usage</h3>
+
+<GridFluidBasic />
+
+```jsx
+<Grid container spacing={1}>
+  <Grid container item xs={12} spacing={3}>
+    <Grid item xs={4}>
+      item
+    </Grid>
+    <Grid item xs={4}>
+      item
+    </Grid>
+    <Grid item xs={4}>
+      item
+    </Grid>
+  </Grid>
+</Grid>
+```

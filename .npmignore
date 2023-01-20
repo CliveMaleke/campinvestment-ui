@@ -6,6 +6,13 @@ src
 .prettierignore
 build-storybook.log
 jsconfig.json
+tsconfig.json
 yarn.lock
 package.lock
 storybook-static
+.cache
+.env
+.prettierrc
+eslintrc.json
+.DS_Store
+mdx.d.ts

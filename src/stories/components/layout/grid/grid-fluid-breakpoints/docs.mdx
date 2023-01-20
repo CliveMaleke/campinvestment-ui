@@ -1,0 +1,31 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import GridFluidBreakpoints from './index';
+
+<Title>Fluid with breakpoints</Title>
+<Subtitle>
+  Fluid grids use columns that scale and resize content. A fluid grid’s layout
+  can use breakpoints to determine if the layout needs to change dramatically.
+  Some columns have multiple widths defined, causing the layout to change at the
+  defined breakpoint.
+</Subtitle>
+
+### Import
+
+```jsx
+import Grid from 'tokenomy-ui/layout/Grid';
+```
+
+<h3 style={{ marginBottom: 25 }}>Usage</h3>
+
+<GridFluidBreakpoints />
+
+```jsx
+<Grid container spacing={3}>
+  <Grid item xs={12} sm={6}>
+    xs=12 sm=6
+  </Grid>
+  <Grid item xs={12} sm={6}>
+    xs=12 sm=6
+  </Grid>
+</Grid>
+```

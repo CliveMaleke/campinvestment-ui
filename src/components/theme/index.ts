@@ -1,0 +1,48 @@
+// Vendors
+import { createTheme } from '@material-ui/core/styles';
+
+// Colors
+
+// THEME SECTIONS
+import { MuiTypographyTheme, MuiTypographyProps } from './typography';
+import MuiBreakpointsTheme from './breakpoints';
+
+// STYLES SECTIONS
+// Layout
+import MuiContainerStyled from '../layout/Container/style';
+// Inputs
+import MuiFormLabelStyled from '../inputs/FormLabel/style';
+// Navigation
+// Data display
+// import MuiTypographyStyled from '../../data-display/Typography/style';
+// Lab
+// Feedback
+
+const defaultTheme = createTheme();
+
+// A custom theme for this app
+export const modifyTheme = createTheme({
+  typography: MuiTypographyTheme,
+  breakpoints: MuiBreakpointsTheme,
+});
+
+const theme = createTheme({
+  ...modifyTheme,
+  props: {
+    MuiTypography: MuiTypographyProps,
+  },
+  overrides: {
+    // Layout
+    MuiContainer: MuiContainerStyled(defaultTheme, modifyTheme),
+    // Inputs
+    MuiFormLabel: MuiFormLabelStyled(defaultTheme, modifyTheme),
+    // Navigation
+    // Data display
+    // MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
+    // Feedback
+    // Lab
+    // Icon
+  },
+});
+
+export default theme;

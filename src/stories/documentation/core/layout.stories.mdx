@@ -53,20 +53,46 @@ import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
 
 <ul>
 <li><strong>xs,</strong> extra-small: 0px</li>
-<li><strong>sm,</strong> small: 600px</li>
-<li><strong>md,</strong> medium: 960px</li>
-<li><strong>lg,</strong> large: 1280px</li>
-<li><strong>xl,</strong> extra-large: 1920px</li>
+<li><strong>sm,</strong> small: 640px</li>
+<li><strong>md,</strong> medium: 768px</li>
+<li><strong>lg,</strong> large: 1024px</li>
+<li><strong>xl,</strong> extra-large: 1280px</li>
+<li><strong>2xl,</strong> extra-large-2x: 1536px</li>
 </ul>
 
 <p>These breakpoint values are used to determine breakpoint ranges. A range starts from the breakpoint value inclusive, to the next breakpoint value exclusive:</p>
 
-```sh
-value         |0px     600px    960px    1280px   1920px
-key           |xs      sm       md       lg       xl
-screen width  |--------|--------|--------|--------|-------->
-range         |   xs   |   sm   |   md   |   lg   |   xl
-```
+<table>
+  <tbody>
+    <tr>
+      <td><b>Value</b></td>
+      <td>0px</td>
+      <td>640px</td>
+      <td>768px</td>
+      <td>1024px</td>
+      <td>1280px</td>
+      <td>1536px</td>
+    </tr>
+    <tr>
+      <td><b>Key</b></td>
+      <td>xs</td>
+      <td>sm</td>
+      <td>md</td>
+      <td>lg</td>
+      <td>xl</td>
+      <td>2xl</td>
+    </tr>
+    <tr>
+      <td><b>Range</b></td>
+      <td>0px - 639px</td>
+      <td>640px - 767px</td>
+      <td>768px - 1023px</td>
+      <td>1024px - 1279px</td>
+      <td>1280px - 1535px</td>
+      <td>1536px - up</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Grid system
 

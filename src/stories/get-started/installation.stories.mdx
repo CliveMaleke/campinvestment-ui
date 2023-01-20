@@ -1,21 +1,31 @@
 import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
 import { TabsState } from '@storybook/components';
 
-<Meta title="Get Started/Installation" 
-  parameters={{  
+<Meta
+  title="Get Started/Installation"
+  parameters={{
     fullPage: true,
     previewTabs: {
       canvas: { hidden: true },
     },
-  }} 
+  }}
 />
 
 <Title>Installation</Title>
-<Subtitle>{process.env.STORYBOOK_APP_NAME} provides developers with React.js components, css, html and assets.</Subtitle>
+<Subtitle>
+  {process.env.STORYBOOK_APP_NAME} provides developers with React.js components,
+  css, html and assets.
+</Subtitle>
 
 ### Add the Kit as a dependency
 
-<p>The next step is to add the Kit to your project as a dependancy. You can choose to install it through <code>npm</code> or <code>yarn</code>: they are both valid package managers and we don't want to recommend one over the other, but once you pick your favourite tool, simply stick with it and avoid using them simultaneously.</p>
+<p>
+  The next step is to add the Kit to your project as a dependancy. You can
+  choose to install it through <code>npm</code> or <code>yarn</code>: they are
+  both valid package managers and we don't want to recommend one over the other,
+  but once you pick your favourite tool, simply stick with it and avoid using
+  them simultaneously.
+</p>
 
 <p>To install and save in your package.json dependencies, run:</p>
 
@@ -38,7 +48,10 @@ yarn add tokenomy-ui
 
 ### Usage with React
 
-<p>Default and recommended usage on demand component. All components are available as modules and you can use them as any other React component.</p>
+<p>
+  Default and recommended usage on demand component. All components are
+  available as modules and you can use them as any other React component.
+</p>
 
 ```jsx
 // Import vendors
@@ -57,7 +70,12 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ### Usage with vanilla JS
 
-<p>The JS components are built using React, but that does not limit their usage to just React applications. You can render any component in any JavaScript application with <code>ReactDOM.render</code>. Think of it like using a jQuery plugin. Make sure you have embedded the CSS of the UI Kit in your project.</p>
+<p>
+  The JS components are built using React, but that does not limit their usage
+  to just React applications. You can render any component in any JavaScript
+  application with <code>ReactDOM.render</code>. Think of it like using a jQuery
+  plugin. Make sure you have embedded the CSS of the UI Kit in your project.
+</p>
 
 ```jsx
 import ReactDOM from 'react-dom';
@@ -74,14 +92,26 @@ ReactDOM.render(
     className: Classes.SMALL,
     children: 'Simple button',
   }),
-  myContainerElement
+  myContainerElement,
 );
 ```
 
-<p style={{margin: 0}}>To remove the component from the DOM and clean up, unmount it:</p>
+<p style={{ margin: 0 }}>
+  To remove the component from the DOM and clean up, unmount it:
+</p>
 
 ```jsx
 ReactDOM.unmountComponentAtNode(myContainerElement);
 ```
 
-<p>Check out the <a class="link" target="_blank" href="https://reactjs.org/docs/react-api.html">React API docs</a> for more details.</p>
+<p>
+  Check out the{' '}
+  <a
+    class="link"
+    target="_blank"
+    href="https://reactjs.org/docs/react-api.html"
+  >
+    React API docs
+  </a>{' '}
+  for more details.
+</p>

@@ -1,8 +1,16 @@
-# production
+# Production
+/theme
 /variables
+/layout
 /inputs
+/navigation
+/surfaces
+/feedback
+/data-display
+/utils
+/lab
 
-# storybook
+# Storybook
 build-storybook.log
 /storybook-static
 
@@ -110,3 +118,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Misc
+.DS_Store

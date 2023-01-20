@@ -1,0 +1,131 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { Figma } from 'storybook-addon-designs/esm/blocks';
+
+<Meta title="Components/Layout/Container" />
+
+<Title>Container</Title>
+<Subtitle>
+  The container centers your content horizontally. It's the most basic layout
+  element.
+</Subtitle>
+
+### Import
+
+```jsx
+import Container from 'tokenomy-ui/inputs/Container';
+```
+
+### Usage
+
+```jsx
+<Container>...</Container>
+```
+
+### Props
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">
+        <span class="prop-name">classes</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">object</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Override or extend the styles applied to the component. See{' '}
+        <a href="#css">CSS API</a> below for more details.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">component</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">elementType</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'div'</span>
+      </td>
+      <td align="left">
+        The component used for the root node. Either a string to use a HTML
+        element or a component.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">disableGutters</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">false</span>
+      </td>
+      <td align="left">
+        If <code>true</code>, the left and right padding is removed.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">fixed</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">false</span>
+      </td>
+      <td align="left">
+        Set the max-width to match the min-width of the current breakpoint. This
+        is useful if you'd prefer to design for a fixed set of sizes instead of
+        trying to accommodate a fully fluid viewport. It's fluid by default.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">maxWidth</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          'lg'
+          <br />
+          |&nbsp;'md'
+          <br />
+          |&nbsp;'sm'
+          <br />
+          |&nbsp;'xl'
+          <br />
+          |&nbsp;'xs'
+          <br />
+          |&nbsp;false
+        </span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'lg'</span>
+      </td>
+      <td align="left">
+        Determine the max-width of the container. The container width grows with
+        the size of the screen. Set to <code>false</code> to disable{' '}
+        <code>maxWidth</code>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Design
+
+<Figma
+  url="https://www.figma.com/file/XaZi4D6q7m3HIdxxx2zTCc/TKN-2498-Design-component-library-for-Web?node-id=140%3A2103&t=tu5IDYN9O1MHmBDJ-0"
+  height="50%"
+  defaultCollapsed
+/>
