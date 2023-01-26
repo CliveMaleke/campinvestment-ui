@@ -7,7 +7,7 @@
     "storybook": "yarn clean && start-storybook -p 6006",
     "build-storybook": "yarn clean && build-storybook",
     "start": "build-storybook && npx http-server ./storybook-static",
-    "clean": "rm -rf variables layout inputs navigation surfaces feedback data-display utils lab",
+    "clean": "rm -rf theme variables layout inputs navigation surfaces feedback data-display utils lab",
     "build": "yarn clean && tsc",
     "chromatic": "npx chromatic --project-token",
     "publish": "yarn version && npm publish",
