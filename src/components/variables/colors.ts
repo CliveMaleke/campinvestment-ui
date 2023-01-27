@@ -88,14 +88,14 @@ export const red80: string = '#931A54';
 export const red90: string = '#460612';
 
 // LIGHT MODE BACKGROUND
-export const backgroundDark: ColorObject = {
+export const backgroundLight: ColorObject = {
   primary: '#F6F9FF', 
   secondary: '#FEFEFE', 
   tertiary: '#E8ECF4', 
 };
 
 // DARK MODE BACKGROUND
-export const backgroundLight: ColorObject = {
+export const backgroundDark: ColorObject = {
   primary: gray70,
   secondary: '#20242D',
 };

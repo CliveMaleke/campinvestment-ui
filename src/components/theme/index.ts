@@ -6,6 +6,7 @@ import { createTheme } from '@material-ui/core/styles';
 // THEME SECTIONS
 import { MuiTypographyTheme, MuiTypographyProps } from './typography';
 import MuiBreakpointsTheme from './breakpoints';
+import MuiPaletteTheme from './palette';
 
 // STYLES SECTIONS
 // Layout
@@ -22,8 +23,9 @@ const defaultTheme = createTheme();
 
 // A custom theme for this app
 export const modifyTheme = createTheme({
-  typography: MuiTypographyTheme,
   breakpoints: MuiBreakpointsTheme,
+  palette: MuiPaletteTheme,
+  typography: MuiTypographyTheme,
 });
 
 const theme = createTheme({

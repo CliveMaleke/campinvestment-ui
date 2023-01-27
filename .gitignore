@@ -121,3 +121,4 @@ dist
 
 # Misc
 .DS_Store
+/backup
