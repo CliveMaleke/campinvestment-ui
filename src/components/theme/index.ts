@@ -7,6 +7,7 @@ import { createTheme } from '@material-ui/core/styles';
 import { MuiTypographyTheme, MuiTypographyProps } from './typography';
 import MuiBreakpointsTheme from './breakpoints';
 import MuiPaletteTheme from './palette';
+import MuiCssBaselineTheme from './cssBaseline';
 
 // STYLES SECTIONS
 // Layout
@@ -34,6 +35,9 @@ const theme = createTheme({
     MuiTypography: MuiTypographyProps,
   },
   overrides: {
+    MuiCssBaseline: {
+      '@global': MuiCssBaselineTheme,
+    },
     // Layout
     MuiContainer: MuiContainerStyled(defaultTheme, modifyTheme),
     // Inputs

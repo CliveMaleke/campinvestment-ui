@@ -2,23 +2,6 @@ import { gray70 } from '../../variables/colors';
 
 const MuiTypographyStyled = (theme: any) => {
   return {
-    body: {
-      fontSize: '14px',
-      fontStyle: 'normal',
-      lineHeight: '18px',
-      letterSpacing: '0.25px',
-      fontWeight: 400,
-      color: gray70,
-    },
-    overline: {
-      fontSize: '14px',
-      fontStyle: 'normal',
-      lineHeight: '18px',
-      letterSpacing: '0.3px',
-      fontWeight: 400,
-      color: gray70,
-      textTransform: 'uppercase' as const,
-    },
     regular: {
       fontWeight: 400,
     },
