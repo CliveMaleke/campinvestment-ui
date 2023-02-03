@@ -14,6 +14,9 @@ export interface ITypographyProps extends TypographyProps {
   overlineScale?: 'extrasmall' | 'small' | 'medium';
   numericScale?: 'small' | 'medium' | 'large' | 'extralarge' | 'extralarge2x' | 'extralarge3x';
   buttonScale?: 'small' | 'medium' | 'large' | 'extralarge' | 'extralarge2x';
+  component?: string;
+  href?: string;
+  target?: string;
 }
 
 const useStyles = makeStyles({

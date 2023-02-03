@@ -1,77 +1,70 @@
-import { gray70 } from '../../variables/colors';
-
-const MuiTypographyStyled = (theme: any) => {
+const MuiTypographyStyled = (defaultTheme: any, modifyTheme: any) => {
+  const colorPrimary = modifyTheme.palette.light.text.primary;
+  const colorSecondary = modifyTheme.palette.light.text.secondary;
+  const colorLink = modifyTheme.palette.light.text.link;
   return {
-    regular: {
-      fontWeight: 400,
+    root: {
+      '&.MuiTypography-link': {
+        color: colorLink,
+        textDecoration: 'none',
+      },
     },
-    medium: {
-      fontWeight: 500,
+    h1: {
+      color: colorPrimary,
     },
-    semibold: {
-      fontWeight: 600,
+    h2: {
+      color: colorPrimary,
     },
-    bold: {
-      fontWeight: 700,
+    h3: {
+      color: colorPrimary,
     },
-    bodyScaleS: {
-      fontSize: '12px',
-      lineHeight: '16px',
+    h4: {
+      color: colorPrimary,
     },
-    bodyScaleM: {
-      fontSize: '14px',
-      lineHeight: '18px',
-      letterSpacing: '0.25px',
+    h5: {
+      color: colorPrimary,
     },
-    bodyScaleL: {
-      fontSize: '16px',
-      lineHeight: '22px',
-      letterSpacing: '0.25px',
+    h6: {
+      color: colorPrimary,
     },
-    bodyScaleXL: {
-      fontSize: '18px',
-      lineHeight: '24px',
-      letterSpacing: '0.5px',
+    subtitle1: {
+      color: colorPrimary,
     },
-    captionScaleXS: {
-      fontSize: '10px',
-      lineHeight: '14px',
-      letterSpacing: '0.15px',
+    body1: {
+      color: colorPrimary,
     },
-    captionScaleS: {
-      fontSize: '12px',
-      lineHeight: '16px',
-      letterSpacing: '0.15px',
+    caption: {
+      color: colorPrimary,
     },
-    captionScaleM: {
-      fontSize: '14px',
-      lineHeight: '18px',
-      letterSpacing: '0.3px',
+    overline: {
+      color: colorPrimary,
     },
-    captionScaleL: {
-      fontSize: '16px',
-      lineHeight: '22px',
-      letterSpacing: '0.5px',
+    button: {
+      color: colorPrimary,
     },
-    captionScaleXL: {
-      fontSize: '18px',
-      lineHeight: '24px',
-      letterSpacing: '0.5px',
+    colorPrimary: {
+      color: colorPrimary,
     },
-    overlineScaleXS: {
-      fontSize: '10px',
-      lineHeight: '14px',
-      letterSpacing: '0.15px',
+    colorSecondary: {
+      color: colorSecondary,
     },
-    overlineScaleS: {
-      fontSize: '12px',
-      lineHeight: '16px',
-      letterSpacing: '0.15px',
-    },
-    overlineScaleM: {
-      fontSize: '14px',
-      lineHeight: '18px',
-      letterSpacing: '0.3px',
+  };
+};
+
+export const MuiTypographyStyledDark = (modifyTheme: any) => {
+  const colorPrimaryDark = modifyTheme.palette.dark.text.primary;
+  const colorSecondaryDark = modifyTheme.palette.dark.text.secondary;
+  const colorLinkDark = modifyTheme.palette.dark.text.link;
+  return {
+    '& .MuiTypography-': {
+      '&h1, &h2, &h3, &h4, &h5, &h6, &subtitle1, &body1, &caption, &overline, &button, &colorPrimary':
+        { color: colorPrimaryDark },
+      '&colorSecondary': {
+        color: colorSecondaryDark,
+      },
+      '&body1, &caption, &subtitle1': {
+        '&.MuiTypography-link': { color: colorLinkDark },
+      },
     },
   };
 };

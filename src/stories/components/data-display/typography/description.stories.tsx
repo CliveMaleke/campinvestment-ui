@@ -46,6 +46,16 @@ export default {
         category: 'Heading',
       },
     },
+    headingColor: {
+      name: 'Color',
+      control: {
+        type: 'select',
+        options: ['initial', 'primary', 'secondary'],
+      },
+      table: {
+        category: 'Heading',
+      },
+    },
     bodyScale: {
       name: 'Scale',
       control: {
@@ -61,6 +71,26 @@ export default {
       control: {
         type: 'select',
         options: ['regular', 'medium', 'semibold'],
+      },
+      table: {
+        category: 'Body',
+      },
+    },
+    bodyColor: {
+      name: 'Color',
+      control: {
+        type: 'select',
+        options: ['initial', 'primary', 'secondary'],
+      },
+      table: {
+        category: 'Body',
+      },
+    },
+    bodyLink: {
+      name: 'Link',
+      defaultValue: false,
+      control: {
+        type: 'boolean',
       },
       table: {
         category: 'Body',
@@ -86,6 +116,26 @@ export default {
         category: 'Caption',
       },
     },
+    captionColor: {
+      name: 'Color',
+      control: {
+        type: 'select',
+        options: ['initial', 'primary', 'secondary'],
+      },
+      table: {
+        category: 'Caption',
+      },
+    },
+    captionLink: {
+      name: 'Link',
+      defaultValue: false,
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        category: 'Caption',
+      },
+    },
     overlineScale: {
       name: 'Scale',
       control: {
@@ -106,11 +156,28 @@ export default {
         category: 'Overline',
       },
     },
+    overlineColor: {
+      name: 'Color',
+      control: {
+        type: 'select',
+        options: ['initial', 'primary', 'secondary'],
+      },
+      table: {
+        category: 'Overline',
+      },
+    },
     numericScale: {
       name: 'Scale',
       control: {
         type: 'select',
-        options: ['small', 'medium', 'large', 'extralarge', 'extralarge2x', 'extralarge3x'],
+        options: [
+          'small',
+          'medium',
+          'large',
+          'extralarge',
+          'extralarge2x',
+          'extralarge3x',
+        ],
       },
       table: {
         category: 'Numeric',
@@ -126,11 +193,41 @@ export default {
         category: 'Numeric',
       },
     },
+    numericColor: {
+      name: 'Color',
+      control: {
+        type: 'select',
+        options: ['initial', 'primary', 'secondary'],
+      },
+      table: {
+        category: 'Numeric',
+      },
+    },
+    numericLink: {
+      name: 'Link',
+      defaultValue: false,
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        category: 'Numeric',
+      },
+    },
     buttonScale: {
       name: 'Scale',
       control: {
         type: 'select',
         options: ['small', 'medium', 'large', 'extralarge', 'extralarge2x'],
+      },
+      table: {
+        category: 'Button',
+      },
+    },
+    buttonColor: {
+      name: 'Color',
+      control: {
+        type: 'select',
+        options: ['initial', 'primary', 'secondary'],
       },
       table: {
         category: 'Button',
@@ -142,21 +239,34 @@ export default {
 export const description = ({
   headingVariant,
   headingType,
+  headingColor,
   bodyScale,
   bodyType,
+  bodyColor,
+  bodyLink,
   captionScale,
   captionType,
+  captionColor,
+  captionLink,
   overlineScale,
   overlineType,
+  overlineColor,
   numericScale,
   numericType,
+  numericColor,
+  numericLink,
   buttonScale,
+  buttonColor,
 }) => (
   <Wrapper>
     <h3 style={{ fontFamily: ['"Montserrat"', 'sans-serif'].join(',') }}>
       Heading
     </h3>
-    <Typography variant={headingVariant} type={headingType}>
+    <Typography
+      variant={headingVariant}
+      type={headingType}
+      color={headingColor}
+    >
       Crypto investment ecosystem you can count on
     </Typography>
     <h3
@@ -167,10 +277,31 @@ export const description = ({
     >
       Body
     </h3>
-    <Typography variant="body1" type={bodyType} bodyScale={bodyScale}>
-      Exchange allows users to easily exchange one crypto asset for another to
-      optimize your crypto gains
-    </Typography>
+    {!bodyLink && (
+      <Typography
+        variant="body1"
+        type={bodyType}
+        bodyScale={bodyScale}
+        color={bodyColor}
+      >
+        Exchange allows users to easily exchange one crypto asset for another to
+        optimize your crypto gains
+      </Typography>
+    )}
+    {bodyLink && (
+      <Typography
+        variant="body1"
+        type={bodyType}
+        bodyScale={bodyScale}
+        color={bodyColor}
+        component="a"
+        href="#"
+        className="MuiTypography-link"
+      >
+        Exchange allows users to easily exchange one crypto asset for another to
+        optimize your crypto gains
+      </Typography>
+    )}
     <h3
       style={{
         marginTop: 50,
@@ -179,13 +310,29 @@ export const description = ({
     >
       Caption
     </h3>
-    <Typography
-      variant="caption"
-      type={captionType}
-      captionScale={captionScale}
-    >
-      Collateral amount
-    </Typography>
+    {!captionLink && (
+      <Typography
+        variant="caption"
+        type={captionType}
+        captionScale={captionScale}
+        color={captionColor}
+      >
+        Collateral amount
+      </Typography>
+    )}
+    {captionLink && (
+      <Typography
+        variant="caption"
+        type={captionType}
+        captionScale={captionScale}
+        color={captionColor}
+        component="a"
+        href="#"
+        className="MuiTypography-link"
+      >
+        Collateral amount
+      </Typography>
+    )}
     <h3
       style={{
         marginTop: 50,
@@ -198,6 +345,7 @@ export const description = ({
       variant="overline"
       type={overlineType}
       overlineScale={overlineScale}
+      color={overlineColor}
     >
       START dAY/End day
     </Typography>
@@ -209,7 +357,29 @@ export const description = ({
     >
       Numeric
     </h3>
-    <Typography variant="subtitle1" type={numericType} numericScale={numericScale}>$100,000.12345678</Typography>
+    {!numericLink && (
+      <Typography
+        variant="subtitle1"
+        type={numericType}
+        numericScale={numericScale}
+        color={numericColor}
+      >
+        $100,000.12345678
+      </Typography>
+    )}
+    {numericLink && (
+      <Typography
+        variant="subtitle1"
+        type={numericType}
+        numericScale={numericScale}
+        color={numericColor}
+        component="a"
+        href="#"
+        className="MuiTypography-link"
+      >
+        $100,000.12345678
+      </Typography>
+    )}
     <h3
       style={{
         marginTop: 50,
@@ -218,7 +388,9 @@ export const description = ({
     >
       Button
     </h3>
-    <Typography variant="button" buttonScale={buttonScale}>Deposit now</Typography>
+    <Typography variant="button" buttonScale={buttonScale} color={buttonColor}>
+      Deposit now
+    </Typography>
   </Wrapper>
 );
 
@@ -233,13 +405,19 @@ description.story = {
 description.args = {
   headingVariant: 'h3',
   headingType: 'medium',
+  headingColor: 'initial',
   bodyScale: 'medium',
   bodyType: 'medium',
+  bodyColor: 'initial',
   captionScale: 'medium',
   captionType: 'medium',
+  captionColor: 'initial',
   overlineScale: 'medium',
   overlineType: 'medium',
+  overlineColor: 'initial',
   numericScale: 'medium',
   numericType: 'medium',
+  numericColor: 'initial',
   buttonScale: 'medium',
+  buttonColor: 'initial',
 };

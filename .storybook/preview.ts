@@ -2,6 +2,7 @@ import { addDecorator } from '@storybook/react';
 import { withPerformance } from 'storybook-addon-performance';
 
 export const parameters = {
+  backgrounds: { disable: true },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {

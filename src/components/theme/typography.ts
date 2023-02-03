@@ -1,13 +1,9 @@
-import MuiPaletteTheme from './palette';
-
 declare module '@material-ui/core/Typography/Typography' {
   interface TypographyPropsVariantOverrides {
     subtitle2: false;
     body2: false;
   }
 }
-
-const { light } = MuiPaletteTheme;
 
 export const MuiTypographyTheme = {
   fontFamily: ['"Montserrat"', 'sans-serif'].join(','),
@@ -17,7 +13,6 @@ export const MuiTypographyTheme = {
     lineHeight: '120px',
     letterSpacing: '-1.5px',
     fontWeight: 500,
-    color: light.text.primary,
   },
   h2: {
     fontSize: '48px',
@@ -25,7 +20,6 @@ export const MuiTypographyTheme = {
     lineHeight: '64px',
     letterSpacing: '-0.5px',
     fontWeight: 500,
-    color: light.text.primary,
   },
   h3: {
     fontSize: '40px',
@@ -33,7 +27,6 @@ export const MuiTypographyTheme = {
     lineHeight: '56px',
     letterSpacing: 0,
     fontWeight: 500,
-    color: light.text.primary,
   },
   h4: {
     fontSize: '32px',
@@ -41,7 +34,6 @@ export const MuiTypographyTheme = {
     lineHeight: '40px',
     letterSpacing: '0.25px',
     fontWeight: 500,
-    color: light.text.primary,
   },
   h5: {
     fontSize: '24px',
@@ -49,7 +41,6 @@ export const MuiTypographyTheme = {
     lineHeight: '32px',
     letterSpacing: 0,
     fontWeight: 500,
-    color: light.text.primary,
   },
   h6: {
     fontSize: '18px',
@@ -57,7 +48,6 @@ export const MuiTypographyTheme = {
     lineHeight: '26px',
     letterSpacing: '0.15px',
     fontWeight: 500,
-    color: light.text.primary,
   },
   subtitle1: {
     fontFamily: ['"Manrope"', 'sans-serif'].join(','),
@@ -66,7 +56,6 @@ export const MuiTypographyTheme = {
     lineHeight: '18px',
     letterSpacing: '0.3px',
     fontWeight: 400,
-    color: light.text.primary,
   },
   subtitle2: undefined,
   body1: {
@@ -75,7 +64,6 @@ export const MuiTypographyTheme = {
     lineHeight: '18px',
     letterSpacing: '-0.15px',
     fontWeight: 400,
-    color: light.text.primary,
   },
   body2: undefined,
   caption: {
@@ -84,7 +72,6 @@ export const MuiTypographyTheme = {
     lineHeight: '18px',
     letterSpacing: '0.3px',
     fontWeight: 400,
-    color: light.text.primary,
   },
   overline: {
     fontSize: '14px',
@@ -92,7 +79,6 @@ export const MuiTypographyTheme = {
     lineHeight: '18px',
     letterSpacing: '0.3px',
     fontWeight: 400,
-    color: light.text.primary,
     textTransform: 'uppercase' as const,
   },
   button: {
@@ -101,7 +87,6 @@ export const MuiTypographyTheme = {
     lineHeight: '16px',
     letterSpacing: '0.15px',
     fontWeight: 600,
-    color: light.text.primary,
     textTransform: 'inherit' as const,
   },
 };
@@ -111,6 +96,5 @@ export const MuiTypographyProps = {
     body1: 'p',
     caption: 'p',
     overline: 'p',
-    srOnly: 'p',
   },
 };

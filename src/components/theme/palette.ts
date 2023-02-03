@@ -150,7 +150,7 @@ const MuiPaletteTheme = {
     },
     text: {
       primary: gray30,
-      secondary: gray50,
+      secondary: gray40,
       link: blue50,
     },
     button: {

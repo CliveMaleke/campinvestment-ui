@@ -16,7 +16,7 @@ import MuiContainerStyled from '../layout/Container/style';
 import MuiFormLabelStyled from '../inputs/FormLabel/style';
 // Navigation
 // Data display
-// import MuiTypographyStyled from '../../data-display/Typography/style';
+import MuiTypographyStyled from '../data-display/Typography/style';
 // Lab
 // Feedback
 
@@ -36,7 +36,7 @@ const theme = createTheme({
   },
   overrides: {
     MuiCssBaseline: {
-      '@global': MuiCssBaselineTheme,
+      '@global': MuiCssBaselineTheme(modifyTheme),
     },
     // Layout
     MuiContainer: MuiContainerStyled(defaultTheme, modifyTheme),
@@ -44,7 +44,7 @@ const theme = createTheme({
     MuiFormLabel: MuiFormLabelStyled(defaultTheme, modifyTheme),
     // Navigation
     // Data display
-    // MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
+    MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
     // Feedback
     // Lab
     // Icon
