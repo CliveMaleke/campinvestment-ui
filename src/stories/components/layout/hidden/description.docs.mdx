@@ -1,0 +1,128 @@
+import { Meta, Title, Subtitle, Preview } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/Layout/Hidden" />
+
+<Title>Hidden</Title>
+<Subtitle>
+  Quickly and responsively toggle the visibility value of components and more
+  with the hidden utilities.
+</Subtitle>
+
+### How it works
+
+<p>
+  Hidden works with a range of breakpoints e.g. <code>xsUp</code> or{' '}
+  <code>mdDown</code>, or one or more breakpoints e.g. <code>only='sm'</code> or{' '}
+  <code>only={['md', 'xl']}</code>. Ranges and individual breakpoints can be
+  used simultaneously to achieve very customized behavior. The ranges are
+  inclusive of the specified breakpoints.
+</p>
+
+### Import
+
+```jsx
+import Hidden from 'tokenomy-ui/layout/Hidden';
+```
+
+### Usage
+
+```jsx
+<Hidden xsUp>...</Hidden>
+```
+
+### Props
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><span class="prop-name">children</span></td>
+<td align="left"><span class="prop-type">node</span></td>
+<td align="left"></td>
+<td align="left">The content of the component.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">implementation</span></td>
+<td align="left"><span class="prop-type">'js'<br/>|&nbsp;'css'</span></td>
+<td align="left"><span class="prop-default">'js'</span></td>
+<td align="left">Specify which implementation to use.  'js' is the default, 'css' works better for server-side rendering.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">initialWidth</span></td>
+<td align="left"><span class="prop-type">'xs'<br/>|&nbsp;'sm'<br/>|&nbsp;'md'<br/>|&nbsp;'lg'<br/>|&nbsp;'xl'</span></td>
+<td align="left"></td>
+<td align="left">You can use this prop when choosing the <code>js</code> implementation with server-side rendering.<br/>As <code>window.innerWidth</code> is unavailable on the server, we default to rendering an empty component during the first mount. You might want to use an heuristic to approximate the screen width of the client browser screen width.<br/>For instance, you could be using the user-agent or the client-hints. <a href="https://caniuse.com/#search=client%20hint">https://caniuse.com/#search=client%20hint</a></td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">lgDown</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and down will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">lgUp</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and up will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">mdDown</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and down will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">mdUp</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and up will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">only</span></td>
+<td align="left"><span class="prop-type">'xs'<br/>|&nbsp;'sm'<br/>|&nbsp;'md'<br/>|&nbsp;'lg'<br/>|&nbsp;'xl'<br/>|&nbsp;Array&lt;'xs'<br/>|&nbsp;'sm'<br/>|&nbsp;'md'<br/>|&nbsp;'lg'<br/>|&nbsp;'xl'&gt;</span></td>
+<td align="left"></td>
+<td align="left">Hide the given breakpoint(s).</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">smDown</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and down will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">smUp</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and up will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">xlDown</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and down will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">xlUp</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and up will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">xsDown</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and down will be hidden.</td>
+</tr>
+<tr>
+<td align="left"><span class="prop-name">xsUp</span></td>
+<td align="left"><span class="prop-type">bool</span></td>
+<td align="left"><span class="prop-default">false</span></td>
+<td align="left">If <code>true</code>, screens this size and up will be hidden.</td>
+</tr>
+</tbody></table>
