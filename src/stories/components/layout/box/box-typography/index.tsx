@@ -86,13 +86,13 @@ export const BoxTypographyLineHeight = () => (
 
 const BoxTypography = () => (
   <>
-    {BoxTypographyTextAlignment()}
-    {BoxTypographyFontWeight()}
-    {BoxTypographyFontSize()}
-    {BoxTypographyFontStyle()}
-    {BoxTypographyFontFamily()}
-    {BoxTypographyLetterSpacing()}
-    {BoxTypographyLineHeight()}
+    <BoxTypographyTextAlignment />
+    <BoxTypographyFontWeight />
+    <BoxTypographyFontSize />
+    <BoxTypographyFontStyle />
+    <BoxTypographyFontFamily />
+    <BoxTypographyLetterSpacing />
+    <BoxTypographyLineHeight />
   </>
 );
 

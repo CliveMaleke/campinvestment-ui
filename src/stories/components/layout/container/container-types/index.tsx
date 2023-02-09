@@ -24,8 +24,8 @@ export const ContainerFixed = () => (
 
 const ContainerTypes = () => (
   <>
-    {ContainerFluid()}
-    {ContainerFixed()}
+    <ContainerFluid />
+    <ContainerFixed />
   </>
 );
 

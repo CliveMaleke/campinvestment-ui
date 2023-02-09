@@ -324,16 +324,16 @@ export const BoxFlexAlignSelf = () => (
 const BoxFlexbox = () => {
   return (
     <>
-      {BoxFlex()}
-      {BoxFlexDirection()}
-      {BoxFlexWrap()}
-      {BoxFlexJustifyContent()}
-      {BoxFlexAlignItems()}
-      {BoxFlexAlignContent()}
-      {BoxFlexOrder()}
-      {BoxFlexGrow()}
-      {BoxFlexShrink()}
-      {BoxFlexAlignSelf()}
+      <BoxFlex />
+      <BoxFlexDirection />
+      <BoxFlexWrap />
+      <BoxFlexJustifyContent />
+      <BoxFlexAlignItems />
+      <BoxFlexAlignContent />
+      <BoxFlexOrder />
+      <BoxFlexGrow />
+      <BoxFlexShrink />
+      <BoxFlexAlignSelf />
     </>
   );
 };

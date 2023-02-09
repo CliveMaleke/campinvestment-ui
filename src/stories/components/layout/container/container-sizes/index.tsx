@@ -51,11 +51,11 @@ export const ContainerSizeXS = () => (
 
 const ContainerSizes = () => (
   <>
-    {ContainerSizeXL()}
-    {ContainerSizeLG()}
-    {ContainerSizeMD()}
-    {ContainerSizeSM()}
-    {ContainerSizeXS()}
+    <ContainerSizeXL />
+    <ContainerSizeLG />
+    <ContainerSizeMD />
+    <ContainerSizeSM />
+    <ContainerSizeXS />
   </>
 );
 

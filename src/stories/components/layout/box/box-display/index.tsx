@@ -126,14 +126,14 @@ export const BoxDisplayWhitespace = () => (
 const BoxDisplay = () => {
   return (
     <>
-      {BoxDisplayInline()}
-      {BoxDisplayBlock()}
-      {BoxDisplayHidingElements()}
-      {BoxDisplayPrint()}
-      {BoxDisplayOverflow()}
-      {BoxDisplayTextOverflow()}
-      {BoxDisplayVisibility()}
-      {BoxDisplayWhitespace()}
+      <BoxDisplayInline />
+      <BoxDisplayBlock />
+      <BoxDisplayHidingElements />
+      <BoxDisplayPrint />
+      <BoxDisplayOverflow />
+      <BoxDisplayTextOverflow />
+      <BoxDisplayVisibility />
+      <BoxDisplayWhitespace />
     </>
   );
 };

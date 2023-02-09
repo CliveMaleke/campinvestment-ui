@@ -49,9 +49,9 @@ export const BoxBorderRadius = () => (
 
 const BoxBorders = () => (
   <>
-    {BoxBorder()}
-    {BoxBorderColor()}
-    {BoxBorderRadius()}
+    <BoxBorder />
+    <BoxBorderColor />
+    <BoxBorderRadius />
   </>
 );
 

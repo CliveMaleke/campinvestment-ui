@@ -69,9 +69,9 @@ export const BoxSizingHeight = () => (
 
 const BoxSizing = () => (
   <>
-    {BoxSizingSupportedValues()}
-    {BoxSizingWidth()}
-    {BoxSizingHeight()}
+    <BoxSizingSupportedValues />
+    <BoxSizingWidth />
+    <BoxSizingHeight />
   </>
 );
 

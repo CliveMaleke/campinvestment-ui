@@ -22,8 +22,8 @@ export const BoxPaletteBackgroundColor = () => (
 
 const BoxPalette = () => (
   <>
-    {BoxPaletteColor()}
-    {BoxPaletteBackgroundColor()}
+    <BoxPaletteColor />
+    <BoxPaletteBackgroundColor />
   </>
 );
 
