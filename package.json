@@ -1,16 +1,22 @@
 {
-  "name": "tokenomy-ui",
-  "version": "1.0.0",
+  "name": "tkn-ui",
+  "version": "1.0.10",
   "description": "Tokenomy User Interface Kit provides you with guidelines, components and templates to boost the user experience of your products.",
   "main": "index.js",
   "scripts": {
-    "storybook": "yarn clean && start-storybook -p 6006",
-    "build-storybook": "yarn clean && build-storybook",
+    "storybook": "yarn && yarn clean && start-storybook -p 6006",
+    "build-storybook": "yarn && yarn clean && build-storybook",
     "start": "build-storybook && npx http-server ./storybook-static",
     "clean": "rm -rf theme variables layout inputs navigation surfaces feedback data-display utils lab",
-    "build": "yarn clean && tsc",
+    "build:data-display": "cp -R dist/components/data-display data-display",
+    "build:inputs": "cp -R dist/components/inputs inputs",
+    "build:layout": "cp -R dist/components/layout layout",
+    "build:surfaces": "cp -R dist/components/surfaces surfaces",
+    "build:theme": "cp -R dist/components/theme theme",
+    "build:variables": "cp -R dist/components/variables variables",
+    "build": "yarn clean && tsc && yarn build:data-display && yarn build:inputs && yarn build:layout && yarn build:surfaces && yarn build:theme && yarn build:variables && rm -rf dist",
     "chromatic": "npx chromatic --project-token",
-    "publish": "yarn version && npm publish",
+    "publish": "npm publish",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
@@ -63,6 +69,14 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },
+  "files": [
+    "data-display",
+    "inputs",
+    "layout",
+    "surfaces",
+    "theme",
+    "variables"
+  ],
   "babel": {
     "presets": [
       "@babel/preset-env",
