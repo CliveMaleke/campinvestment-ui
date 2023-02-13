@@ -3,8 +3,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Components
-import Box from '../../../../../components/layout/Box';
-import Grid from '../../../../../components/layout/Grid';
+import Box from '@components/layout/Box';
+import Grid from '@components/layout/Grid';
 
 const useStyles = makeStyles((theme) => ({
   root: {

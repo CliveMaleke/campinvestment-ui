@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Components
-import Container from '../../../../../components/layout/Container';
+import Container from '@components/layout/Container';
 
 export const ContainerSizeXL = () => (
   <>

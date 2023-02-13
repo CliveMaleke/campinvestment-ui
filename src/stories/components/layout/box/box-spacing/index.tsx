@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Components
-import Box from '../../../../../components/layout/Box';
+import Box from '@components/layout/Box';
 
 const BoxSpacing = () => (
   <div>

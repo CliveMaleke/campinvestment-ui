@@ -3,8 +3,8 @@ import React from 'react';
 import withWidth, { WithWidth } from '@material-ui/core/withWidth';
 
 // Components
-import Hidden from '../../../../../components/layout/Hidden';
-import Box from '../../../../../components/layout/Box';
+import Hidden from '@components/layout/Hidden';
+import Box from '@components/layout/Box';
 
 const defaultProps = {
   bgcolor: '#cfe8fc',

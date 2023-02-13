@@ -2,8 +2,8 @@
 import React, { FC } from 'react';
 
 // Components
-import Typography from '../../../../../components/data-display/Typography';
-import { ITypographyProps } from '../../../../../components/data-display/Typography/Typography';
+import Typography from '@components/data-display/Typography';
+import { ITypographyProps } from '@components/data-display/Typography/Typography';
 
 export const TypographyHeading1: FC<ITypographyProps> = (props) => (
   <Typography {...props}>Heading 1</Typography>

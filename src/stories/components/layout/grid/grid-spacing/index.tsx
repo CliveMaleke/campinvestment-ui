@@ -4,12 +4,12 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 import { GridSpacing as GridSpacingProps } from '@material-ui/core/Grid';
 
 // Components
-import Box from '../../../../../components/layout/Box';
-import Grid from '../../../../../components/layout/Grid';
-import FormLabel from '../../../../../components/inputs/FormLabel';
-import FormControlLabel from '../../../../../components/inputs/FormControlLabel';
-import RadioGroup from '../../../../../components/inputs/RadioGroup';
-import Radio from '../../../../../components/inputs/Radio';
+import Box from '@components/layout/Box';
+import Grid from '@components/layout/Grid';
+import FormLabel from '@components/inputs/FormLabel';
+import FormControlLabel from '@components/inputs/FormControlLabel';
+import RadioGroup from '@components/inputs/RadioGroup';
+import Radio from '@components/inputs/Radio';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
