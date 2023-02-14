@@ -8,55 +8,6 @@ import { Theme } from '@material-ui/core';
 import Typography from '@components/data-display/Typography';
 import TypographyDescriptionDocs from './description.docs.mdx';
 
-// interface DefaultPropsTypography {
-//   headingVariant: string;
-//   headingType: string;
-//   headingColor: string;
-//   bodyScale: string;
-//   bodyType: string;
-//   bodyColor: string;
-//   bodyLink: string;
-//   captionScale: string;
-//   captionType: string;
-//   captionColor: string;
-//   captionLink: string;
-//   overlineScale: string;
-//   overlineType: string;
-//   overlineColor: string;
-//   numericScale: string;
-//   numericType: string;
-//   numericColor: string;
-//   numericLink: string;
-//   buttonScale: string;
-//   buttonColor: string;
-// }
-
-// interface ArgTypography extends ArgStory {
-//   ({
-//     headingVariant,
-//     headingType,
-//     headingColor,
-//     bodyScale,
-//     bodyType,
-//     bodyColor,
-//     bodyLink,
-//     captionScale,
-//     captionType,
-//     captionColor,
-//     captionLink,
-//     overlineScale,
-//     overlineType,
-//     overlineColor,
-//     numericScale,
-//     numericType,
-//     numericColor,
-//     numericLink,
-//     buttonScale,
-//     buttonColor,
-//   }: DefaultPropsTypography): JSX.Element;
-//   args: DefaultPropsTypography;
-// }
-
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
