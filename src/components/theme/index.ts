@@ -17,6 +17,7 @@ import MuiFormLabelStyled from '../inputs/FormLabel/style';
 // Navigation
 // Data display
 import MuiTypographyStyled from '../data-display/Typography/style';
+import MuiIconStyled from '../data-display/Icon/style';
 // Lab
 // Feedback
 
@@ -45,6 +46,7 @@ const theme = createTheme({
     // Navigation
     // Data display
     MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
+    MuiSvgIcon: MuiIconStyled(defaultTheme, modifyTheme),
     // Feedback
     // Lab
     // Icon

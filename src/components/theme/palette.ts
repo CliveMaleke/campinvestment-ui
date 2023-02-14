@@ -24,6 +24,8 @@ import {
   red90,
   lightBlue20,
   lightBlue50,
+  green50,
+  yellow50,
 } from '../variables/colors';
 
 interface ButtonContainedColors {
@@ -68,6 +70,13 @@ interface PaletteColors {
     outlinedSecondary: ButtonOutlinedColors;
     text: ButtonContainedColors;
   };
+  icon: {
+    primary: string;
+    secondary: string;
+    success: string;
+    warning: string;
+    danger: string;
+  }
 }
 
 interface CustomPaletteOptions extends PaletteOptions {
@@ -142,6 +151,13 @@ const MuiPaletteTheme = {
         bgDisabled: 'transparent',
       },
     },
+    icon: {
+      primary: gray70,
+      secondary: gray50,
+      success: green50,
+      warning: yellow50,
+      danger: red50,
+    }
   },
   dark: {
     background: {
@@ -207,6 +223,13 @@ const MuiPaletteTheme = {
         bgDisabled: 'transparent',
       },
     },
+    icon: {
+      primary: gray70,
+      secondary: gray50,
+      success: green50,
+      warning: yellow50,
+      danger: red50,
+    }
   },
 } as CustomPaletteOptions;
 
