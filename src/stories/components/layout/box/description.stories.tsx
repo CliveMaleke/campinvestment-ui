@@ -1,8 +1,10 @@
 // Vendors
 import React from 'react';
+import { Meta } from '@storybook/react/types-6-0';
 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
 import BoxDescriptionDocs from './description.docs.mdx';
@@ -17,7 +19,14 @@ import BoxSizing from './box-sizing';
 import BoxSpacing from './box-spacing';
 import BoxTypography from './box-typography';
 
-const useStyles = makeStyles((theme) => ({
+interface ArgBox extends ArgStory {
+  ({ type }: { type: string }): JSX.Element;
+  args: {
+    type: string;
+  };
+}
+
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -25,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wrapper = ({ children }) => {
+const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.root}>{children}</div>;
 };
@@ -55,16 +64,9 @@ export default {
       },
     },
   },
-};
+} as Meta;
 
-const defaultProps = {
-  bgcolor: '#cfe8fc',
-  m: 1,
-  style: { width: '5rem', height: '5rem' },
-  borderColor: 'text.primary',
-};
-
-export const description = ({ type }) => (
+export const description: ArgBox = ({ type }) => (
   <Wrapper>
     {type == 'borders' && <BoxBorders />}
     {type == 'display' && <BoxDisplay />}

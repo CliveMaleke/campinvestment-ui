@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Box from '@components/layout/Box';
 
-const BoxSpacing = () => (
+const BoxSpacing:React.FC = () => (
   <div>
     <Box p={1} bgcolor="#cfe8fc">
       p={1}

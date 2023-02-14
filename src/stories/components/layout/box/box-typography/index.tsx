@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Box from '@components/layout/Box';
 
-export const BoxTypographyTextAlignment = () => (
+export const BoxTypographyTextAlignment:React.FC = () => (
   <>
     <h3>Text Alignment</h3>
     <div>
@@ -25,21 +25,21 @@ export const BoxTypographyTextAlignment = () => (
   </>
 );
 
-export const BoxTypographyFontWeight = () => (
+export const BoxTypographyFontWeight:React.FC = () => (
   <>
     <h3 style={{ marginTop: 40 }}>Font Weight</h3>
     <Box fontWeight={700}>Bold</Box>
   </>
 );
 
-export const BoxTypographyFontSize = () => (
+export const BoxTypographyFontSize:React.FC = () => (
   <>
     <h3 style={{ marginTop: 40 }}>Font Size</h3>
     <Box fontSize={14}>Font size 14</Box>
   </>
 );
 
-export const BoxTypographyFontStyle = () => (
+export const BoxTypographyFontStyle:React.FC = () => (
   <>
     <h3 style={{ marginTop: 40 }}>Font Style</h3>
     <Box fontStyle="normal" m={1}>
@@ -51,7 +51,7 @@ export const BoxTypographyFontStyle = () => (
   </>
 );
 
-export const BoxTypographyFontFamily = () => (
+export const BoxTypographyFontFamily:React.FC = () => (
   <>
     <h3 style={{ marginTop: 40 }}>Font Style</h3>
     <Box fontFamily="fontFamily" m={1}>
@@ -63,7 +63,7 @@ export const BoxTypographyFontFamily = () => (
   </>
 );
 
-export const BoxTypographyLetterSpacing = () => (
+export const BoxTypographyLetterSpacing:React.FC = () => (
   <>
     <h3 style={{ marginTop: 40 }}>Letter Spacing</h3>
     <Box letterSpacing={6} m={1}>
@@ -72,7 +72,7 @@ export const BoxTypographyLetterSpacing = () => (
   </>
 );
 
-export const BoxTypographyLineHeight = () => (
+export const BoxTypographyLineHeight:React.FC = () => (
   <>
     <h3 style={{ marginTop: 40 }}>Line Height</h3>
     <Box lineHeight="normal" m={1}>
@@ -84,7 +84,7 @@ export const BoxTypographyLineHeight = () => (
   </>
 );
 
-const BoxTypography = () => (
+const BoxTypography:React.FC = () => (
   <>
     <BoxTypographyTextAlignment />
     <BoxTypographyFontWeight />

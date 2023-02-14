@@ -1,8 +1,10 @@
 // Vendors
 import React from 'react';
+import { Meta } from '@storybook/react/types-6-0';
 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
 import HiddenBreakpointUp from './hidden-breakpoint-up';
@@ -11,7 +13,14 @@ import HiddenBreakpointOnly from './hidden-breakpoint-only';
 
 import HiddenDescriptionDocs from './description.docs.mdx';
 
-const useStyles = makeStyles((theme) => ({
+interface ArgHidden extends ArgStory {
+  ({ type }: { type: string }): JSX.Element;
+  args: {
+    type: string;
+  };
+}
+
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -19,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wrapper = ({ children }) => {
+const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.root}>{children}</div>;
 };
@@ -39,16 +48,9 @@ export default {
       },
     },
   },
-};
+} as Meta;
 
-const defaultProps = {
-  bgcolor: '#cfe8fc',
-  m: 1,
-  style: { width: '5rem', height: '5rem' },
-  borderColor: 'text.primary',
-};
-
-export const description = ({ type }) => (
+export const description: ArgHidden = ({ type }) => (
   <Wrapper>
     {type == 'up' && <HiddenBreakpointUp />}
     {type == 'down' && <HiddenBreakpointDown />}

@@ -10,7 +10,7 @@ const defaultProps = {
   style: { width: '5rem', height: '5rem' },
 };
 
-export const BoxBorder = () => (
+export const BoxBorder: React.FC = () => (
   <>
     <h3>Border</h3>
     <Box display="flex" justifyContent="left">
@@ -23,7 +23,7 @@ export const BoxBorder = () => (
   </>
 );
 
-export const BoxBorderColor = () => (
+export const BoxBorderColor: React.FC = () => (
   <>
     <h3 style={{ marginTop: 30 }}>Border Color</h3>
     <Box display="flex" justifyContent="left">
@@ -36,7 +36,7 @@ export const BoxBorderColor = () => (
   </>
 );
 
-export const BoxBorderRadius = () => (
+export const BoxBorderRadius: React.FC = () => (
   <>
     <h3 style={{ marginTop: 30 }}>Border Radius</h3>
     <Box display="flex" justifyContent="left">
@@ -47,7 +47,7 @@ export const BoxBorderRadius = () => (
   </>
 );
 
-const BoxBorders = () => (
+const BoxBorders: React.FC = () => (
   <>
     <BoxBorder />
     <BoxBorderColor />

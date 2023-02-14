@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Box from '@components/layout/Box';
 
-export const BoxSizingSupportedValues = () => (
+export const BoxSizingSupportedValues:React.FC = () => (
   <>
     <h3>Supported values</h3>
     <Box width="100%">
@@ -24,7 +24,7 @@ export const BoxSizingSupportedValues = () => (
   </>
 );
 
-export const BoxSizingWidth = () => (
+export const BoxSizingWidth:React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Width</h3>
     <Box width="100%">
@@ -47,7 +47,7 @@ export const BoxSizingWidth = () => (
   </>
 );
 
-export const BoxSizingHeight = () => (
+export const BoxSizingHeight:React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Height</h3>
     <Box height={100} width="100%">
@@ -67,7 +67,7 @@ export const BoxSizingHeight = () => (
   </>
 );
 
-const BoxSizing = () => (
+const BoxSizing:React.FC = () => (
   <>
     <BoxSizingSupportedValues />
     <BoxSizingWidth />

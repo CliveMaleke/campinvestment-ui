@@ -6,13 +6,19 @@ import withWidth, { WithWidth } from '@material-ui/core/withWidth';
 import Hidden from '@components/layout/Hidden';
 import Box from '@components/layout/Box';
 
-const defaultProps = {
+interface DefaultProps {
+  bgcolor: string;
+  p: number;
+  mb: number;
+}
+
+const defaultProps: DefaultProps = {
   bgcolor: '#cfe8fc',
   p: 2,
   mb: 2,
 };
 
-const HiddenBreakpointUp = (props: WithWidth) => {
+const HiddenBreakpointUp: React.FC<WithWidth> = (props) => {
   const { width } = props;
   return (
     <>

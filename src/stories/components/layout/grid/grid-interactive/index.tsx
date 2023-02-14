@@ -1,6 +1,7 @@
 // Vendors
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 import {
   GridDirection,
   GridJustification,
@@ -15,7 +16,15 @@ import FormControlLabel from '@components/inputs/FormControlLabel';
 import RadioGroup from '@components/inputs/RadioGroup';
 import Radio from '@components/inputs/Radio';
 
-const useStyles = makeStyles((theme: any) => ({
+interface DefaultProps {
+  bgcolor: string;
+  p: number;
+  m: number;
+  height: string;
+  textAlign: string;
+}
+
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -24,7 +33,7 @@ const useStyles = makeStyles((theme: any) => ({
   },
 }));
 
-const defaultProps = {
+const defaultProps: DefaultProps = {
   bgcolor: '#cfe8fc',
   p: 2,
   m: 1,
@@ -32,7 +41,7 @@ const defaultProps = {
   textAlign: 'center',
 };
 
-const GridInteractive = () => {
+const GridInteractive: React.FC = () => {
   const [direction, setDirection] = React.useState<GridDirection>('row');
   const [justify, setJustify] = React.useState<GridJustification>('flex-start');
   const [alignItems, setAlignItems] =

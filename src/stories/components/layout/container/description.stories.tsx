@@ -1,14 +1,24 @@
 // Vendors
 import React from 'react';
+import { Meta } from '@storybook/react/types-6-0';
 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
 import Container from '../../../../components/layout/Container';
 import ContainerDescriptionDocs from './description.docs.mdx';
 
-const useStyles = makeStyles((theme) => ({
+interface ArgContainer extends ArgStory {
+  ({ type, size }: { type: string, size: any }): JSX.Element;
+  args: {
+    type: string;
+    size: any;
+  };
+}
+
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -16,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wrapper = ({ children }) => {
+const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.root}>{children}</div>;
 };
@@ -43,8 +53,8 @@ export default {
       },
     },
   },
-};
-export const description = ({ type, size }) => (
+} as Meta;
+export const description: ArgContainer = ({ type, size }) => (
   <Wrapper>
     <Container fixed={type == 'fixed'} maxWidth={size}>
       <div style={{ backgroundColor: '#cfe8fc', height: '70vh' }}></div>

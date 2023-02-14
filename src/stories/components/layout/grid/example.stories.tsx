@@ -1,6 +1,8 @@
 // Vendors
 import React from 'react';
+import { Meta } from '@storybook/react/types-6-0';
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
 import GridSpacing from './grid-spacing';
@@ -21,7 +23,7 @@ import GridAutoLayoutDocs from './grid-auto-layout/docs.mdx';
 import GridNested from './grid-nested';
 import GridNestedDocs from './grid-nested/docs.mdx';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wrapper = ({ children }) => {
+const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.root}>{children}</div>;
 };
@@ -40,9 +42,9 @@ export default {
     design: { disabled: true },
     options: { showPanel: false },
   },
-};
+} as Meta;
 
-export const spacing = () => (
+export const spacing: ArgStory = () => (
   <Wrapper>
     <GridSpacing />
   </Wrapper>
@@ -55,7 +57,7 @@ spacing.story = {
   },
 };
 
-export const fluidBasic = () => (
+export const fluidBasic: ArgStory = () => (
   <Wrapper>
     <GridFluidBasic />
   </Wrapper>
@@ -68,7 +70,7 @@ fluidBasic.story = {
   },
 };
 
-export const fluidBreakpoints = () => (
+export const fluidBreakpoints: ArgStory = () => (
   <Wrapper>
     <GridFluidBreakpoints />
   </Wrapper>
@@ -81,7 +83,7 @@ fluidBreakpoints.story = {
   },
 };
 
-export const interactive = () => (
+export const interactive: ArgStory = () => (
   <Wrapper>
     <GridInteractive />
   </Wrapper>
@@ -94,7 +96,7 @@ interactive.story = {
   },
 };
 
-export const autoLayout = () => (
+export const autoLayout: ArgStory = () => (
   <Wrapper>
     <GridAutoLayout />
   </Wrapper>
@@ -107,7 +109,7 @@ autoLayout.story = {
   },
 };
 
-export const nestedGrid = () => (
+export const nestedGrid: ArgStory = () => (
   <Wrapper>
     <GridNested />
   </Wrapper>

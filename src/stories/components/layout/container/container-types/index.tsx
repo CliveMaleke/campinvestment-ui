@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Container from '@components/layout/Container';
 
-export const ContainerFluid = () => (
+export const ContainerFluid: React.FC = () => (
   <>
     <h3>Fluid</h3>
     <Container disableGutters>
@@ -13,7 +13,7 @@ export const ContainerFluid = () => (
   </>
 );
 
-export const ContainerFixed = () => (
+export const ContainerFixed: React.FC = () => (
   <>
     <h3 style={{ marginTop: 30 }}>Fixed</h3>
     <Container maxWidth="sm" fixed disableGutters>
@@ -22,7 +22,7 @@ export const ContainerFixed = () => (
   </>
 );
 
-const ContainerTypes = () => (
+const ContainerTypes: React.FC = () => (
   <>
     <ContainerFluid />
     <ContainerFixed />

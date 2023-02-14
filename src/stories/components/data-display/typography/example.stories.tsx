@@ -3,6 +3,7 @@ import React from 'react';
 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
 import TypographyHeading from './typography-heading';
@@ -23,7 +24,7 @@ import TypographyNumericDocs from './typography-numeric/docs.mdx';
 import TypographyButton from './typography-button';
 import TypographyButtonDocs from './typography-button/docs.mdx';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wrapper = ({ children }) => {
+const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.root}>{children}</div>;
 };

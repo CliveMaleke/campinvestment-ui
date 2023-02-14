@@ -1,24 +1,31 @@
 // Vendors
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
 import Box from '@components/layout/Box';
 import Grid from '@components/layout/Grid';
 
-const useStyles = makeStyles((theme) => ({
+interface DefaultProps {
+  bgcolor: string;
+  p: number;
+  textAlign: string;
+}
+
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     flexGrow: 1,
   },
 }));
 
-const defaultProps = {
+const defaultProps: DefaultProps = {
   bgcolor: '#cfe8fc',
   p: 2,
   textAlign: 'center',
 };
 
-const GridAutoLayout = () => {
+const GridAutoLayout: React.FC = () => {
   const classes = useStyles();
 
   return (

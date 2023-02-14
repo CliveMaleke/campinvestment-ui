@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Container from '@components/layout/Container';
 
-export const ContainerSizeXL = () => (
+export const ContainerSizeXL: React.FC = () => (
   <>
     <h3>Extra Large</h3>
     <Container maxWidth="xl" disableGutters>
@@ -13,7 +13,7 @@ export const ContainerSizeXL = () => (
   </>
 );
 
-export const ContainerSizeLG = () => (
+export const ContainerSizeLG: React.FC = () => (
   <>
     <h3 style={{ marginTop: 30 }}>Large</h3>
     <Container disableGutters>
@@ -22,7 +22,7 @@ export const ContainerSizeLG = () => (
   </>
 );
 
-export const ContainerSizeMD = () => (
+export const ContainerSizeMD: React.FC = () => (
   <>
     <h3 style={{ marginTop: 30 }}>Medium</h3>
     <Container maxWidth="md" disableGutters>
@@ -31,7 +31,7 @@ export const ContainerSizeMD = () => (
   </>
 );
 
-export const ContainerSizeSM = () => (
+export const ContainerSizeSM: React.FC = () => (
   <>
     <h3 style={{ marginTop: 30 }}>Small</h3>
     <Container maxWidth="sm" disableGutters>
@@ -40,7 +40,7 @@ export const ContainerSizeSM = () => (
   </>
 );
 
-export const ContainerSizeXS = () => (
+export const ContainerSizeXS: React.FC = () => (
   <>
     <h3 style={{ marginTop: 30 }}>Extra Small</h3>
     <Container maxWidth="xs" disableGutters>
@@ -49,7 +49,7 @@ export const ContainerSizeXS = () => (
   </>
 );
 
-const ContainerSizes = () => (
+const ContainerSizes: React.FC = () => (
   <>
     <ContainerSizeXL />
     <ContainerSizeLG />

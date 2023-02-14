@@ -10,7 +10,7 @@ const defaultProps = {
   p: 1,
 };
 
-export const BoxFlex = () => (
+export const BoxFlex: React.FC = () => (
   <>
     <h3>Flex</h3>
     <Box display="flex" {...defaultProps}>
@@ -19,7 +19,7 @@ export const BoxFlex = () => (
   </>
 );
 
-export const BoxFlexDirection = () => (
+export const BoxFlexDirection: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Flex Direction</h3>
     <div style={{ width: '100%' }}>
@@ -49,7 +49,7 @@ export const BoxFlexDirection = () => (
   </>
 );
 
-export const BoxFlexWrap = () => (
+export const BoxFlexWrap: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Flex Wrap</h3>
     <div style={{ width: '100%' }}>
@@ -97,7 +97,7 @@ export const BoxFlexWrap = () => (
   </>
 );
 
-export const BoxFlexJustifyContent = () => (
+export const BoxFlexJustifyContent: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Justify Content</h3>
     <div style={{ width: '100%' }}>
@@ -138,7 +138,7 @@ export const BoxFlexJustifyContent = () => (
   </>
 );
 
-export const BoxFlexAlignItems = () => (
+export const BoxFlexAlignItems: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Align Items</h3>
     <div style={{ width: '100%' }}>
@@ -179,7 +179,7 @@ export const BoxFlexAlignItems = () => (
   </>
 );
 
-export const BoxFlexAlignContent = () => (
+export const BoxFlexAlignContent: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Align Content</h3>
     <div style={{ width: '100%' }}>
@@ -245,7 +245,7 @@ export const BoxFlexAlignContent = () => (
   </>
 );
 
-export const BoxFlexOrder = () => (
+export const BoxFlexOrder: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Order</h3>
     <div style={{ width: '100%' }}>
@@ -283,7 +283,7 @@ export const BoxFlexGrow = () => (
   </>
 );
 
-export const BoxFlexShrink = () => (
+export const BoxFlexShrink: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Flex Shrink</h3>
     <div style={{ width: '100%' }}>
@@ -302,7 +302,7 @@ export const BoxFlexShrink = () => (
   </>
 );
 
-export const BoxFlexAlignSelf = () => (
+export const BoxFlexAlignSelf: React.FC = () => (
   <>
     <h3 style={{ marginTop: 20 }}>Align Self</h3>
     <div style={{ width: '100%' }}>
@@ -321,7 +321,7 @@ export const BoxFlexAlignSelf = () => (
   </>
 );
 
-const BoxFlexbox = () => {
+const BoxFlexbox: React.FC = () => {
   return (
     <>
       <BoxFlex />

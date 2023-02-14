@@ -1,8 +1,10 @@
 // Vendors
 import React from 'react';
+import { Meta } from '@storybook/react/types-6-0';
 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
 import BoxBorders from './box-borders';
@@ -32,7 +34,7 @@ import BoxSpacingDocs from './box-spacing/docs.mdx';
 import BoxTypography from './box-typography';
 import BoxTypographyDocs from './box-typography/docs.mdx';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -40,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Wrapper = ({ children }) => {
+const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.root}>{children}</div>;
 };
@@ -51,9 +53,9 @@ export default {
     design: { disabled: true },
     options: { showPanel: false },
   },
-};
+} as Meta;
 
-export const borders = () => (
+export const borders: ArgStory = () => (
   <Wrapper>
     <BoxBorders />
   </Wrapper>
@@ -66,7 +68,7 @@ borders.story = {
   },
 };
 
-export const display = () => (
+export const display: ArgStory = () => (
   <Wrapper>
     <BoxDisplay />
   </Wrapper>
@@ -79,7 +81,7 @@ display.story = {
   },
 };
 
-export const flexbox = () => (
+export const flexbox: ArgStory = () => (
   <Wrapper>
     <BoxFlexbox />
   </Wrapper>
@@ -92,7 +94,7 @@ flexbox.story = {
   },
 };
 
-export const palette = () => (
+export const palette: ArgStory = () => (
   <Wrapper>
     <BoxPalette />
   </Wrapper>
@@ -105,7 +107,7 @@ palette.story = {
   },
 };
 
-export const positions = () => (
+export const positions: ArgStory = () => (
   <Wrapper>
     <BoxPositions />
   </Wrapper>
@@ -118,7 +120,7 @@ positions.story = {
   },
 };
 
-export const shadows = () => (
+export const shadows: ArgStory = () => (
   <Wrapper>
     <BoxShadows />
   </Wrapper>
@@ -131,7 +133,7 @@ shadows.story = {
   },
 };
 
-export const sizing = () => (
+export const sizing: ArgStory = () => (
   <Wrapper>
     <BoxSizing />
   </Wrapper>
@@ -144,7 +146,7 @@ sizing.story = {
   },
 };
 
-export const spacing = () => (
+export const spacing: ArgStory = () => (
   <Wrapper>
     <BoxSpacing />
   </Wrapper>
@@ -157,7 +159,7 @@ spacing.story = {
   },
 };
 
-export const typography = () => (
+export const typography: ArgStory = () => (
   <Wrapper>
     <BoxTypography />
   </Wrapper>

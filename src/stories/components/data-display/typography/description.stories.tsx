@@ -1,12 +1,63 @@
 // Vendors
 import React from 'react';
+import { Meta } from '@storybook/react/types-6-0';
 import { makeStyles } from '@material-ui/core/styles';
+import { Theme } from '@material-ui/core';
 
 // Components
-import Typography from '../../../../components/data-display/Typography';
+import Typography from '@components/data-display/Typography';
 import TypographyDescriptionDocs from './description.docs.mdx';
 
-const useStyles = makeStyles((theme: any) => ({
+// interface DefaultPropsTypography {
+//   headingVariant: string;
+//   headingType: string;
+//   headingColor: string;
+//   bodyScale: string;
+//   bodyType: string;
+//   bodyColor: string;
+//   bodyLink: string;
+//   captionScale: string;
+//   captionType: string;
+//   captionColor: string;
+//   captionLink: string;
+//   overlineScale: string;
+//   overlineType: string;
+//   overlineColor: string;
+//   numericScale: string;
+//   numericType: string;
+//   numericColor: string;
+//   numericLink: string;
+//   buttonScale: string;
+//   buttonColor: string;
+// }
+
+// interface ArgTypography extends ArgStory {
+//   ({
+//     headingVariant,
+//     headingType,
+//     headingColor,
+//     bodyScale,
+//     bodyType,
+//     bodyColor,
+//     bodyLink,
+//     captionScale,
+//     captionType,
+//     captionColor,
+//     captionLink,
+//     overlineScale,
+//     overlineType,
+//     overlineColor,
+//     numericScale,
+//     numericType,
+//     numericColor,
+//     numericLink,
+//     buttonScale,
+//     buttonColor,
+//   }: DefaultPropsTypography): JSX.Element;
+//   args: DefaultPropsTypography;
+// }
+
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -234,7 +285,7 @@ export default {
       },
     },
   },
-};
+} as Meta;
 
 export const description = ({
   headingVariant,

@@ -11,7 +11,13 @@ import FormControlLabel from '@components/inputs/FormControlLabel';
 import RadioGroup from '@components/inputs/RadioGroup';
 import Radio from '@components/inputs/Radio';
 
-const useStyles = makeStyles((theme: Theme) => ({
+interface DefaultProps {
+  bgcolor: string;
+  height: number;
+  width: number;
+}
+
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -20,13 +26,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-const defaultProps = {
+const defaultProps: DefaultProps = {
   bgcolor: '#cfe8fc',
   height: 200,
   width: 100,
 };
 
-const GridSpacing = () => {
+const GridSpacing: React.FC = () => {
   const [spacing, setSpacing] = React.useState<GridSpacingProps>(2);
   const classes = useStyles();
 

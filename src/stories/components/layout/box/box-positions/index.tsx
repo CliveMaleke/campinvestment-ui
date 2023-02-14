@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Box from '@components/layout/Box';
 
-const BoxPositions = () => (
+const BoxPositions:React.FC = () => (
   <>
     <h3>Z-Index</h3>
     <div style={{ height: 100, width: '100%', position: 'relative' }}>

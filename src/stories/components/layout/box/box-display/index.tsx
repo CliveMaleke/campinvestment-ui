@@ -11,7 +11,7 @@ const defaultProps = {
   p: 1,
 };
 
-export const BoxDisplayInline = () => (
+export const BoxDisplayInline: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 20 }}>Inline</h3>
     <div style={{ width: '100%' }}>
@@ -25,7 +25,7 @@ export const BoxDisplayInline = () => (
   </>
 );
 
-export const BoxDisplayBlock = () => (
+export const BoxDisplayBlock: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 10, marginTop: 30 }}>Block</h3>
     <div style={{ width: '100%' }}>
@@ -39,7 +39,7 @@ export const BoxDisplayBlock = () => (
   </>
 );
 
-export const BoxDisplayHidingElements = () => (
+export const BoxDisplayHidingElements: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 10, marginTop: 30 }}>Hiding elements</h3>
     <div style={{ width: '100%' }}>
@@ -53,7 +53,7 @@ export const BoxDisplayHidingElements = () => (
   </>
 );
 
-export const BoxDisplayPrint = () => (
+export const BoxDisplayPrint: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 10, marginTop: 30 }}>Display in print</h3>
     <div style={{ width: '100%' }}>
@@ -67,7 +67,7 @@ export const BoxDisplayPrint = () => (
   </>
 );
 
-export const BoxDisplayOverflow = () => (
+export const BoxDisplayOverflow: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 10, marginTop: 30 }}>Overflow</h3>
     <div style={{ width: 200, whiteSpace: 'nowrap' }}>
@@ -81,7 +81,7 @@ export const BoxDisplayOverflow = () => (
   </>
 );
 
-export const BoxDisplayTextOverflow = () => (
+export const BoxDisplayTextOverflow: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 10, marginTop: 30 }}>Text Overflow</h3>
     <div style={{ width: 200, whiteSpace: 'nowrap' }}>
@@ -95,7 +95,7 @@ export const BoxDisplayTextOverflow = () => (
   </>
 );
 
-export const BoxDisplayVisibility = () => (
+export const BoxDisplayVisibility: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 10, marginTop: 30 }}>Visibility</h3>
     <div style={{ width: '100%' }}>
@@ -109,7 +109,7 @@ export const BoxDisplayVisibility = () => (
   </>
 );
 
-export const BoxDisplayWhitespace = () => (
+export const BoxDisplayWhitespace: React.FC = () => (
   <>
     <h3 style={{ marginBottom: 10, marginTop: 30 }}>White Space</h3>
     <div style={{ width: 200 }}>
@@ -123,7 +123,7 @@ export const BoxDisplayWhitespace = () => (
   </>
 );
 
-const BoxDisplay = () => {
+const BoxDisplay: React.FC = () => {
   return (
     <>
       <BoxDisplayInline />
