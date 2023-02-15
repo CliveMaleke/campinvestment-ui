@@ -31,7 +31,7 @@ export default {
   },
 } as Meta;
 
-export const tokenomyIcon: ArgStory = () => (
+export const tokenomyIcon = () => (
   <Wrapper>
     <IconTokenomy />
   </Wrapper>
@@ -41,31 +41,11 @@ tokenomyIcon.story = {
     docs: {
       page: IconTokenomyDocs,
     },
-  },
-};
-
-export const materialDesignIcon = () => {
-  window.open('https://material-ui.com/components/material-icons', '_blank');
-  return (
-    <Wrapper>
-      <h3>
-        Please check on{' '}
-        <a
-          className="link"
-          target="_blank"
-          href="https://material-ui.com/components/material-icons"
-        >
-          https://material-ui.com/components/material-icons
-        </a>
-      </h3>
-    </Wrapper>
-  );
-};
-materialDesignIcon.story = {
-  parameters: {
-    fullPage: true,
     previewTabs: {
-      canvas: { hidden: true },
+      canvas: {
+          hidden: true,
+      },
     },
+    viewMode: 'docs',
   },
 };

@@ -4,7 +4,7 @@ import { SvgIconProps } from '@material-ui/core/SvgIcon';
 
 import Icon from './index';
 
-const PlusFillIcon: FC<SvgIconProps> = (props) => (
+const PlusFilledIcon: FC<SvgIconProps> = (props) => (
   <Icon {...props}>
     <path
       fillRule="evenodd"
@@ -14,4 +14,4 @@ const PlusFillIcon: FC<SvgIconProps> = (props) => (
   </Icon>
 );
 
-export default PlusFillIcon;
+export default PlusFilledIcon;

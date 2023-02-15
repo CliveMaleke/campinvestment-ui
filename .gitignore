@@ -9,6 +9,7 @@
 /data-display
 /utils
 /lab
+/assets
 
 # Storybook
 build-storybook.log

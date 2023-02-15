@@ -4,7 +4,7 @@ import { SvgIconProps } from '@material-ui/core/SvgIcon';
 
 import Icon from './index';
 
-const HamburgerIcon: FC<SvgIconProps> = (props) => (
+const HamburgerMenuIcon: FC<SvgIconProps> = (props) => (
   <Icon {...props}>
     <rect x="2.3999" y="5.03662" width="19.2" height="2.17079" rx="1.0854" />
     <rect x="2.3999" y="11.549" width="19.2" height="2.17079" rx="1.0854" />
@@ -12,4 +12,4 @@ const HamburgerIcon: FC<SvgIconProps> = (props) => (
   </Icon>
 );
 
-export default HamburgerIcon;
+export default HamburgerMenuIcon;

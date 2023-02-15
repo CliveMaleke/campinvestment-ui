@@ -16,7 +16,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 
-import { red50 } from '@components/variables/colors';
+import { gray70 } from '@components/variables/colors';
 
 // Components
 import Grid from '@components/layout/Grid';
@@ -38,8 +38,8 @@ import CardHolderIcon from '@components/data-display/Icon/CardHolderIcon';
 import BookIcon from '@components/data-display/Icon/BookIcon';
 import StarIcon from '@components/data-display/Icon/StarIcon';
 import CalendarIcon from '@components/data-display/Icon/CalendarIcon';
-import EyeOpenedIcon from '@components/data-display/Icon/EyeOpenedIcon';
-import EyeClosedIcon from '@components/data-display/Icon/EyeClosedIcon';
+import EyeOpenIcon from '@components/data-display/Icon/EyeOpenIcon';
+import EyeCloseIcon from '@components/data-display/Icon/EyeCloseIcon';
 import CheckIcon from '@components/data-display/Icon/CheckIcon';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
 import SyncIcon from '@components/data-display/Icon/SyncIcon';
@@ -53,8 +53,8 @@ import DeleteIcon from '@components/data-display/Icon/DeleteIcon';
 import VerifiedIcon from '@components/data-display/Icon/VerifiedIcon';
 import SaveIcon from '@components/data-display/Icon/SaveIcon';
 import EditIcon from '@components/data-display/Icon/EditIcon';
-import VerticalEllipsisIcon from '@components/data-display/Icon/VerticalEllipsisIcon';
-import HamburgerIcon from '@components/data-display/Icon/HamburgerIcon';
+import MoreMenuIcon from '@components/data-display/Icon/MoreMenuIcon';
+import HamburgerMenuIcon from '@components/data-display/Icon/HamburgerMenuIcon';
 import CarretSortIcon from '@components/data-display/Icon/CarretSortIcon';
 import CarretDownIcon from '@components/data-display/Icon/CarretDownIcon';
 import CarretUpIcon from '@components/data-display/Icon/CarretUpIcon';
@@ -64,19 +64,54 @@ import ArrowLeftIcon from '@components/data-display/Icon/ArrowLeftIcon';
 import ArrowRightIcon from '@components/data-display/Icon/ArrowRightIcon';
 import ArrowDownIcon from '@components/data-display/Icon/ArrowDownIcon';
 import ArrowUpIcon from '@components/data-display/Icon/ArrowUpIcon';
-import ArrowDoubleLeftIcon from '@components/data-display/Icon/ArrowDoubleLeftIcon';
-import ArrowDoubleRightIcon from '@components/data-display/Icon/ArrowDoubleRightIcon';
+import ChevronDoubleLeftIcon from '@components/data-display/Icon/ChevronDoubleLeftIcon';
+import ChevronDoubleRightIcon from '@components/data-display/Icon/ChevronDoubleRightIcon';
 import NotificationIcon from '@components/data-display/Icon/NotificationIcon';
-import CheckFillIcon from '@components/data-display/Icon/CheckFillIcon';
-import PlusFillIcon from '@components/data-display/Icon/PlusFillIcon';
-import WarningIcon from '@components/data-display/Icon/WarningIcon';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import PlusFilledIcon from '@components/data-display/Icon/PlusFilledIcon';
+import AlertIcon from '@components/data-display/Icon/AlertIcon';
 import SafeIcon from '@components/data-display/Icon/SafeIcon';
 import CloudUploadIcon from '@components/data-display/Icon/CloudUploadIcon';
 import PlusIcon from '@components/data-display/Icon/PlusIcon';
 import SwitchIcon from '@components/data-display/Icon/SwitchIcon';
-import CloseFillIcon from '@components/data-display/Icon/CloseFillIcon';
+import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
 import ResizeIcon from '@components/data-display/Icon/ResizeIcon';
 import EarnIcon from '@components/data-display/Icon/EarnIcon';
+import TelegramIcon from '@components/data-display/Icon/TelegramIcon';
+import FacebookIcon from '@components/data-display/Icon/FacebookIcon';
+import TwitterIcon from '@components/data-display/Icon/TwitterIcon';
+import InstagramIcon from '@components/data-display/Icon/InstagramIcon';
+import RedditIcon from '@components/data-display/Icon/RedditIcon';
+import CoinMarketCapIcon from '@components/data-display/Icon/CoinMarketCapIcon';
+import LinkedinIcon from '@components/data-display/Icon/LinkedinIcon';
+import AvaxIcon from '@components/data-display/Icon/AvaxIcon';
+import BalIcon from '@components/data-display/Icon/BalIcon';
+import BtcIcon from '@components/data-display/Icon/BtcIcon';
+import BchIcon from '@components/data-display/Icon/BchIcon';
+import AdaIcon from '@components/data-display/Icon/AdaIcon';
+import LinkIcon from '@components/data-display/Icon/LinkIcon';
+import CompIcon from '@components/data-display/Icon/CompIcon';
+import EosIcon from '@components/data-display/Icon/EosIcon';
+import EthIcon from '@components/data-display/Icon/EthIcon';
+import IdkIcon from '@components/data-display/Icon/IdkIcon';
+import LtcIcon from '@components/data-display/Icon/LtcIcon';
+import MkrIcon from '@components/data-display/Icon/MkrIcon';
+import DaiIcon from '@components/data-display/Icon/DaiIcon';
+import DotIcon from '@components/data-display/Icon/DotIcon';
+import SolIcon from '@components/data-display/Icon/SolIcon';
+import XlmIcon from '@components/data-display/Icon/XlmIcon';
+import SnxIcon from '@components/data-display/Icon/SnxIcon';
+import XtzIcon from '@components/data-display/Icon/XtzIcon';
+import TenIcon from '@components/data-display/Icon/TenIcon';
+import TrxIcon from '@components/data-display/Icon/TrxIcon';
+import UsdcIcon from '@components/data-display/Icon/UsdcIcon';
+import UsdtIcon from '@components/data-display/Icon/UsdtIcon';
+
+interface ObjIcon {
+  name: string;
+  element: React.ReactNode;
+  importName: string;
+}
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -141,7 +176,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
   modalIconPreview: {
     '& svg': {
-      color: red50,
+      color: gray70,
       fontSize: 210,
       backgroundSize: '30px 30px',
       backgroundColor: '#fff',
@@ -153,23 +188,23 @@ const useStyles = makeStyles<Theme>((theme) => ({
   },
 }));
 
-// function useDebounce(value, delay) {
-//   const [debouncedValue, setDebouncedValue] = useState(value);
+function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
 
-//   useEffect(() => {
-//     const handler = setTimeout(() => {
-//       setDebouncedValue(value);
-//     }, delay);
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
 
-//     return () => {
-//       clearTimeout(handler);
-//     };
-//   }, [value]);
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value]);
 
-//   return debouncedValue;
-// }
+  return debouncedValue;
+}
 
-const icons = [
+const iconsTokenomy = [
   {
     name: 'home',
     element: <HomeIcon />,
@@ -236,14 +271,14 @@ const icons = [
     importName: 'CalendarIcon',
   },
   {
-    name: 'eye opened',
-    element: <EyeOpenedIcon />,
-    importName: 'EyeOpenedIcon',
+    name: 'eye open',
+    element: <EyeOpenIcon />,
+    importName: 'EyeOpenIcon',
   },
   {
-    name: 'eye closed',
-    element: <EyeClosedIcon />,
-    importName: 'EyeClosedIcon',
+    name: 'eye close',
+    element: <EyeCloseIcon />,
+    importName: 'EyeCloseIcon',
   },
   {
     name: 'check',
@@ -311,14 +346,14 @@ const icons = [
     importName: 'EditIcon',
   },
   {
-    name: 'vertical ellipsis',
-    element: <VerticalEllipsisIcon />,
-    importName: 'VerticalEllipsisIcon',
+    name: 'more menu',
+    element: <MoreMenuIcon />,
+    importName: 'MoreMenuIcon',
   },
   {
-    name: 'hamburger',
-    element: <HamburgerIcon />,
-    importName: 'HamburgerIcon',
+    name: 'hamburger menu',
+    element: <HamburgerMenuIcon />,
+    importName: 'HamburgerMenuIcon',
   },
   {
     name: 'carret sort',
@@ -366,14 +401,14 @@ const icons = [
     importName: 'ArrowUpIcon',
   },
   {
-    name: 'arrow double left',
-    element: <ArrowDoubleLeftIcon />,
-    importName: 'ArrowDoubleLeftIcon',
+    name: 'chevron double left',
+    element: <ChevronDoubleLeftIcon />,
+    importName: 'ChevronDoubleLeftIcon',
   },
   {
-    name: 'arrow double right',
-    element: <ArrowDoubleRightIcon />,
-    importName: 'ArrowDoubleRightIcon',
+    name: 'chevron double right',
+    element: <ChevronDoubleRightIcon />,
+    importName: 'ChevronDoubleRightIcon',
   },
   {
     name: 'notification',
@@ -381,19 +416,19 @@ const icons = [
     importName: 'NotificationIcon',
   },
   {
-    name: 'check fill',
-    element: <CheckFillIcon />,
-    importName: 'CheckFillIcon',
+    name: 'check filled',
+    element: <CheckFilledIcon />,
+    importName: 'CheckFilledIcon',
   },
   {
-    name: 'plus fill',
-    element: <PlusFillIcon />,
-    importName: 'PlusFillIcon',
+    name: 'plus filled',
+    element: <PlusFilledIcon />,
+    importName: 'PlusFilledIcon',
   },
   {
-    name: 'warning',
-    element: <WarningIcon />,
-    importName: 'WarningIcon',
+    name: 'alert',
+    element: <AlertIcon />,
+    importName: 'AlertIcon',
   },
   {
     name: 'safe',
@@ -416,9 +451,9 @@ const icons = [
     importName: 'SwitchIcon',
   },
   {
-    name: 'close fill',
-    element: <CloseFillIcon />,
-    importName: 'CloseFillIcon',
+    name: 'close filled',
+    element: <CloseFilledIcon />,
+    importName: 'CloseFilledIcon',
   },
   {
     name: 'resize',
@@ -432,13 +467,167 @@ const icons = [
   },
 ];
 
+const iconsSocialMedia = [
+  {
+    name: 'telegram',
+    element: <TelegramIcon />,
+    importName: 'TelegramIcon',
+  },
+  {
+    name: 'facebook',
+    element: <FacebookIcon />,
+    importName: 'FacebookIcon',
+  },
+  {
+    name: 'twitter',
+    element: <TwitterIcon />,
+    importName: 'TwitterIcon',
+  },
+  {
+    name: 'instagram',
+    element: <InstagramIcon />,
+    importName: 'InstagramIcon',
+  },
+  {
+    name: 'reddit',
+    element: <RedditIcon />,
+    importName: 'RedditIcon',
+  },
+  {
+    name: 'coin market cap',
+    element: <CoinMarketCapIcon />,
+    importName: 'CoinMarketCapIcon',
+  },
+  {
+    name: 'linkedin',
+    element: <LinkedinIcon />,
+    importName: 'LinkedinIcon',
+  },
+];
+
+const iconsAsset = [
+  {
+    name: 'avalance (AVAX)',
+    element: <AvaxIcon />,
+    importName: 'AvaxIcon',
+  },
+  {
+    name: 'balancer (BAL)',
+    element: <BalIcon />,
+    importName: 'BalIcon',
+  },
+  {
+    name: 'bitcoin (BTC)',
+    element: <BtcIcon />,
+    importName: 'BtcIcon',
+  },
+  {
+    name: 'bitcoin cash (BCH)',
+    element: <BchIcon />,
+    importName: 'BchIcon',
+  },
+  {
+    name: 'cardano (ADA)',
+    element: <AdaIcon />,
+    importName: 'AdaIcon',
+  },
+  {
+    name: 'chainlink (LINK)',
+    element: <LinkIcon />,
+    importName: 'LinkIcon',
+  },
+  {
+    name: 'compound (COMP)',
+    element: <CompIcon />,
+    importName: 'CompIcon',
+  },
+  {
+    name: 'EOS',
+    element: <EosIcon />,
+    importName: 'EosIcon',
+  },
+  {
+    name: 'ethereum (ETH)',
+    element: <EthIcon />,
+    importName: 'EthIcon',
+  },
+  {
+    name: 'IDK',
+    element: <IdkIcon />,
+    importName: 'IdkIcon',
+  },
+  {
+    name: 'litecoin (LTC)',
+    element: <LtcIcon />,
+    importName: 'LtcIcon',
+  },
+  {
+    name: 'maker (MKR)',
+    element: <MkrIcon />,
+    importName: 'MkrIcon',
+  },
+  {
+    name: 'DAI',
+    element: <DaiIcon />,
+    importName: 'DaiIcon',
+  },
+  {
+    name: 'polkadot (DOT)',
+    element: <DotIcon />,
+    importName: 'DotIcon',
+  },
+  {
+    name: 'solana (SOL)',
+    element: <SolIcon />,
+    importName: 'SolIcon',
+  },
+  {
+    name: 'stellar (XLM)',
+    element: <XlmIcon />,
+    importName: 'XlmIcon',
+  },
+  {
+    name: 'tezos (XTZ)',
+    element: <XtzIcon />,
+    importName: 'XtzIcon',
+  },
+  {
+    name: 'tokenomy (TEN)',
+    element: <TenIcon />,
+    importName: 'TenIcon',
+  },
+  {
+    name: 'tron (TRX)',
+    element: <TrxIcon />,
+    importName: 'TrxIcon',
+  },
+  {
+    name: 'USDC',
+    element: <UsdcIcon />,
+    importName: 'UsdcIcon',
+  },
+  {
+    name: 'USDT',
+    element: <UsdtIcon />,
+    importName: 'UsdtIcon',
+  },
+];
+
+const icons = [ ...iconsTokenomy, ...iconsSocialMedia, ...iconsAsset ];
+
 const CustomDialogTitle = withStyles(styles)((props: DialogTitleProps) => {
   const { children, classes, onClose, ...other } = props;
   return (
     <DialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography variant="h6" style={{ textTransform: 'capitalize' }}>
+        {children}
+      </Typography>
       {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <IconButton
+          aria-label="close"
+          className={classes.closeButton}
+          onClick={onClose}
+        >
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -458,7 +647,7 @@ const IconTokenomy = () => {
   const [open, setOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
 
-  const handleClickOpen = (objIcon) => {
+  const handleClickOpen = (objIcon: ObjIcon) => {
     setOpen(true);
     setModalData(objIcon);
   };
@@ -468,25 +657,40 @@ const IconTokenomy = () => {
 
   // Searching
   const [searchTerm, setSearchTerm] = useState(null);
-  // const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const debouncedSearchTerm = useDebounce(searchTerm, 100);
 
-  // const searchCharacters = (search) => {
-  //   return true;
-  // };
+  const searchCharacters = async (keyword: string) => {
+    return await new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(keyword);
+      }, 100),
+    );
+  };
 
-  // useEffect(() => {
-  //   if (debouncedSearchTerm) {
-  //     searchCharacters(debouncedSearchTerm).then((r) => {
-  //       console.log('a');
-  //     });
-  //   } else {
-  //     if (debouncedSearchTerm == '') {
-  //       searchCharacters(debouncedSearchTerm).then((r) => {
-  //         console.log('b');
-  //       });
-  //     }
-  //   }
-  // }, [debouncedSearchTerm]);
+  const filteredCharacters = (list: any, key: string, value: string) => {
+    let filtered = [], i = list.length;
+    let reg = new RegExp("(.*)(" + value.toLowerCase() + ")(.*)");
+    while (i--) {
+        if (reg.test(list[i][key].toLowerCase())) {
+            filtered.push(list[i]);
+        }
+    }
+    return filtered;
+  }
+
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      searchCharacters(debouncedSearchTerm).then((keyword: string) => {
+        setIconState(filteredCharacters(icons, 'name', keyword));
+      });
+    } else {
+      if (debouncedSearchTerm == '') {
+        searchCharacters(debouncedSearchTerm).then(() => {
+          setIconState(icons);
+        });
+      }
+    }
+  }, [debouncedSearchTerm]);
 
   return (
     <>
@@ -535,10 +739,11 @@ const IconTokenomy = () => {
                 {modalData.element}
               </div>
             </div>
-            {/* <Source
+            <Source
               language="jsx"
               code={dedent`import ${modalData.importName} from 'tokenomy-ui/Icon/${modalData.importName}';`}
-            /> */}
+            />
+            <Source language="jsx" code={dedent`<${modalData.importName} />`} />
           </CustomDialogContent>
         </Dialog>
       )}

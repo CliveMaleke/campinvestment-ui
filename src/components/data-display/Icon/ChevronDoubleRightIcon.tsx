@@ -4,7 +4,7 @@ import { SvgIconProps } from '@material-ui/core/SvgIcon';
 
 import Icon from './index';
 
-const ArrowDoubleRightIcon: FC<SvgIconProps> = (props) => (
+const ChevronDoubleRightIcon: FC<SvgIconProps> = (props) => (
   <Icon {...props}>
     <path
       d="M5.25 5L12.75 12.5L5.25 20"
@@ -23,4 +23,4 @@ const ArrowDoubleRightIcon: FC<SvgIconProps> = (props) => (
   </Icon>
 );
 
-export default ArrowDoubleRightIcon;
+export default ChevronDoubleRightIcon;

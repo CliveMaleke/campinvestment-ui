@@ -4,7 +4,7 @@ import { SvgIconProps } from '@material-ui/core/SvgIcon';
 
 import Icon from './index';
 
-const WarningIcon: FC<SvgIconProps> = (props) => (
+const AlertIcon: FC<SvgIconProps> = (props) => (
   <Icon {...props}>
     <path
       fillRule="evenodd"
@@ -14,4 +14,4 @@ const WarningIcon: FC<SvgIconProps> = (props) => (
   </Icon>
 );
 
-export default WarningIcon;
+export default AlertIcon;
