@@ -76,6 +76,7 @@ interface PaletteColors {
     success: string;
     warning: string;
     danger: string;
+    disabled: string;
   }
 }
 
@@ -157,6 +158,7 @@ const MuiPaletteTheme = {
       success: green50,
       warning: yellow50,
       danger: red50,
+      disabled: gray50,
     }
   },
   dark: {
@@ -229,6 +231,7 @@ const MuiPaletteTheme = {
       success: green50,
       warning: yellow50,
       danger: red50,
+      disabled: gray50,
     }
   },
 } as CustomPaletteOptions;

@@ -10,6 +10,12 @@ import { Theme } from '@material-ui/core';
 import IconTokenomy from './icon-tokenomy';
 import IconTokenomyDocs from './icon-tokenomy/docs.mdx';
 
+import IconColor from './icon-color';
+import IconColorDocs from './icon-color/docs.mdx';
+
+import IconSize from './icon-size';
+import IconSizeDocs from './icon-size/docs.mdx';
+
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
@@ -47,5 +53,31 @@ tokenomyIcon.story = {
       },
     },
     viewMode: 'docs',
+  },
+};
+
+export const color = () => (
+  <Wrapper>
+    <IconColor />
+  </Wrapper>
+);
+color.story = {
+  parameters: {
+    docs: {
+      page: IconColorDocs,
+    },
+  },
+};
+
+export const size = () => (
+  <Wrapper>
+    <IconSize />
+  </Wrapper>
+);
+size.story = {
+  parameters: {
+    docs: {
+      page: IconSizeDocs,
+    },
   },
 };
