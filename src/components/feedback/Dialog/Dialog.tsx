@@ -8,7 +8,7 @@ import theme from '../../theme';
 export default (props: DialogProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <Dialog {...props} />
+      <Dialog {...props}>{props.children}</Dialog>
     </ThemeProvider>
   );
 };
