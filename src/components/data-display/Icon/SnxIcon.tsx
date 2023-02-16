@@ -6,14 +6,14 @@ import Icon from './index';
 
 const SnxIcon: FC<SvgIconProps> = (props) => (
   <Icon {...props}>
-    <g clip-path="url(#clip0_1740_940)">
+    <g clipPath="url(#clip0_1740_940)">
       <path
         d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"
         fill="#201C3A"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7.31251 19.7344L5.66251 18.4969L16.2844 3.75L17.9344 4.9875L7.31251 19.7344Z"
         fill="#8F8D9C"
       />

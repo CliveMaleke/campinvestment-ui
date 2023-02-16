@@ -111,6 +111,7 @@ interface ObjIcon {
   name: string;
   element: React.ReactNode;
   importName: string;
+  codeName?: string;
 }
 
 const styles = (theme: Theme) =>
@@ -510,110 +511,134 @@ const iconsAsset = [
     name: 'avalance (AVAX)',
     element: <AvaxIcon />,
     importName: 'AvaxIcon',
+    codeName: 'avax',
   },
   {
     name: 'balancer (BAL)',
     element: <BalIcon />,
     importName: 'BalIcon',
+    codeName: 'bal',
   },
   {
     name: 'bitcoin (BTC)',
     element: <BtcIcon />,
     importName: 'BtcIcon',
+    codeName: 'btc',
   },
   {
     name: 'bitcoin cash (BCH)',
     element: <BchIcon />,
     importName: 'BchIcon',
+    codeName: 'bch',
   },
   {
     name: 'cardano (ADA)',
     element: <AdaIcon />,
     importName: 'AdaIcon',
+    codeName: 'ada',
   },
   {
     name: 'chainlink (LINK)',
     element: <LinkIcon />,
     importName: 'LinkIcon',
+    codeName: 'link',
   },
   {
     name: 'compound (COMP)',
     element: <CompIcon />,
     importName: 'CompIcon',
+    codeName: 'comp',
   },
   {
     name: 'EOS',
     element: <EosIcon />,
     importName: 'EosIcon',
+    codeName: 'eos',
   },
   {
     name: 'ethereum (ETH)',
     element: <EthIcon />,
     importName: 'EthIcon',
+    codeName: 'eth',
   },
   {
     name: 'IDK',
     element: <IdkIcon />,
     importName: 'IdkIcon',
+    codeName: 'idk',
   },
   {
     name: 'litecoin (LTC)',
     element: <LtcIcon />,
     importName: 'LtcIcon',
+    codeName: 'ltc',
   },
   {
     name: 'maker (MKR)',
     element: <MkrIcon />,
     importName: 'MkrIcon',
+    codeName: 'mkr',
   },
   {
     name: 'DAI',
     element: <DaiIcon />,
     importName: 'DaiIcon',
+    codeName: 'dai',
   },
   {
     name: 'polkadot (DOT)',
     element: <DotIcon />,
     importName: 'DotIcon',
+    codeName: 'dot',
   },
   {
     name: 'solana (SOL)',
     element: <SolIcon />,
     importName: 'SolIcon',
+    codeName: 'sol',
   },
   {
     name: 'stellar (XLM)',
     element: <XlmIcon />,
     importName: 'XlmIcon',
+    codeName: 'xlm',
   },
   {
     name: 'tezos (XTZ)',
     element: <XtzIcon />,
     importName: 'XtzIcon',
+    codeName: 'xtz',
   },
   {
     name: 'tokenomy (TEN)',
     element: <TenIcon />,
     importName: 'TenIcon',
+    codeName: 'ten',
   },
   {
     name: 'tron (TRX)',
     element: <TrxIcon />,
     importName: 'TrxIcon',
+    codeName: 'trx',
   },
   {
     name: 'USDC',
     element: <UsdcIcon />,
     importName: 'UsdcIcon',
+    codeName: 'usdc',
   },
   {
     name: 'USDT',
     element: <UsdtIcon />,
     importName: 'UsdtIcon',
+    codeName: 'usdt',
   },
 ];
 
-const icons = [ ...iconsTokenomy, ...iconsSocialMedia, ...iconsAsset ];
+const newIconsTokenomy = iconsTokenomy.map(v => ({...v, codeName: ''}));
+const newIconsSocialMedia = iconsSocialMedia.map(v => ({...v, codeName: ''}));
+
+const icons = [...newIconsTokenomy, ...newIconsSocialMedia, ...iconsAsset];
 
 const CustomDialogTitle = withStyles(styles)((props: DialogTitleProps) => {
   const { children, classes, onClose, ...other } = props;
@@ -668,15 +693,16 @@ const IconTokenomy = () => {
   };
 
   const filteredCharacters = (list: any, key: string, value: string) => {
-    let filtered = [], i = list.length;
-    let reg = new RegExp("(.*)(" + value.toLowerCase() + ")(.*)");
+    let filtered = [],
+      i = list.length;
+    let reg = new RegExp('(.*)(' + value.toLowerCase() + ')(.*)');
     while (i--) {
-        if (reg.test(list[i][key].toLowerCase())) {
-            filtered.push(list[i]);
-        }
+      if (reg.test(list[i][key].toLowerCase())) {
+        filtered.push(list[i]);
+      }
     }
     return filtered;
-  }
+  };
 
   useEffect(() => {
     if (debouncedSearchTerm) {
@@ -706,11 +732,11 @@ const IconTokenomy = () => {
       <Grid container spacing={2} className={classes.iconWrapper}>
         <Grid item xs>
           <Grid container spacing={2}>
-            {iconState.map(({ name, element, importName }, i) => (
+            {iconState.map(({ name, element, importName, codeName }, i) => (
               <Grid
                 item
                 key={i}
-                onClick={() => handleClickOpen({ name, element, importName })}
+                onClick={() => handleClickOpen({ name, element, importName, codeName })}
               >
                 <Paper className={classes.iconItem}>
                   <div>
@@ -744,6 +770,20 @@ const IconTokenomy = () => {
               code={dedent`import ${modalData.importName} from 'tokenomy-ui/Icon/${modalData.importName}';`}
             />
             <Source language="jsx" code={dedent`<${modalData.importName} />`} />
+
+            {modalData.codeName !== '' && (
+              <>
+                <b>Additional Import</b>
+                <Source
+                  language="jsx"
+                  code={dedent`https://spot.tokenomy.com/tokenomy-assets/images/cryptocurrency-icons/${modalData.codeName}.svg`}
+                />
+                <Source
+                  language="jsx"
+                  code={dedent`import ${modalData.codeName.toUpperCase()}Svg from 'tokenomy-ui/assets/icon/${modalData.codeName}.svg';`}
+                />
+              </>
+            )}
           </CustomDialogContent>
         </Dialog>
       )}

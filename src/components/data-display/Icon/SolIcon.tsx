@@ -27,8 +27,8 @@ const SolIcon: FC<SvgIconProps> = (props) => (
         y2="23.483"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFA3" />
-        <stop offset="1" stop-color="#DC1FFF" />
+        <stop stopColor="#00FFA3" />
+        <stop offset="1" stopColor="#DC1FFF" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_1740_926"
@@ -38,8 +38,8 @@ const SolIcon: FC<SvgIconProps> = (props) => (
         y2="20.9089"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFA3" />
-        <stop offset="1" stop-color="#DC1FFF" />
+        <stop stopColor="#00FFA3" />
+        <stop offset="1" stopColor="#DC1FFF" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_1740_926"
@@ -49,8 +49,8 @@ const SolIcon: FC<SvgIconProps> = (props) => (
         y2="22.1878"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#00FFA3" />
-        <stop offset="1" stop-color="#DC1FFF" />
+        <stop stopColor="#00FFA3" />
+        <stop offset="1" stopColor="#DC1FFF" />
       </linearGradient>
     </defs>
   </Icon>
