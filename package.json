@@ -1,7 +1,7 @@
 {
   "name": "tokenomy-ui",
   "version": "1.0.0",
-  "description": "Tokenomy User Interface Kit provides you with guidelines, components and templates to boost the user experience of your products.",
+  "description": "Tokenomy User Interface Kit provides you with guidelines, components and ui toolkit to boost the user experience of your products.",
   "main": "index.js",
   "scripts": {
     "storybook": "yarn && yarn clean && start-storybook -p 6006",

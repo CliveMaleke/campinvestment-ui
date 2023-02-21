@@ -66,7 +66,7 @@ export const parameters = {
           'Lab',
           ['Alert', 'Autocomplete', 'Skeleton', 'Pagination'],
         ],
-        'Templates',
+        'UI Toolkit',
         ['Login', 'Emails Template', 'Errors Page', 'Under Construction'],
       ],
     },
