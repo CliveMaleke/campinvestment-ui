@@ -767,7 +767,7 @@ const IconTokenomy = () => {
             </div>
             <Source
               language="jsx"
-              code={dedent`import ${modalData.importName} from 'tokenomy-ui/Icon/${modalData.importName}';`}
+              code={dedent`import ${modalData.importName} from 'tokenomy-ui/data-display/Icon/${modalData.importName}';`}
             />
             <Source language="jsx" code={dedent`<${modalData.importName} />`} />
 
