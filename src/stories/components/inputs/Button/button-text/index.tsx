@@ -2,9 +2,10 @@
 import React from 'react';
 
 // Components
-import Button, { ButtonProps } from '@components/inputs/Button';
+import Button from '@components/inputs/Button';
+import { IButtonProps } from '@components/inputs/Button/Button';
 
-export const ButtonText = (props: ButtonProps) => (
+export const ButtonText = (props: IButtonProps) => (
   <Button variant="text" {...props}>
     Button
   </Button>

@@ -4,7 +4,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Components
-import Button from '../../../../components/inputs/Button';
+import Button from '@components/inputs/Button';
 import ButtonDescriptionDocs from './description.docs.mdx';
 import DeleteIcon from '@components/data-display/Icon/DeleteIcon';
 
