@@ -1,0 +1,257 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { Figma } from 'storybook-addon-designs/esm/blocks';
+
+<Meta title="Components/Input/Button" />
+
+<Title>Button</Title>
+<Subtitle>
+  Buttons allow users to take actions, and make choices, with a single tap.
+</Subtitle>
+
+### Import
+
+```jsx
+import Button from 'tokenomy-ui/inputs/Button';
+```
+
+### Usage
+
+```jsx
+<Button>Button</Button>
+```
+
+### Props
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">
+        <span class="prop-name">children</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        The content of the button.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">classes</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">object</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Override or extend the styles applied to the component. See{' '}
+        <a href="#css">CSS API</a> below for more details.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">color</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          'default'
+          <br />
+          |&nbsp;'inherit'
+          <br />
+          |&nbsp;'primary'
+          <br />
+          |&nbsp;'secondary'
+        </span>
+      </td>
+      <td align="left">'default'</td>
+      <td align="left">
+        Override or extend the styles applied to the component. See{' '}
+        <a href="#css">CSS API</a> below for more details.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">component</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">elementType</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'button'</span>
+      </td>
+      <td align="left">
+        The component used for the root node. Either a string to use a HTML element or a component.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">disabled</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">false</span>
+      </td>
+      <td align="left">
+        If <code>true</code>, the button will be disabled.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">disableElevation</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">false</span>
+      </td>
+      <td align="left">
+        If <code>true</code>, no elevation is used.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">disableFocusRipple</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">false</span>
+      </td>
+      <td align="left">
+        If <code>true</code>, the keyboard focus ripple will be disabled.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">disableRipple</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default"></span>
+      </td>
+      <td align="left">
+        If <code>true</code>, the ripple effect will be disabled.
+        <br />⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure to highlight the element by applying separate styles with the <code>focusVisibleClassName</code>.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">endIcon</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left">
+        <span class="prop-default"></span>
+      </td>
+      <td align="left">
+        Element placed after the children.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">fullWidth</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">false</span>
+      </td>
+      <td align="left">
+        If <code>true</code>, the button will take up the full width of its container.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">href</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">string</span>
+      </td>
+      <td align="left">
+        <span class="prop-default"></span>
+      </td>
+      <td align="left">
+        The URL to link to when the button is clicked. If defined, an <code>a</code> element will be used as the root node.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">size</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          'large'
+          <br />
+          |&nbsp;'medium'
+          <br />
+          |&nbsp;'small'
+        </span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'medium'</span>
+      </td>
+      <td align="left">
+        The size of the button. <code>small</code> is equivalent to the dense button styling.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">startIcon</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left">
+        <span class="prop-default"></span>
+      </td>
+      <td align="left">
+        Element placed before the children.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">variant</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          'contained'
+          <br />
+          |&nbsp;'outlined'
+          <br />
+          |&nbsp;'text'
+        </span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'text'</span>
+      </td>
+      <td align="left">
+        The variant to use.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Design
+
+<Figma
+  url="https://www.figma.com/file/XaZi4D6q7m3HIdxxx2zTCc/TKN-2498-Design-component-library-for-Web?node-id=2643%3A25831&t=VIv7wfAYBeYQAghY-0"
+  height="50%"
+  defaultCollapsed
+/>

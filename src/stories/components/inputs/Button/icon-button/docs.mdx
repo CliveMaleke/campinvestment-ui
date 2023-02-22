@@ -1,0 +1,95 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { Figma } from 'storybook-addon-designs/esm/blocks';
+
+<Meta title="Components/Input/Button" />
+
+<Title>Icon Button</Title>
+<Subtitle>
+  Buttons allow users to take actions, and make choices, with a single tap.
+</Subtitle>
+
+### Import
+
+```jsx
+import IconButton from 'tokenomy-ui/inputs/IconButton';
+import DeleteIcon from 'tokenomy-ui/data-display/Icon';
+```
+
+### Usage
+
+```jsx
+<IconButton>
+  <DeleteIcon />
+</IconButton>
+```
+
+### Props
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><span class="prop-name">children</span></td>
+      <td align="left"><span class="prop-type">node</span></td>
+      <td align="left"></td>
+      <td align="left">The icon element.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">classes</span></td>
+      <td align="left"><span class="prop-type">object</span></td>
+      <td align="left"></td>
+      <td align="left">Override or extend the styles applied to the component. See <a href="#css">CSS API</a> below for more details.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">color</span></td>
+      <td align="left"><span class="prop-type">'default'<br />|&nbsp;'inherit'<br />|&nbsp;'primary'<br />|&nbsp;'secondary'</span></td>
+      <td align="left"><span class="prop-default">'default'</span></td>
+      <td align="left">The color of the component. It supports those theme colors that make sense for this component.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">disabled</span></td>
+      <td align="left"><span class="prop-type">bool</span></td>
+      <td align="left"><span class="prop-default">false</span></td>
+      <td align="left">If <code>true</code>, the button will be disabled.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">disableFocusRipple</span></td>
+      <td align="left"><span class="prop-type">bool</span></td>
+      <td align="left"><span class="prop-default">false</span></td>
+      <td align="left">If <code>true</code>, the  keyboard focus ripple will be disabled.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">disableRipple</span></td>
+      <td align="left"><span class="prop-type">bool</span></td>
+      <td align="left"></td>
+      <td align="left">If <code>true</code>, the ripple effect will be disabled.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">edge</span></td>
+      <td align="left"><span class="prop-type">'start'<br />|&nbsp;'end'<br />|&nbsp;false</span></td>
+      <td align="left"><span class="prop-default">false</span></td>
+      <td align="left">If given, uses a negative margin to counteract the padding on one side (this is often helpful for aligning the left or right side of the icon with content above or below, without ruining the border size and shape).</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">size</span></td>
+      <td align="left"><span class="prop-type">'small'<br />|&nbsp;'medium'</span></td>
+      <td align="left"><span class="prop-default">'medium'</span></td>
+      <td align="left">The size of the button. <code>small</code> is equivalent to the dense button styling.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Design
+
+<Figma
+  url="https://www.figma.com/file/XaZi4D6q7m3HIdxxx2zTCc/TKN-2498-Design-component-library-for-Web?node-id=2643%3A27268&t=a2GAiWCgh4ZBuSMh-0"
+  height="50%"
+  defaultCollapsed
+/>

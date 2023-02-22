@@ -14,6 +14,8 @@ import MuiCssBaselineTheme from './cssBaseline';
 import MuiContainerStyled from '../layout/Container/style';
 // Inputs
 import MuiFormLabelStyled from '../inputs/FormLabel/style';
+import MuiButtonStyled from '../inputs/Button/style';
+import MuiIconButtonStyled from '../inputs/IconButton/style';
 // Navigation
 // Data display
 import MuiTypographyStyled from '../data-display/Typography/style';
@@ -44,6 +46,8 @@ const theme = createTheme({
     MuiContainer: MuiContainerStyled(defaultTheme, modifyTheme),
     // Inputs
     MuiFormLabel: MuiFormLabelStyled(defaultTheme, modifyTheme),
+    MuiButton: MuiButtonStyled(defaultTheme, modifyTheme),
+    MuiIconButton: MuiButtonStyled(defaultTheme, modifyTheme),
     // Navigation
     // Data display
     MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
