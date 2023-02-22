@@ -18,7 +18,7 @@
     "build:variables": "cp -R dist/components/variables variables",
     "build": "yarn clean && tsc && yarn build:assets && yarn build:data-display && yarn build:feedback && yarn build:inputs && yarn build:layout && yarn build:surfaces && yarn build:theme && yarn build:variables && rm -rf dist",
     "chromatic": "npx chromatic --project-token",
-    "publish": "npm publish",
+    "publish:npm": "yarn build && yarn logout && yarn publish",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
