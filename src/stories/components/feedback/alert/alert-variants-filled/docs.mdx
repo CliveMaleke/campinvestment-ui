@@ -1,0 +1,61 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import {
+  AlertFilledGeneral,
+  AlertFilledError,
+  AlertFilledWarning,
+  AlertFilledInfo,
+  AlertFilledSuccess,
+} from './index';
+
+<Title>Alert Variants</Title>
+<Subtitle>
+  Two additional variants are available – outlined, and filled:
+</Subtitle>
+
+### Import
+
+```jsx
+import Alert from 'tokenomy-ui/lab/Alert';
+```
+
+### Usage
+
+<AlertFilledGeneral />
+
+```jsx
+<Alert variant="filled" className="MuiAlert-standardGeneral">
+  This is a general alert — check it out!
+</Alert>
+```
+
+<AlertFilledError />
+
+```jsx
+<Alert variant="filled" severity="error">
+  This is an error alert — check it out!
+</Alert>
+```
+
+<AlertFilledWarning />
+
+```jsx
+<Alert variant="filled" severity="warning">
+  This is a warning alert — check it out!
+</Alert>
+```
+
+<AlertFilledInfo />
+
+```jsx
+<Alert variant="filled" severity="info">
+  This is an info alert — check it out!
+</Alert>
+```
+
+<AlertFilledSuccess />
+
+```jsx
+<Alert variant="filled" severity="success">
+  This is a success alert — check it out!
+</Alert>
+```

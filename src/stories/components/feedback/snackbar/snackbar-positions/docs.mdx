@@ -1,0 +1,315 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import {
+  SnackbarPositionTopCenter,
+  SnackbarPositionTopRight,
+  SnackbarPositionBottomRight,
+  SnackbarPositionBottomCenter,
+  SnackbarPositionBottomLeft,
+  SnackbarPositionTopLeft,
+} from './index';
+
+<Title>Positions snackbars</Title>
+<Subtitle>
+  In wide layouts, snackbars can be left-aligned or center-aligned if they are
+  consistently placed on the same spot at the bottom of the screen, however
+  there may be circumstances where the placement of the snackbar needs to be
+  more flexible. You can control the position of the snackbar by specifying the
+  <code>anchorOrigin</code> prop.
+</Subtitle>
+
+### Import
+
+```jsx
+// Vendors
+import React from 'react';
+
+// Components
+import Snackbar from '@components/feedback/Snackbar';
+import Button from '@material-ui/core/Button';
+import Alert from '@components/feedback/Alert';
+import CloseIcon from '@components/data-display/Icon/CloseIcon';
+```
+
+### Usage
+
+<SnackbarPositionTopCenter />
+
+```jsx
+export const SnackbarPositionTopCenter = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+        Top-Center
+      </Button>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        open={open}
+        onClose={() => setOpen(false)}
+        message=""
+        key="top-center"
+      >
+        <Alert
+          severity="info"
+          className="MuiAlert-standardGeneral"
+          action={
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
+            >
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          I love snacks!
+          <div className="MuiButtonWrapper-root">
+            <Button variant="text" onClick={() => {}}>
+              Button 1
+            </Button>
+            <Button variant="text" onClick={() => {}}>
+              Button 2
+            </Button>
+          </div>
+        </Alert>
+      </Snackbar>
+    </>
+  );
+};
+```
+
+<SnackbarPositionTopRight />
+
+```jsx
+export const SnackbarPositionTopRight = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+        Top-Right
+      </Button>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={open}
+        onClose={() => setOpen(false)}
+        message=""
+        key="top-right"
+      >
+        <Alert
+          severity="info"
+          className="MuiAlert-standardGeneral"
+          action={
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
+            >
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          I love snacks!
+          <div className="MuiButtonWrapper-root">
+            <Button variant="text" onClick={() => {}}>
+              Button 1
+            </Button>
+            <Button variant="text" onClick={() => {}}>
+              Button 2
+            </Button>
+          </div>
+        </Alert>
+      </Snackbar>
+    </>
+  );
+};
+```
+
+<SnackbarPositionBottomRight />
+
+```jsx
+export const SnackbarPositionBottomRight = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+        Bottom-Right
+      </Button>
+      <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        open={open}
+        onClose={() => setOpen(false)}
+        message=""
+        key="bottom-right"
+      >
+        <Alert
+          severity="info"
+          className="MuiAlert-standardGeneral"
+          action={
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
+            >
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          I love snacks!
+          <div className="MuiButtonWrapper-root">
+            <Button variant="text" onClick={() => {}}>
+              Button 1
+            </Button>
+            <Button variant="text" onClick={() => {}}>
+              Button 2
+            </Button>
+          </div>
+        </Alert>
+      </Snackbar>
+    </>
+  );
+};
+```
+
+<SnackbarPositionBottomCenter />
+
+```jsx
+export const SnackbarPositionBottomCenter = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+        Bottom-Center
+      </Button>
+      <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        open={open}
+        onClose={() => setOpen(false)}
+        message=""
+        key="bottom-center"
+      >
+        <Alert
+          severity="info"
+          className="MuiAlert-standardGeneral"
+          action={
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
+            >
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          I love snacks!
+          <div className="MuiButtonWrapper-root">
+            <Button variant="text" onClick={() => {}}>
+              Button 1
+            </Button>
+            <Button variant="text" onClick={() => {}}>
+              Button 2
+            </Button>
+          </div>
+        </Alert>
+      </Snackbar>
+    </>
+  );
+};
+```
+
+<SnackbarPositionBottomLeft />
+
+```jsx
+export const SnackbarPositionBottomLeft = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+        Bottom-Left
+      </Button>
+      <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        open={open}
+        onClose={() => setOpen(false)}
+        message=""
+        key="bottom-left"
+      >
+        <Alert
+          severity="info"
+          className="MuiAlert-standardGeneral"
+          action={
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
+            >
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          I love snacks!
+          <div className="MuiButtonWrapper-root">
+            <Button variant="text" onClick={() => {}}>
+              Button 1
+            </Button>
+            <Button variant="text" onClick={() => {}}>
+              Button 2
+            </Button>
+          </div>
+        </Alert>
+      </Snackbar>
+    </>
+  );
+};
+```
+
+<SnackbarPositionTopLeft />
+
+```jsx
+export const SnackbarPositionTopLeft = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button variant="contained" color="primary" onClick={() => setOpen(true)}>
+        Top-Left
+      </Button>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+        open={open}
+        onClose={() => setOpen(false)}
+        message=""
+        key="top-left"
+      >
+        <Alert
+          severity="info"
+          className="MuiAlert-standardGeneral"
+          action={
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
+            >
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          I love snacks!
+          <div className="MuiButtonWrapper-root">
+            <Button variant="text" onClick={() => {}}>
+              Button 1
+            </Button>
+            <Button variant="text" onClick={() => {}}>
+              Button 2
+            </Button>
+          </div>
+        </Alert>
+      </Snackbar>
+    </>
+  );
+};
+```

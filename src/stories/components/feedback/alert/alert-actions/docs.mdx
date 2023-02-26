@@ -1,0 +1,33 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { AlertActionUndo, AlertActionClose } from './index';
+
+<Title>Alert Actions</Title>
+<Subtitle>
+  An alert can have an action, such as a close or undo button. It is rendered
+  after the message, at the end of the alert. If an <code>onClose</code>{' '}
+  callback is provided and no <code>action</code> prop is set, a close icon is
+  displayed. The <code>action</code> prop can be used to provide an alternative
+  action, for example using a Button or IconButton.
+</Subtitle>
+
+### Import
+
+```jsx
+import Alert from 'tokenomy-ui/lab/Alert';
+```
+
+### Usage
+
+<AlertActionUndo />
+
+```jsx
+<Alert action={<button color="inherit">UNDO</button>}>
+  This is a success alert — check it out!
+</Alert>
+```
+
+<AlertActionClose />
+
+```jsx
+<Alert onClose={() => {}}>This is a success alert — check it out!</Alert>
+```

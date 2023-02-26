@@ -1,0 +1,56 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import {
+  SnackbarMessageShorWithButton,
+  SnackbarMessageLong,
+  SnackbarMessageRegularWithButton,
+  SnackbarMessageLongWithButton,
+} from './index';
+
+<Title>Snackbar message length variations</Title>
+<Subtitle>Some snackbars with varying message length.</Subtitle>
+
+### Import
+
+```jsx
+import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+```
+
+### Usage
+
+<SnackbarMessageShorWithButton />
+
+```jsx
+<SnackbarContent message="I love snacks." action={action} />
+```
+
+<SnackbarMessageLong />
+
+```jsx
+<SnackbarContent
+  message={
+    'I love candy. I love cookies. I love cupcakes. \
+    I love cheesecake. I love chocolate.'
+  }
+/>
+```
+
+<SnackbarMessageRegularWithButton />
+
+```jsx
+<SnackbarContent
+  message="I love candy. I love cookies. I love cupcakes."
+  action={action}
+/>
+```
+
+<SnackbarMessageLongWithButton />
+
+```jsx
+<SnackbarContent
+  message={
+    'I love candy. I love cookies. I love cupcakes. \
+      I love cheesecake. I love chocolate.'
+  }
+  action={action}
+/>
+```

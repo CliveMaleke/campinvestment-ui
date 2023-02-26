@@ -1,0 +1,54 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import {
+  AlertGeneral,
+  AlertError,
+  AlertWarning,
+  AlertInfo,
+  AlertSuccess,
+} from './index';
+
+<Title>Alert</Title>
+<Subtitle>
+  An alert displays a short, important message in a way that attracts the user's
+  attention without interrupting the user's task.
+</Subtitle>
+
+### Import
+
+```jsx
+import Alert from 'tokenomy-ui/lab/Alert';
+```
+
+### Usage
+
+<AlertGeneral />
+
+```jsx
+<Alert className="MuiAlert-standardGeneral">
+  This is a general alert — check it out!
+</Alert>
+```
+
+<AlertError />
+
+```jsx
+<Alert severity="error">This is an error alert — check it out!</Alert>
+```
+
+<AlertWarning />
+
+```jsx
+<Alert severity="warning">This is a warning alert — check it out!</Alert>
+```
+
+<AlertInfo />
+
+```jsx
+<Alert severity="info">This is an info alert — check it out!</Alert>
+```
+
+<AlertSuccess />
+
+```jsx
+<Alert severity="success">This is a success alert — check it out!</Alert>
+```

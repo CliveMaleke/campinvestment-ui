@@ -1,0 +1,405 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { Figma } from 'storybook-addon-designs/esm/blocks';
+
+<Meta title="Components/Feedback/Snackbar" />
+
+<Title>Snackbar</Title>
+<Subtitle>
+  Snackbars provide brief messages about app processes. The component is also
+  known as a toast.
+</Subtitle>
+
+### Import
+
+```jsx
+import Box from 'tokenomy-ui/Feedback/Snackbar';
+```
+
+### Usage
+
+```jsx
+<Alert severity="general">...</Alert>
+```
+
+&#123;
+&#125;
+
+### Props
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">
+        <span class="prop-name">action</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        The action to display. It renders after the message, at the end of the
+        snackbar.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">anchorOrigin</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          &#123; horizontal: 'center'
+          <br />| &nbsp;'left'
+          <br />| &nbsp;'right', vertical: 'bottom'
+          <br />| &nbsp;'top' &#125;
+        </span>
+      </td>
+      <td align="left">
+        <span class="prop-default">
+          &#123; vertical: 'bottom', horizontal: 'center' &#125;
+        </span>
+      </td>
+      <td align="left">
+        The anchor of the <code>Snackbar</code>.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">autoHideDuration</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">number</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">null</span>
+      </td>
+      <td align="left">
+        The number of milliseconds to wait before automatically calling the{' '}
+        <code>onClose</code> function. <code>onClose</code> should then set the
+        state of the <code>open</code> prop to hide the Snackbar. This behavior
+        is disabled by default with the <code>null</code> value.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">children</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">element</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Replace the <code>SnackbarContent</code> component.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">classes</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">object</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Override or extend the styles applied to the component. See{' '}
+        <a href="#css">CSS API</a> below for more details.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">ClickAwayListenerProps</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">object</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Props applied to the <code>ClickAwayListener</code> element.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">ContentProps</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">object</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Props applied to the{' '}
+        <a href="/api/snackbar-content/">
+          <code>SnackbarContent</code>
+        </a>{' '}
+        element.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">disableWindowBlurListener</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">false</span>
+      </td>
+      <td align="left">
+        If <code>true</code>, the <code>autoHideDuration</code> timer will
+        expire even if the window is not focused.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">key</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">any</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        When displaying multiple consecutive Snackbars from a parent rendering a
+        single &lt;Snackbar/&gt;, add the key prop to ensure independent
+        treatment of each message. e.g. &lt;Snackbar key=&#123;message&#125;
+        /&gt;, otherwise, the message may update-in-place and features such as
+        autoHideDuration may be canceled.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">message</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">The message to display.</td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">onClose</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Callback fired when the component requests to be closed. Typically{' '}
+        <code>onClose</code> is used to set state in the parent component, which
+        is used to control the <code>Snackbar</code> <code>open</code> prop. The{' '}
+        <code>reason</code> parameter can optionally be used to control the
+        response to <code>onClose</code>, for example ignoring{' '}
+        <code>clickaway</code>.<br />
+        <br />
+        <strong>Signature:</strong>
+        <br />
+        <code>function(event: object, reason: string) =&gt; void</code>
+        <br />
+        <em>event:</em> The event source of the callback.
+        <br />
+        <em>reason:</em> Can be: <code>"timeout"</code> (
+        <code>autoHideDuration</code> expired), <code>"clickaway"</code>.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <del>
+          <span class="prop-name">onEnter</span>
+        </del>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        <em>Deprecated</em>. Use the <code>TransitionProps</code> prop instead.
+        <br />
+        <br />
+        Callback fired before the transition is entering.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <del>
+          <span class="prop-name">onEntered</span>
+        </del>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        <em>Deprecated</em>. Use the <code>TransitionProps</code> prop instead.
+        <br />
+        <br />
+        Callback fired when the transition has entered.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <del>
+          <span class="prop-name">onEntering</span>
+        </del>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        <em>Deprecated</em>. Use the <code>TransitionProps</code> prop instead.
+        <br />
+        <br />
+        Callback fired when the transition is entering.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <del>
+          <span class="prop-name">onExit</span>
+        </del>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        <em>Deprecated</em>. Use the <code>TransitionProps</code> prop instead.
+        <br />
+        <br />
+        Callback fired before the transition is exiting.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <del>
+          <span class="prop-name">onExited</span>
+        </del>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        <em>Deprecated</em>. Use the <code>TransitionProps</code> prop instead.
+        <br />
+        <br />
+        Callback fired when the transition has exited.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <del>
+          <span class="prop-name">onExiting</span>
+        </del>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        <em>Deprecated</em>. Use the <code>TransitionProps</code> prop instead.
+        <br />
+        <br />
+        Callback fired when the transition is exiting.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">open</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">bool</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        If <code>true</code>, <code>Snackbar</code> is open.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">resumeHideDuration</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">number</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        The number of milliseconds to wait before dismissing after user
+        interaction. If <code>autoHideDuration</code> prop isn't specified, it
+        does nothing. If <code>autoHideDuration</code> prop is specified but{' '}
+        <code>resumeHideDuration</code> isn't, we default to{' '}
+        <code>autoHideDuration / 2</code> ms.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">TransitionComponent</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">elementType</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">Grow</span>
+      </td>
+      <td align="left">
+        The component used for the transition.{' '}
+        <a href="/components/transitions/#transitioncomponent-prop">
+          Follow this guide
+        </a>{' '}
+        to learn more about the requirements for this component.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">transitionDuration</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          number
+          <br />
+          |&nbsp;&#123; appear?: number, enter?: number, exit?: number &#125;
+        </span>
+      </td>
+      <td align="left">
+        <span class="prop-default">
+          &#123; enter: duration.enteringScreen, exit:
+          duration.leavingScreen,&#125;
+        </span>
+      </td>
+      <td align="left">
+        The duration for the transition, in milliseconds. You may specify a
+        single timeout for all transitions, or individually with an object.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">TransitionProps</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">object</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Props applied to the{' '}
+        <a href="http://reactcommunity.org/react-transition-group/transition#Transition-props">
+          <code>Transition</code>
+        </a>{' '}
+        element.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Design
+
+<Figma
+  url="https://www.figma.com/file/XaZi4D6q7m3HIdxxx2zTCc/TKN-2498-Design-component-library-for-Web?node-id=1474%3A17685&t=gcQxK5Gudfzy5ui8-0"
+  height="50%"
+  defaultCollapsed
+/>

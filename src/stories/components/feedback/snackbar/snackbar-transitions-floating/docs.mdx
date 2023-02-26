@@ -1,0 +1,36 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { SnackbarTransitionFloating } from './index';
+
+<Title>Transition floating snackbars</Title>
+<Subtitle>Snackbars should appear above FABs (on mobile).</Subtitle>
+
+### Import
+
+```jsx
+import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+```
+
+### Usage
+
+<SnackbarTransitionFloating />
+
+```jsx
+<>
+  <CssBaseline />
+  <div>
+    <AppBar position="static" color="primary">
+      <Toolbar>App Bar</Toolbar>
+    </AppBar>
+    <Fab color="secondary" className={classes.fab}>
+      +
+    </Fab>
+    <Snackbar
+      open
+      autoHideDuration={6000}
+      message="Archived"
+      action={<button color="inherit">Undo</button>}
+      className={classes.snackbar}
+    />
+  </div>
+</>
+```

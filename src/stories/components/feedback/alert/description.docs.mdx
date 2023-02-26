@@ -1,0 +1,230 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { Figma } from 'storybook-addon-designs/esm/blocks';
+
+<Meta title="Components/Feedback/Alert" />
+
+<Title>Alert</Title>
+<Subtitle>
+  An alert displays a short, important message in a way that attracts the user's
+  attention without interrupting the user's task.
+</Subtitle>
+
+### Import
+
+```jsx
+import Box from 'tokenomy-ui/Lab/Alert';
+```
+
+### Usage
+
+```jsx
+<Alert severity="general">...</Alert>
+```
+
+### Props
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left">
+        <span class="prop-name">action</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        The action to display. It renders after the message, at the end of the
+        alert.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">children</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">The content of the component.</td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">classes</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">object</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Override or extend the styles applied to the component. See{' '}
+        <a target="_blank" href="https://v4.mui.com/api/alert/#css">
+          CSS API
+        </a>{' '}
+        below for more details.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">closeText</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">string</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'Close'</span>
+      </td>
+      <td align="left">
+        Override the default label for the <em>close popup</em> icon button.
+        <br />
+        For localization purposes, you can use the provided{' '}
+        <a target="_blank" href="https://v4.mui.com/guides/localization/">
+          translations
+        </a>
+        .
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">color</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          'error'
+          <br />
+          |&nbsp;'info'
+          <br />
+          |&nbsp;'success'
+          <br />
+          |&nbsp;'warning'
+        </span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        The main color for the alert. Unless provided, the value is taken from
+        the <code>severity</code> prop.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">icon</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">node</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Override the icon displayed before the children. Unless provided, the
+        icon is mapped to the value of the <code>severity</code> prop.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">iconMapping</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          &#123; error?: node, info?: node, success?: node, warning?: node
+          &#125;
+        </span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        The component maps the <code>severity</code> prop to a range of
+        different icons, for instance success to{' '}
+        <code>&lt;SuccessOutlined&gt;</code>. If you wish to change this
+        mapping, you can provide your own. Alternatively, you can use the{' '}
+        <code>icon</code> prop to override the icon displayed.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">onClose</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">func</span>
+      </td>
+      <td align="left"></td>
+      <td align="left">
+        Callback fired when the component requests to be closed. When provided
+        and no <code>action</code> prop is set, a close icon button is displayed
+        that triggers the callback when clicked.
+        <br />
+        <br />
+        <strong>Signature:</strong>
+        <br />
+        <code>function(event: object) =&gt; void</code>
+        <br />
+        <em>event:</em> The event source of the callback.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">role</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">string</span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'alert'</span>
+      </td>
+      <td align="left">The ARIA role attribute of the element.</td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">severity</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          'error'
+          <br />
+          |&nbsp;'info'
+          <br />
+          |&nbsp;'success'
+          <br />
+          |&nbsp;'warning'
+        </span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'success'</span>
+      </td>
+      <td align="left">
+        The severity of the alert. This defines the color and icon used.
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        <span class="prop-name">variant</span>
+      </td>
+      <td align="left">
+        <span class="prop-type">
+          'filled'
+          <br />
+          |&nbsp;'outlined'
+          <br />
+          |&nbsp;'standard'
+        </span>
+      </td>
+      <td align="left">
+        <span class="prop-default">'standard'</span>
+      </td>
+      <td align="left">The variant to use.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Design
+
+<Figma
+  url="https://www.figma.com/file/XaZi4D6q7m3HIdxxx2zTCc/TKN-2498-Design-component-library-for-Web?node-id=1474%3A17685&t=6NWybzBmfrSk9Gzb-0"
+  height="50%"
+  defaultCollapsed
+/>

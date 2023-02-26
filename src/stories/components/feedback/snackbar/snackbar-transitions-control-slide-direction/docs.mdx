@@ -1,0 +1,37 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { SnackbarTransitionControlSlideDirection } from './index';
+
+<Title>Transition control slide direction snackbars</Title>
+<Subtitle>
+  You can change the direction of the{' '}
+  <a target="_blank" href="https://v4.mui.com/components/transitions/#slide">
+    Slide
+  </a>{' '}
+  transition.
+</Subtitle>
+
+### Import
+
+```jsx
+import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+```
+
+### Usage
+
+<SnackbarTransitionControlSlideDirection />
+
+```jsx
+<div>
+  <button onClick={handleClick(TransitionLeft)}>Right</button>
+  <button onClick={handleClick(TransitionUp)}>Up</button>
+  <button onClick={handleClick(TransitionRight)}>Left</button>
+  <button onClick={handleClick(TransitionDown)}>Down</button>
+  <Snackbar
+    open={open}
+    onClose={handleClose}
+    TransitionComponent={transition}
+    message="I love snacks"
+    key={transition ? transition.name : ''}
+  />
+</div>
+```

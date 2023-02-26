@@ -25,6 +25,7 @@ import {
   lightBlue20,
   lightBlue50,
   green50,
+  gray60,
   yellow50,
 } from '../variables/colors';
 
@@ -77,7 +78,7 @@ interface PaletteColors {
     warning: string;
     danger: string;
     disabled: string;
-  }
+  };
 }
 
 interface CustomPaletteOptions extends PaletteOptions {
@@ -159,7 +160,24 @@ const MuiPaletteTheme = {
       warning: yellow50,
       danger: red50,
       disabled: gray50,
-    }
+    },
+    alert: {
+      background: {
+        regular: gray60,
+        success: green50,
+        error: red50,
+        info: blue50,
+        warning: yellow50,
+      },
+      text: white,
+      icon: {
+        regular: gray60,
+        success: green50,
+        error: red50,
+        info: blue50,
+        warning: yellow50,
+      },
+    },
   },
   dark: {
     background: {
@@ -232,7 +250,24 @@ const MuiPaletteTheme = {
       warning: yellow50,
       danger: red50,
       disabled: gray50,
-    }
+    },
+    alert: {
+      background: {
+        regular: gray60,
+        success: green50,
+        error: red50,
+        info: blue50,
+        warning: yellow50,
+      },
+      text: white,
+      icon: {
+        regular: gray60,
+        success: green50,
+        error: red50,
+        info: blue50,
+        warning: yellow50,
+      },
+    },
   },
 } as CustomPaletteOptions;
 

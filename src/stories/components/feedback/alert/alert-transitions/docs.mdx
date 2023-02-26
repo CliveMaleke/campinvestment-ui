@@ -1,0 +1,57 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { AlertTransition } from './index';
+
+<Title>Alert Transitions</Title>
+<Subtitle>
+  You can use a{' '}
+  <a
+    class="link"
+    target="_blank"
+    href="https://v4.mui.com/components/transitions/"
+  >
+    transition component
+  </a>{' '}
+  such as <code>Collaps</code> to transition the appearance of the alert.
+</Subtitle>
+
+### Import
+
+```jsx
+import Alert from 'tokenomy-ui/lab/Alert';
+```
+
+### Usage
+
+<AlertTransition />
+
+```jsx
+<>
+  <Collapse in={open}>
+    <Alert
+      action={
+        <IconButton
+          aria-label="close"
+          color="inherit"
+          size="small"
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          <CloseIcon fontSize="inherit" />
+        </IconButton>
+      }
+    >
+      This is a success alert — check it out!
+    </Alert>
+  </Collapse>
+  <Button
+    disabled={open}
+    variant="outlined"
+    onClick={() => {
+      setOpen(true);
+    }}
+  >
+    Re-open
+  </Button>
+</>
+```

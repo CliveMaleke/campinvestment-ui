@@ -1,0 +1,67 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import {
+  AlertDescriptionGeneral,
+  AlertDescriptionError,
+  AlertDescriptionWarning,
+  AlertDescriptionInfo,
+  AlertDescriptionSuccess,
+} from './index';
+
+<Title>Alert Types</Title>
+<Subtitle>
+  The alert offers four severity levels that set a distinctive icon and color.
+</Subtitle>
+
+### Import
+
+```jsx
+import Alert from 'tokenomy-ui/lab/Alert';
+import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
+```
+
+### Usage
+
+<AlertDescriptionGeneral />
+
+```jsx
+<Alert className="MuiAlert-standardGeneral">
+  <AlertTitle>General</AlertTitle>
+  This is an general alert — <strong>check it out!</strong>
+</Alert>
+```
+
+<AlertDescriptionError />
+
+```jsx
+<Alert severity="error">
+  <AlertTitle>Error</AlertTitle>
+  This is an error alert — check it out!
+</Alert>
+```
+
+<AlertDescriptionWarning />
+
+```jsx
+<Alert severity="warning">
+  <AlertTitle>Warning</AlertTitle>
+  This is a warning alert — check it out!
+</Alert>
+```
+
+<AlertDescriptionInfo />
+
+```jsx
+<Alert severity="info">
+  <AlertTitle>Info</AlertTitle>
+  This is an info alert — check it out!
+</Alert>
+```
+
+<AlertDescriptionSuccess />
+
+```jsx
+<Alert severity="success">
+  <AlertTitle>success</AlertTitle>
+  This is a success alert — check it out!
+</Alert>
+```

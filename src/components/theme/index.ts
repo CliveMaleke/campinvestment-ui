@@ -18,8 +18,9 @@ import MuiFormLabelStyled from '../inputs/FormLabel/style';
 // Data display
 import MuiTypographyStyled from '../data-display/Typography/style';
 import MuiIconStyled from '../data-display/Icon/style';
-// Lab
 // Feedback
+import MuiAlertStyled from '../feedback/Alert/style';
+import MuiSnackbarStyled from '../feedback/Snackbar/style';
 
 const defaultTheme = createTheme();
 
@@ -48,7 +49,8 @@ const theme = createTheme({
     MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
     MuiSvgIcon: MuiIconStyled(defaultTheme, modifyTheme),
     // Feedback
-    // Lab
+    MuiSnackbar: MuiSnackbarStyled(defaultTheme, modifyTheme),
+    MuiAlert: MuiAlertStyled(defaultTheme, modifyTheme),
     // Icon
   },
 });

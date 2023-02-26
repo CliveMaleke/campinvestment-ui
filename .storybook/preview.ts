@@ -44,7 +44,7 @@ export const parameters = {
           ['Accordion', 'Card', 'Paper'],
 
           'Feedback',
-          ['Backdrop', 'Dialog', 'Progress', 'Snackbar'],
+          ['Backdrop', 'Dialog', 'Progress', 'Snackbar', 'Alert'],
 
           'Data Display',
           [
@@ -64,7 +64,7 @@ export const parameters = {
           ['No SSR', 'Popover'],
 
           'Lab',
-          ['Alert', 'Autocomplete', 'Skeleton', 'Pagination'],
+          ['Autocomplete', 'Skeleton', 'Pagination'],
         ],
         'UI Toolkit',
         ['Login', 'Emails Template', 'Errors Page', 'Under Construction'],
