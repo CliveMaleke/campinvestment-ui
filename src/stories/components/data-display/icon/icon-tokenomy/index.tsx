@@ -31,6 +31,7 @@ import ContractMarketIcon from '@components/data-display/Icon/ContractMarketIcon
 import LoanIcon from '@components/data-display/Icon/LoanIcon';
 import ExchangeIcon from '@components/data-display/Icon/ExchangeIcon';
 import HistoryIcon from '@components/data-display/Icon/HistoryIcon';
+import SearchIcon from '@components/data-display/Icon/SearchIcon';
 import SettingsIcon from '@components/data-display/Icon/SettingsIcon';
 import HelpIcon from '@components/data-display/Icon/HelpIcon';
 import InfoIcon from '@components/data-display/Icon/InfoIcon';
@@ -235,6 +236,11 @@ const iconsTokenomy = [
     name: 'history',
     element: <HistoryIcon />,
     importName: 'HistoryIcon',
+  },
+  {
+    name: 'search',
+    element: <SearchIcon />,
+    importName: 'SearchIcon',
   },
   {
     name: 'settings',
@@ -635,8 +641,11 @@ const iconsAsset = [
   },
 ];
 
-const newIconsTokenomy = iconsTokenomy.map(v => ({...v, codeName: ''}));
-const newIconsSocialMedia = iconsSocialMedia.map(v => ({...v, codeName: ''}));
+const newIconsTokenomy = iconsTokenomy.map((v) => ({ ...v, codeName: '' }));
+const newIconsSocialMedia = iconsSocialMedia.map((v) => ({
+  ...v,
+  codeName: '',
+}));
 
 const icons = [...newIconsTokenomy, ...newIconsSocialMedia, ...iconsAsset];
 
@@ -732,20 +741,28 @@ const IconTokenomy = () => {
       <Grid container spacing={2} className={classes.iconWrapper}>
         <Grid item xs>
           <Grid container spacing={2}>
-            {iconState.map(({ name, element, importName, codeName }, i) => (
-              <Grid
-                item
-                key={i}
-                onClick={() => handleClickOpen({ name, element, importName, codeName })}
-              >
-                <Paper className={classes.iconItem}>
-                  <div>
-                    {element}
-                    <p style={{ textTransform: 'capitalize' }}>{name}</p>
-                  </div>
-                </Paper>
-              </Grid>
-            ))}
+            {iconState.length > 0 &&
+              iconState.map(({ name, element, importName, codeName }, i) => (
+                <Grid
+                  item
+                  key={i}
+                  onClick={() =>
+                    handleClickOpen({ name, element, importName, codeName })
+                  }
+                >
+                  <Paper className={classes.iconItem}>
+                    <div>
+                      {element}
+                      <p style={{ textTransform: 'capitalize' }}>{name}</p>
+                    </div>
+                  </Paper>
+                </Grid>
+              ))}
+            {iconState.length === 0 && (
+              <Typography variant="h6" style={{ textAlign: 'center', width: '100%' }}>
+                Icon not found!
+              </Typography>
+            )}
           </Grid>
         </Grid>
       </Grid>
@@ -780,7 +797,9 @@ const IconTokenomy = () => {
                 />
                 <Source
                   language="jsx"
-                  code={dedent`import ${modalData.codeName.toUpperCase()}Svg from 'tokenomy-ui/assets/icon/${modalData.codeName}.svg';`}
+                  code={dedent`import ${modalData.codeName.toUpperCase()}Svg from 'tokenomy-ui/assets/icon/cryptocurrency/${
+                    modalData.codeName
+                  }.svg';`}
                 />
               </>
             )}

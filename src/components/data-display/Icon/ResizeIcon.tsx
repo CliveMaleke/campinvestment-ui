@@ -7,10 +7,10 @@ import Icon from './index';
 const ResizeIcon: FC<SvgIconProps> = (props) => (
   <Icon {...props}>
     <path
-      d="M12.0001 20.4999L20.0001 12.4999M4 20.5L20 4.5"
       stroke="#272A32"
-      strokeWidth="3"
-      strokeLinecap="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      d="m12 21.5 9-9m-18 9 18-18"
     />
   </Icon>
 );
