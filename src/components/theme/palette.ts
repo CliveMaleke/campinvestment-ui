@@ -1,31 +1,39 @@
 import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 
 import {
+  backgroundLight,
+  backgroundDark,
+
   blue50,
+  blue60,
+  blue70,
+  blue80,
+  blue90,
+
   gray30,
   gray40,
   gray50,
+  gray60,
   gray70,
-  backgroundLight,
-  backgroundDark,
-  white,
-  blue60,
-  blue70,
+
+  green50,
+
+  lightBlue20,
+  lightBlue30,
+  lightBlue40,
+  lightBlue50,
+  
   lightGray40,
+
+  red10,
+  red20,
   red50,
   red60,
   red70,
-  lightBlue30,
-  lightBlue40,
-  blue80,
-  blue90,
-  red10,
-  red20,
   red90,
-  lightBlue20,
-  lightBlue50,
-  green50,
-  gray60,
+
+  white,
+  
   yellow50,
 } from '../variables/colors';
 
