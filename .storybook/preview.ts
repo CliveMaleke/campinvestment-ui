@@ -31,20 +31,8 @@ export const parameters = {
         ],
         'Components',
         [
-          'Layout',
-          ['Box', 'Container', 'Grid', 'Hidden'],
-
           'Inputs',
           ['Button', 'Checkbox', 'Datetime', 'Radio', 'Select', 'Slider', 'Switch', 'TextField'],
-
-          'Navigation',
-          ['Bottom Navigation', 'Breadcrumbs', 'Drawer', 'Menu', 'Stepper', 'Tabs'],
-
-          'Surfaces',
-          ['Accordion', 'Card', 'Paper'],
-
-          'Feedback',
-          ['Backdrop', 'Dialog', 'Progress', 'Snackbar', 'Alert'],
 
           'Data Display',
           [
@@ -59,6 +47,18 @@ export const parameters = {
             'Tooltip',
             'Typography',
           ],
+
+          'Feedback',
+          ['Backdrop', 'Dialog', 'Progress', 'Snackbar', 'Alert'],
+
+          'Surfaces',
+          ['Accordion', 'Card', 'Paper'],
+
+          'Navigation',
+          ['Bottom Navigation', 'Breadcrumbs', 'Drawer', 'Menu', 'Stepper', 'Tabs'],
+
+          'Layout',
+          ['Box', 'Container', 'Grid', 'Hidden'],
 
           'Utils',
           ['No SSR', 'Popover'],
