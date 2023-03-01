@@ -6,25 +6,7 @@ import Icon from './index';
 
 const ArrowRightIcon: FC<SvgIconProps> = (props) => (
   <Icon {...props}>
-    <g clipPath="url(#clip0_1704_3752)">
-      <path
-        d="M9 5L16.5 12.5L9 20"
-        stroke="#272A32"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </g>
-    <defs>
-      <clipPath id="clip0_1704_3752">
-        <rect
-          width="24"
-          height="24"
-          fill="white"
-          transform="translate(0 0.5)"
-        />
-      </clipPath>
-    </defs>
+    <path d="m17.38,11.62l-7.5-7.5c-.49-.49-1.28-.49-1.77,0-.49.49-.49,1.28,0,1.77l6.62,6.62-6.62,6.62c-.49.49-.49,1.28,0,1.77.49.49,1.28.49,1.77,0l7.5-7.5c.49-.49.49-1.28,0-1.77Z" />
   </Icon>
 );
 
