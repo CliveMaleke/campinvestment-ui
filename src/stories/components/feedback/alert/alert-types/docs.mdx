@@ -16,7 +16,9 @@ import {
 ### Import
 
 ```jsx
-import Alert from 'tokenomy-ui/lab/Alert';
+import React, { FC } from 'react';
+import { AlertProps } from '@material-ui/lab/Alert';
+import Alert from 'tokenomy-ui/feedback/Alert';
 ```
 
 ### Usage
@@ -24,31 +26,49 @@ import Alert from 'tokenomy-ui/lab/Alert';
 <AlertGeneral />
 
 ```jsx
-<Alert className="MuiAlert-standardGeneral">
-  This is a general alert — check it out!
-</Alert>
+export const AlertGeneral: FC<AlertProps> = (props) => (
+  <Alert className="MuiAlert-standardGeneral" {...props}>
+    This is a general alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertError />
 
 ```jsx
-<Alert severity="error">This is an error alert — check it out!</Alert>
+export const AlertError: FC<AlertProps> = (props) => (
+  <Alert severity="error" {...props}>
+    This is an error alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertWarning />
 
 ```jsx
-<Alert severity="warning">This is a warning alert — check it out!</Alert>
+export const AlertWarning: FC<AlertProps> = (props) => (
+  <Alert severity="warning" {...props}>
+    This is a warning alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertInfo />
 
 ```jsx
-<Alert severity="info">This is an info alert — check it out!</Alert>
+export const AlertInfo: FC<AlertProps> = (props) => (
+  <Alert severity="info" {...props}>
+    This is an info alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertSuccess />
 
 ```jsx
-<Alert severity="success">This is a success alert — check it out!</Alert>
+export const AlertSuccess: FC<AlertProps> = (props) => (
+  <Alert severity="success" {...props}>
+    This is a success alert — check it out!
+  </Alert>
+);
 ```

@@ -12,17 +12,19 @@ import { Figma } from 'storybook-addon-designs/esm/blocks';
 ### Import
 
 ```jsx
-import Box from 'tokenomy-ui/Feedback/Snackbar';
+import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 ```
 
 ### Usage
 
 ```jsx
-<Alert severity="general">...</Alert>
+<Button variant="outlined" onClick={handleClick}>
+  Open success snackbar
+</Button>
+<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+...
+</Snackbar>
 ```
-
-&#123;
-&#125;
 
 ### Props
 

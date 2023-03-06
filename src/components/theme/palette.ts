@@ -177,7 +177,14 @@ const MuiPaletteTheme = {
         info: blue50,
         warning: yellow50,
       },
-      text: white,
+      text: {
+        default: white,
+        regular: gray60,
+        success: green50,
+        error: red50,
+        info: blue50,
+        warning: yellow50,
+      },
       icon: {
         regular: gray60,
         success: green50,

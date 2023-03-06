@@ -53,8 +53,8 @@ const theme = createTheme({
     MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
     MuiSvgIcon: MuiIconStyled(defaultTheme, modifyTheme),
     // Feedback
-    MuiSnackbar: MuiSnackbarStyled(defaultTheme, modifyTheme),
     MuiAlert: MuiAlertStyled(defaultTheme, modifyTheme),
+    MuiSnackbar: MuiSnackbarStyled(defaultTheme, modifyTheme),
     // Icon
   },
 });

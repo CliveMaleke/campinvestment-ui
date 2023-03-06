@@ -1,10 +1,11 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 import Slide, { SlideProps } from '@material-ui/core/Slide';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
 import Button from '@material-ui/core/Button';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
 type TransitionProps = Omit<SlideProps, 'direction'>;
 
@@ -24,7 +25,9 @@ function TransitionDown(props: TransitionProps) {
   return <Slide {...props} direction="down" />;
 }
 
-export const SnackbarTransitionControlSlideDirection = () => {
+export const SnackbarTransitionControlSlideDirection: FC<SnackbarProps> = (
+  props,
+) => {
   const [open, setOpen] = React.useState(false);
   const [transition, setTransition] = React.useState<
     React.ComponentType<TransitionProps> | undefined
@@ -84,6 +87,7 @@ export const SnackbarTransitionControlSlideDirection = () => {
         TransitionComponent={transition}
         message="I love snacks"
         key={transition ? transition.name : ''}
+        {...props}
       />
     </div>
   );

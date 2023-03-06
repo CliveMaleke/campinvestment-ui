@@ -1,5 +1,5 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 import { TransitionProps } from '@material-ui/core/transitions';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
@@ -10,6 +10,7 @@ import Snackbar from '@components/feedback/Snackbar';
 import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
 function SlideTransition(props: TransitionProps) {
   return <Slide {...props} direction="up" />;
@@ -19,7 +20,7 @@ function GrowTransition(props: TransitionProps) {
   return <Grow {...props} />;
 }
 
-export const SnackbarTransitionChange = () => {
+export const SnackbarTransitionChange: FC<SnackbarProps> = (props) => {
   const [state, setState] = React.useState<{
     open: boolean;
     Transition: React.ComponentType<
@@ -82,10 +83,11 @@ export const SnackbarTransitionChange = () => {
         onClose={handleClose}
         TransitionComponent={state.Transition}
         key={state.Transition.name}
+        {...props}
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-standardGeneral MuiAlert-snackbar"
           action={
             <span aria-label="close" color="inherit" onClick={handleClose}>
               <CloseIcon fontSize="small" />

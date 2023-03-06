@@ -12,6 +12,7 @@ import {
 ### Import
 
 ```jsx
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 ```
 
@@ -20,37 +21,62 @@ import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 <SnackbarMessageShorWithButton />
 
 ```jsx
-<SnackbarContent message="I love snacks." action={action} />
+export const SnackbarMessageShorWithButton: FC<SnackbarProps> = (props) => {
+  const action = <button>lorem ipsum dolorem</button>;
+
+  return (
+    <SnackbarContent message="I love snacks." action={action} {...props} />
+  );
+};
 ```
 
 <SnackbarMessageLong />
 
 ```jsx
-<SnackbarContent
-  message={
-    'I love candy. I love cookies. I love cupcakes. \
+export const SnackbarMessageLong: FC<SnackbarProps> = (props) => {
+  return (
+    <SnackbarContent
+      message={
+        'I love candy. I love cookies. I love cupcakes. \
     I love cheesecake. I love chocolate.'
-  }
-/>
+      }
+      {...props}
+    />
+  );
+};
 ```
 
 <SnackbarMessageRegularWithButton />
 
 ```jsx
-<SnackbarContent
-  message="I love candy. I love cookies. I love cupcakes."
-  action={action}
-/>
+export const SnackbarMessageRegularWithButton: FC<SnackbarProps> = (props) => {
+  const action = <button>lorem ipsum dolorem</button>;
+
+  return (
+    <SnackbarContent
+      message="I love candy. I love cookies. I love cupcakes."
+      action={action}
+      {...props}
+    />
+  );
+};
 ```
 
 <SnackbarMessageLongWithButton />
 
 ```jsx
-<SnackbarContent
-  message={
-    'I love candy. I love cookies. I love cupcakes. \
+export const SnackbarMessageLongWithButton: FC<SnackbarProps> = (props) => {
+  const action = <button>lorem ipsum dolorem</button>;
+
+  return (
+    <SnackbarContent
+      message={
+        'I love candy. I love cookies. I love cupcakes. \
       I love cheesecake. I love chocolate.'
-  }
-  action={action}
-/>
+      }
+      action={action}
+      {...props}
+    />
+  );
+};
 ```

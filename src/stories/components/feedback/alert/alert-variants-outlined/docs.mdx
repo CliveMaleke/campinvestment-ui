@@ -15,7 +15,8 @@ import {
 ### Import
 
 ```jsx
-import Alert from 'tokenomy-ui/lab/Alert';
+import { AlertProps } from '@material-ui/lab/Alert';
+import Alert from 'tokenomy-ui/feedback/Alert';
 ```
 
 ### Usage
@@ -23,39 +24,49 @@ import Alert from 'tokenomy-ui/lab/Alert';
 <AlertOutlinedGeneral />
 
 ```jsx
-<Alert variant="outlined" className="MuiAlert-standardGeneral">
-  This is a general alert — check it out!
-</Alert>
+export const AlertOutlinedGeneral: FC<AlertProps> = (props) => (
+  <Alert className="MuiAlert-standardOutlinedGeneral" {...props}>
+    This is a general alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertOutlinedError />
 
 ```jsx
-<Alert variant="outlined" severity="error">
-  This is an error alert — check it out!
-</Alert>
+export const AlertOutlinedError: FC<AlertProps> = (props) => (
+  <Alert variant="outlined" severity="error" {...props}>
+    This is an error alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertOutlinedWarning />
 
 ```jsx
-<Alert variant="outlined" severity="warning">
-  This is a warning alert — check it out!
-</Alert>
+export const AlertOutlinedWarning: FC<AlertProps> = (props) => (
+  <Alert variant="outlined" severity="warning" {...props}>
+    This is a warning alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertOutlinedInfo />
 
 ```jsx
-<Alert variant="outlined" severity="info">
-  This is an info alert — check it out!
-</Alert>
+export const AlertOutlinedInfo: FC<AlertProps> = (props) => (
+  <Alert variant="outlined" severity="info" {...props}>
+    This is an info alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertOutlinedSuccess />
 
 ```jsx
-<Alert variant="outlined" severity="success">
-  This is a success alert — check it out!
-</Alert>
+export const AlertOutlinedSuccess: FC<AlertProps> = (props) => (
+  <Alert variant="outlined" severity="success" {...props}>
+    This is a success alert — check it out!
+  </Alert>
+);
 ```

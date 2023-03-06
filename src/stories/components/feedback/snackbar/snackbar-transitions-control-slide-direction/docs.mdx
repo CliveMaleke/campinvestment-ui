@@ -13,7 +13,11 @@ import { SnackbarTransitionControlSlideDirection } from './index';
 ### Import
 
 ```jsx
+import React, { FC } from 'react';
+import Slide, { SlideProps } from '@material-ui/core/Slide';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+import Button from '@material-ui/core/Button';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 ```
 
 ### Usage
@@ -21,17 +25,71 @@ import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 <SnackbarTransitionControlSlideDirection />
 
 ```jsx
-<div>
-  <button onClick={handleClick(TransitionLeft)}>Right</button>
-  <button onClick={handleClick(TransitionUp)}>Up</button>
-  <button onClick={handleClick(TransitionRight)}>Left</button>
-  <button onClick={handleClick(TransitionDown)}>Down</button>
-  <Snackbar
-    open={open}
-    onClose={handleClose}
-    TransitionComponent={transition}
-    message="I love snacks"
-    key={transition ? transition.name : ''}
-  />
-</div>
+export const SnackbarTransitionControlSlideDirection: FC<SnackbarProps> = (
+  props,
+) => {
+  const [open, setOpen] = React.useState(false);
+  const [transition, setTransition] = React.useState<
+    React.ComponentType<TransitionProps> | undefined
+  >(undefined);
+
+  const handleClick =
+    (Transition: React.ComponentType<TransitionProps>) => () => {
+      setTransition(() => Transition);
+      setOpen(true);
+    };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <div
+        style={{
+          display: 'grid',
+          gap: '12px 12px',
+          gridTemplateColumns: '200px 200px',
+        }}
+      >
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleClick(TransitionLeft)}
+        >
+          left
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleClick(TransitionRight)}
+        >
+          Right
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleClick(TransitionUp)}
+        >
+          Up
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleClick(TransitionDown)}
+        >
+          Down
+        </Button>
+      </div>
+      <Snackbar
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={transition}
+        message="I love snacks"
+        key={transition ? transition.name : ''}
+        {...props}
+      />
+    </div>
+  );
+};
 ```

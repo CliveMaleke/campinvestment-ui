@@ -15,7 +15,9 @@ import {
 ### Import
 
 ```jsx
-import Alert from 'tokenomy-ui/lab/Alert';
+import React, { FC } from 'react';
+import { AlertProps } from '@material-ui/lab/Alert';
+import Alert from 'tokenomy-ui/feedback/Alert';
 import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
 ```
 
@@ -24,44 +26,54 @@ import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
 <AlertDescriptionGeneral />
 
 ```jsx
-<Alert className="MuiAlert-standardGeneral">
-  <AlertTitle>General</AlertTitle>
-  This is an general alert — <strong>check it out!</strong>
-</Alert>
+export const AlertDescriptionGeneral: FC<AlertProps> = (props) => (
+  <Alert className="MuiAlert-standardGeneral" {...props}>
+    <AlertTitle>General</AlertTitle>
+    This is an general alert — <strong>check it out!</strong>
+  </Alert>
+);
 ```
 
 <AlertDescriptionError />
 
 ```jsx
-<Alert severity="error">
-  <AlertTitle>Error</AlertTitle>
-  This is an error alert — check it out!
-</Alert>
+export const AlertDescriptionError: FC<AlertProps> = (props) => (
+  <Alert severity="error" {...props}>
+    <AlertTitle>Error</AlertTitle>
+    This is an error alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertDescriptionWarning />
 
 ```jsx
-<Alert severity="warning">
-  <AlertTitle>Warning</AlertTitle>
-  This is a warning alert — check it out!
-</Alert>
+export const AlertDescriptionWarning: FC<AlertProps> = (props) => (
+  <Alert severity="warning" {...props}>
+    <AlertTitle>Warning</AlertTitle>
+    This is a warning alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertDescriptionInfo />
 
 ```jsx
-<Alert severity="info">
-  <AlertTitle>Info</AlertTitle>
-  This is an info alert — check it out!
-</Alert>
+export const AlertDescriptionInfo: FC<AlertProps> = (props) => (
+  <Alert severity="info" {...props}>
+    <AlertTitle>Info</AlertTitle>
+    This is an info alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertDescriptionSuccess />
 
 ```jsx
-<Alert severity="success">
-  <AlertTitle>success</AlertTitle>
-  This is a success alert — check it out!
-</Alert>
+export const AlertDescriptionSuccess: FC<AlertProps> = (props) => (
+  <Alert severity="success" {...props}>
+    <AlertTitle>success</AlertTitle>
+    This is a success alert — check it out!
+  </Alert>
+);
 ```

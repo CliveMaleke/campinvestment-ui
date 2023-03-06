@@ -1,13 +1,14 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
 import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
-export const SnackbarPositionTopCenter = () => {
+export const SnackbarPositionTopCenter: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -21,10 +22,11 @@ export const SnackbarPositionTopCenter = () => {
         onClose={() => setOpen(false)}
         message=""
         key="top-center"
+        {...props}
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-standardGeneral MuiAlert-snackbar"
           action={
             <span
               aria-label="close"
@@ -50,7 +52,7 @@ export const SnackbarPositionTopCenter = () => {
   );
 };
 
-export const SnackbarPositionTopRight = () => {
+export const SnackbarPositionTopRight: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -64,10 +66,11 @@ export const SnackbarPositionTopRight = () => {
         onClose={() => setOpen(false)}
         message=""
         key="top-right"
+        {...props}
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-standardGeneral MuiAlert-snackbar"
           action={
             <span
               aria-label="close"
@@ -93,7 +96,7 @@ export const SnackbarPositionTopRight = () => {
   );
 };
 
-export const SnackbarPositionBottomRight = () => {
+export const SnackbarPositionBottomRight: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -107,10 +110,11 @@ export const SnackbarPositionBottomRight = () => {
         onClose={() => setOpen(false)}
         message=""
         key="bottom-right"
+        {...props}
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-standardGeneral MuiAlert-snackbar"
           action={
             <span
               aria-label="close"
@@ -136,7 +140,7 @@ export const SnackbarPositionBottomRight = () => {
   );
 };
 
-export const SnackbarPositionBottomCenter = () => {
+export const SnackbarPositionBottomCenter: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -150,10 +154,11 @@ export const SnackbarPositionBottomCenter = () => {
         onClose={() => setOpen(false)}
         message=""
         key="bottom-center"
+        {...props}
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-standardGeneral MuiAlert-snackbar"
           action={
             <span
               aria-label="close"
@@ -179,7 +184,7 @@ export const SnackbarPositionBottomCenter = () => {
   );
 };
 
-export const SnackbarPositionBottomLeft = () => {
+export const SnackbarPositionBottomLeft: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -193,10 +198,11 @@ export const SnackbarPositionBottomLeft = () => {
         onClose={() => setOpen(false)}
         message=""
         key="bottom-left"
+        {...props}
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-standardGeneral MuiAlert-snackbar"
           action={
             <span
               aria-label="close"
@@ -222,7 +228,7 @@ export const SnackbarPositionBottomLeft = () => {
   );
 };
 
-export const SnackbarPositionTopLeft = () => {
+export const SnackbarPositionTopLeft: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -236,10 +242,11 @@ export const SnackbarPositionTopLeft = () => {
         onClose={() => setOpen(false)}
         message=""
         key="top-left"
+        {...props}
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-standardGeneral MuiAlert-snackbar"
           action={
             <span
               aria-label="close"

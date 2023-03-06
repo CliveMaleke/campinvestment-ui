@@ -1,13 +1,16 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
 import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import AlertTitle from '@components/lab/AlertTitle';
+import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
-export const SnackbarSimple = () => {
+export const SnackbarSimple: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -37,15 +40,21 @@ export const SnackbarSimple = () => {
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        action={
-          <span aria-label="close" color="inherit" onClick={handleClose}>
-            x
-          </span>
-        }
+        {...props}
       >
-        <Alert severity="success" onClose={handleClose}>
-          <AlertTitle>success</AlertTitle>
-          This is a success alert — check it out!
+        <Alert
+          className="MuiAlert-snackbar"
+          severity="success"
+          onClose={handleClose}
+          icon={<CheckFilledIcon fontSize="small" />}
+          action={
+            <span aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          <AlertTitle>This is a success snackbar message</AlertTitle>
+          Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
               Button 1

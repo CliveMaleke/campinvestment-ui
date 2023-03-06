@@ -13,7 +13,10 @@ import { AlertActionUndo, AlertActionClose } from './index';
 ### Import
 
 ```jsx
-import Alert from 'tokenomy-ui/lab/Alert';
+import React, { FC } from 'react';
+import { AlertProps } from '@material-ui/lab/Alert';
+import Button from '@material-ui/core/Button';
+import Alert from 'tokenomy-ui/feedback/Alert';
 ```
 
 ### Usage
@@ -21,13 +24,26 @@ import Alert from 'tokenomy-ui/lab/Alert';
 <AlertActionUndo />
 
 ```jsx
-<Alert action={<button color="inherit">UNDO</button>}>
-  This is a success alert — check it out!
-</Alert>
+export const AlertActionUndo: FC<AlertProps> = (props) => (
+  <Alert
+    action={
+      <Button color="inherit" size="small">
+        UNDO
+      </Button>
+    }
+    {...props}
+  >
+    This is a success alert — check it out!
+  </Alert>
+);
 ```
 
 <AlertActionClose />
 
 ```jsx
-<Alert onClose={() => {}}>This is a success alert — check it out!</Alert>
+export const AlertActionClose: FC<AlertProps> = (props) => (
+  <Alert onClose={() => {}} {...props}>
+    This is a success alert — check it out!
+  </Alert>
+);
 ```

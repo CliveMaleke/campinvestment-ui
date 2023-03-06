@@ -1,16 +1,12 @@
 // Vendors
-import {
-  Collapse,
-  createStyles,
-  IconButton,
-  makeStyles,
-  Theme,
-} from '@material-ui/core';
-import React from 'react';
+import React, { FC } from 'react';
+import { Collapse, createStyles, makeStyles, Theme } from '@material-ui/core';
 
 // Components
 import Alert from '@components/feedback/Alert';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import Button from '@material-ui/core/Button';
+import { AlertProps } from '@material-ui/lab/Alert';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const AlertTransition = () => {
+export const AlertTransition: FC<AlertProps> = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   return (
@@ -39,18 +35,21 @@ export const AlertTransition = () => {
               x
             </CloseIcon>
           }
+          {...props}
         >
           This is a success alert — check it out!
         </Alert>
       </Collapse>
-      <button
+      <Button
         disabled={open}
         onClick={() => {
           setOpen(true);
         }}
+        variant="contained"
+        size="small"
       >
         Re-open
-      </button>
+      </Button>
     </div>
   );
 };

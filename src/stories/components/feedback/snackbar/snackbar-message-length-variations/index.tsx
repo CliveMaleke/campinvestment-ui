@@ -1,38 +1,43 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 
 // Components
 import SnackbarContent from '@components/feedback/SnackbarContent';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
-export const SnackbarMessageShorWithButton = () => {
+export const SnackbarMessageShorWithButton: FC<SnackbarProps> = (props) => {
   const action = <button>lorem ipsum dolorem</button>;
 
-  return <SnackbarContent message="I love snacks." action={action} />;
+  return (
+    <SnackbarContent message="I love snacks." action={action} {...props} />
+  );
 };
 
-export const SnackbarMessageLong = () => {
+export const SnackbarMessageLong: FC<SnackbarProps> = (props) => {
   return (
     <SnackbarContent
       message={
         'I love candy. I love cookies. I love cupcakes. \
     I love cheesecake. I love chocolate.'
       }
+      {...props}
     />
   );
 };
 
-export const SnackbarMessageRegularWithButton = () => {
+export const SnackbarMessageRegularWithButton: FC<SnackbarProps> = (props) => {
   const action = <button>lorem ipsum dolorem</button>;
 
   return (
     <SnackbarContent
       message="I love candy. I love cookies. I love cupcakes."
       action={action}
+      {...props}
     />
   );
 };
 
-export const SnackbarMessageLongWithButton = () => {
+export const SnackbarMessageLongWithButton: FC<SnackbarProps> = (props) => {
   const action = <button>lorem ipsum dolorem</button>;
 
   return (
@@ -42,6 +47,7 @@ export const SnackbarMessageLongWithButton = () => {
       I love cheesecake. I love chocolate.'
       }
       action={action}
+      {...props}
     />
   );
 };

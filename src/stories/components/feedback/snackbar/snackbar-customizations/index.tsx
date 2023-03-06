@@ -1,12 +1,19 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
 import Alert from '@components/feedback/Alert';
+import AlertTitle from '@components/lab/AlertTitle';
 import Button from '@material-ui/core/Button';
+import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import AlertIcon from '@components/data-display/Icon/AlertIcon';
+import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
+import InfoIcon from '@components/data-display/Icon/InfoIcon';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
-export const SnackbarCustomizedGeneral = () => {
+export const SnackbarCustomizedGeneral: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -29,9 +36,23 @@ export const SnackbarCustomizedGeneral = () => {
       <Button variant="contained" color="primary" onClick={handleClick}>
         Open general snackbar
       </Button>
-      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-        <Alert onClose={handleClose} className="MuiAlert-standardGeneral">
-          This is a general message!
+      <Snackbar
+        open={open}
+        autoHideDuration={1000}
+        onClose={handleClose}
+        {...props}
+      >
+        <Alert
+          onClose={handleClose}
+          className="MuiAlert-standardGeneral"
+          action={
+            <span aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          <AlertTitle>This is a general message!</AlertTitle>
+          Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
               Button 1
@@ -46,7 +67,7 @@ export const SnackbarCustomizedGeneral = () => {
   );
 };
 
-export const SnackbarCustomizedError = () => {
+export const SnackbarCustomizedError: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -69,9 +90,25 @@ export const SnackbarCustomizedError = () => {
       <Button variant="contained" color="primary" onClick={handleClick}>
         Open error snackbar
       </Button>
-      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="error">
-          This is a error message!
+      <Snackbar
+        open={open}
+        autoHideDuration={1000}
+        onClose={handleClose}
+        {...props}
+      >
+        <Alert
+          className="MuiAlert-snackbar"
+          onClose={handleClose}
+          severity="error"
+          icon={<CloseFilledIcon fontSize="small" />}
+          action={
+            <span aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          <AlertTitle>This is a error message!</AlertTitle>
+          Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
               Button 1
@@ -86,7 +123,7 @@ export const SnackbarCustomizedError = () => {
   );
 };
 
-export const SnackbarCustomizedWarning = () => {
+export const SnackbarCustomizedWarning: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -109,9 +146,24 @@ export const SnackbarCustomizedWarning = () => {
       <Button variant="contained" color="primary" onClick={handleClick}>
         Open warning snackbar
       </Button>
-      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="warning">
-          This is a warning message!
+      <Snackbar
+        open={open}
+        autoHideDuration={1000}
+        onClose={handleClose}
+        {...props}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="warning"
+          icon={<AlertIcon fontSize="small" />}
+          action={
+            <span aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          <AlertTitle>This is a warning message!</AlertTitle>
+          Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
               Button 1
@@ -126,7 +178,7 @@ export const SnackbarCustomizedWarning = () => {
   );
 };
 
-export const SnackbarCustomizedInfo = () => {
+export const SnackbarCustomizedInfo: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -149,9 +201,24 @@ export const SnackbarCustomizedInfo = () => {
       <Button variant="contained" color="primary" onClick={handleClick}>
         Open info snackbar
       </Button>
-      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="info">
-          This is a info message!
+      <Snackbar
+        open={open}
+        autoHideDuration={1000}
+        onClose={handleClose}
+        {...props}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="info"
+          icon={<InfoIcon fontSize="small" />}
+          action={
+            <span aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          <AlertTitle>This is a info message!</AlertTitle>
+          Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
               Button 1
@@ -166,7 +233,7 @@ export const SnackbarCustomizedInfo = () => {
   );
 };
 
-export const SnackbarCustomizedSuccess = () => {
+export const SnackbarCustomizedSuccess: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -189,9 +256,24 @@ export const SnackbarCustomizedSuccess = () => {
       <Button variant="contained" color="primary" onClick={handleClick}>
         Open success snackbar
       </Button>
-      <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          This is a success message!
+      <Snackbar
+        open={open}
+        autoHideDuration={1000}
+        onClose={handleClose}
+        {...props}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          icon={<CheckFilledIcon fontSize="small" />}
+          action={
+            <span aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </span>
+          }
+        >
+          <AlertTitle>This is a success message!</AlertTitle>
+          Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
               Button 1

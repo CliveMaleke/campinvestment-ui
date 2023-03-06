@@ -1,5 +1,5 @@
 // Vendors
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,6 +7,11 @@ import { makeStyles } from '@material-ui/core/styles';
 // Components
 import Alert from '@components/feedback/Alert';
 import AlertDescriptionDocs from './description.docs.mdx';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import AlertIcon from '@components/data-display/Icon/AlertIcon';
+import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
+import InfoIcon from '@components/data-display/Icon/InfoIcon';
+import { SvgIconProps } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,11 +43,48 @@ export default {
     },
   },
 };
-export const description = ({ types, label }) => (
-  <Wrapper>
-    <Alert severity={types}>{label}</Alert>
-  </Wrapper>
-);
+export const description = ({ types, label }) => {
+  const [icon, setIcon] = React.useState<{
+    Icon: React.ComponentType<SvgIconProps>;
+  }>({
+    Icon: CheckFilledIcon,
+  });
+
+  useEffect(() => {
+    if (types === 'error') {
+      setIcon({
+        Icon: CloseFilledIcon,
+      });
+    }
+    if (types === 'warning') {
+      setIcon({
+        Icon: AlertIcon,
+      });
+    }
+    if (types === 'info') {
+      setIcon({
+        Icon: InfoIcon,
+      });
+    }
+    if (types === 'success') {
+      setIcon({
+        Icon: CheckFilledIcon,
+      });
+    }
+  }, [types]);
+
+  return (
+    <Wrapper>
+      <Alert
+        severity={types}
+        className={types === 'general' && 'MuiAlert-standardGeneral'}
+        icon={types !== 'general' && <icon.Icon fontSize="small" />}
+      >
+        {label}
+      </Alert>
+    </Wrapper>
+  );
+};
 
 description.story = {
   parameters: {

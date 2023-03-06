@@ -1,11 +1,12 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
 import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import AlertTitle from '@components/lab/AlertTitle';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
 export interface SnackbarMessage {
   message: string;
@@ -18,7 +19,7 @@ export interface State {
   messageInfo?: SnackbarMessage;
 }
 
-export const SnackbarTransitionConsecutive = () => {
+export const SnackbarTransitionConsecutive: FC<SnackbarProps> = (props) => {
   const [snackPack, setSnackPack] = React.useState<SnackbarMessage[]>([]);
   const [open, setOpen] = React.useState(false);
   const [messageInfo, setMessageInfo] = React.useState<
@@ -89,8 +90,13 @@ export const SnackbarTransitionConsecutive = () => {
         autoHideDuration={6000}
         onClose={handleClose}
         onExited={handleExited}
+        {...props}
       >
-        <Alert severity="success" onClose={handleClose}>
+        <Alert
+          className="MuiAlert-snackbar"
+          severity="success"
+          onClose={handleClose}
+        >
           <AlertTitle>success</AlertTitle>
           This is a success alert {messageInfo?.message} — check it out!
           <div className="MuiButtonWrapper-root">

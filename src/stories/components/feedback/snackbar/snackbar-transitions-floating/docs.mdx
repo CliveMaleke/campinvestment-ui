@@ -7,7 +7,12 @@ import { SnackbarTransitionFloating } from './index';
 ### Import
 
 ```jsx
+import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from '@material-ui/core/Button';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+import Alert from 'tokenomy-ui/feedback/Alert';
+import CloseIcon from 'tokenomy-ui/data-display/Icon/CloseIcon';
 ```
 
 ### Usage
@@ -15,22 +20,76 @@ import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 <SnackbarTransitionFloating />
 
 ```jsx
-<>
-  <CssBaseline />
-  <div>
-    <AppBar position="static" color="primary">
-      <Toolbar>App Bar</Toolbar>
-    </AppBar>
-    <Fab color="secondary" className={classes.fab}>
-      +
-    </Fab>
-    <Snackbar
-      open
-      autoHideDuration={6000}
-      message="Archived"
-      action={<button color="inherit">Undo</button>}
-      className={classes.snackbar}
-    />
-  </div>
-</>
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    '@global': {
+      body: {
+        backgroundColor: theme.palette.background.paper,
+      },
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    fab: {
+      position: 'absolute',
+      bottom: theme.spacing(2),
+      right: theme.spacing(2),
+    },
+    snackbar: {
+      [theme.breakpoints.down('xs')]: {
+        bottom: 90,
+      },
+    },
+  }),
+);
+
+export const SnackbarTransitionFloating: FC<SnackbarProps> = (props) => {
+  const classes = useStyles();
+
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <div>
+        <AppBar position="static" color="primary">
+          <Toolbar>
+            <Typography variant="h6" color="inherit">
+              App Bar
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Fab color="secondary" className={classes.fab}>
+          +
+        </Fab>
+        <Snackbar
+          open
+          autoHideDuration={6000}
+          message="Archived"
+          action={<button color="inherit">Undo</button>}
+          className={classes.snackbar}
+          {...props}
+        >
+          <Alert
+            severity="info"
+            className="MuiAlert-standardGeneral MuiAlert-snackbar"
+            action={
+              <span aria-label="close" color="inherit" onClick={() => {}}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            I love snacks!
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </Snackbar>
+      </div>
+    </React.Fragment>
+  );
+};
 ```

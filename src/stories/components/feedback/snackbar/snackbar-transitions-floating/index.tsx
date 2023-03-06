@@ -1,5 +1,5 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
@@ -12,6 +12,7 @@ import Snackbar from '@components/feedback/Snackbar';
 import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const SnackbarTransitionFloating = () => {
+export const SnackbarTransitionFloating: FC<SnackbarProps> = (props) => {
   const classes = useStyles();
 
   return (
@@ -59,10 +60,11 @@ export const SnackbarTransitionFloating = () => {
           message="Archived"
           action={<button color="inherit">Undo</button>}
           className={classes.snackbar}
+          {...props}
         >
           <Alert
             severity="info"
-            className="MuiAlert-standardGeneral"
+            className="MuiAlert-standardGeneral MuiAlert-snackbar"
             action={
               <span aria-label="close" color="inherit" onClick={() => {}}>
                 <CloseIcon fontSize="small" />

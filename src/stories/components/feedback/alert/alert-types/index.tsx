@@ -1,29 +1,38 @@
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 
 // Components
 import Alert from '@components/feedback/Alert';
+import { AlertProps } from '@material-ui/lab/Alert';
 
-export const AlertGeneral = () => (
-  <Alert className="MuiAlert-standardGeneral">
+export const AlertGeneral: FC<AlertProps> = (props) => (
+  <Alert className="MuiAlert-standardGeneral" {...props}>
     This is a general alert — check it out!
   </Alert>
 );
 
-export const AlertError = () => (
-  <Alert severity="error">This is an error alert — check it out!</Alert>
+export const AlertError: FC<AlertProps> = (props) => (
+  <Alert severity="error" {...props}>
+    This is an error alert — check it out!
+  </Alert>
 );
 
-export const AlertWarning = () => (
-  <Alert severity="warning">This is a warning alert — check it out!</Alert>
+export const AlertWarning: FC<AlertProps> = (props) => (
+  <Alert severity="warning" {...props}>
+    This is a warning alert — check it out!
+  </Alert>
 );
 
-export const AlertInfo = () => (
-  <Alert severity="info">This is an info alert — check it out!</Alert>
+export const AlertInfo: FC<AlertProps> = (props) => (
+  <Alert severity="info" {...props}>
+    This is an info alert — check it out!
+  </Alert>
 );
 
-export const AlertSuccess = () => (
-  <Alert severity="success">This is a success alert — check it out!</Alert>
+export const AlertSuccess: FC<AlertProps> = (props) => (
+  <Alert severity="success" {...props}>
+    This is a success alert — check it out!
+  </Alert>
 );
 
 const AlertTypes = () => (

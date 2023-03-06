@@ -14,6 +14,11 @@ import SnackbarDescriptionDocs from './description.docs.mdx';
 import Alert from '@components/feedback/Alert';
 import AlertTitle from '@components/lab/AlertTitle';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import AlertIcon from '@components/data-display/Icon/AlertIcon';
+import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
+import InfoIcon from '@components/data-display/Icon/InfoIcon';
+import { SvgIconProps } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -118,6 +123,34 @@ export const description = ({
     open: false,
     Transition: Fade,
   });
+  const [icon, setIcon] = React.useState<{
+    Icon: React.ComponentType<SvgIconProps>;
+  }>({
+    Icon: CheckFilledIcon,
+  });
+
+  useEffect(() => {
+    if (types === 'error') {
+      setIcon({
+        Icon: CloseFilledIcon,
+      });
+    }
+    if (types === 'warning') {
+      setIcon({
+        Icon: AlertIcon,
+      });
+    }
+    if (types === 'info') {
+      setIcon({
+        Icon: InfoIcon,
+      });
+    }
+    if (types === 'success') {
+      setIcon({
+        Icon: CheckFilledIcon,
+      });
+    }
+  }, [types]);
 
   useEffect(() => {
     if (transitions === 'grow') {
@@ -172,20 +205,39 @@ export const description = ({
         children={
           <Alert
             severity={types}
-            className={types === 'general' && 'MuiAlert-standardGeneral'}
+            className={`MuiAlert-snackbar ${
+              types === 'general' && 'MuiAlert-standardGeneral'
+            }`}
             action={
               <span aria-label="close" color="inherit" onClick={handleClose}>
                 <CloseIcon fontSize="small" />
               </span>
             }
+            icon={types !== 'general' && <icon.Icon />}
           >
             <AlertTitle>{title}</AlertTitle>
             {body}
             <div className="MuiButtonWrapper-root">
-              <Button variant="text" onClick={() => {}}>
+              <Button
+                variant="text"
+                onClick={() => {
+                  window.open(
+                    'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+                    '_blank',
+                  );
+                }}
+              >
                 Button 1
               </Button>
-              <Button variant="text" onClick={() => {}}>
+              <Button
+                variant="text"
+                onClick={() => {
+                  window.open(
+                    'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+                    '_blank',
+                  );
+                }}
+              >
                 Button 2
               </Button>
             </div>
@@ -205,10 +257,10 @@ description.story = {
 };
 
 description.args = {
-  title: 'snackbar title',
-  body: 'snackbar body',
+  title: 'This is a success snackbar message',
+  body: 'description',
   types: 'success',
   positions: 'top-center',
-  duration: 1000,
+  duration: 3000,
   transitions: 'grow',
 };

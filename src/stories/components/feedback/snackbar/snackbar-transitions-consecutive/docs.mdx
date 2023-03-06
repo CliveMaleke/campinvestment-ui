@@ -11,13 +11,14 @@ import { SnackbarTransitionConsecutive } from './index';
 
 ```jsx
 // Vendors
-import React from 'react';
+import React, { FC } from 'react';
 
 // Components
-import Snackbar from '@components/feedback/Snackbar';
+import { SnackbarProps } from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
-import Alert from '@components/feedback/Alert';
-import AlertTitle from '@components/lab/AlertTitle';
+import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+import Alert from 'tokenomy-ui/feedback/Alert';
+import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
 ```
 
 ### Usage
@@ -36,7 +37,7 @@ export interface State {
   messageInfo?: SnackbarMessage;
 }
 
-export const SnackbarTransitionConsecutive = () => {
+export const SnackbarTransitionConsecutive: FC<SnackbarProps> = (props) => {
   const [snackPack, setSnackPack] = React.useState<SnackbarMessage[]>([]);
   const [open, setOpen] = React.useState(false);
   const [messageInfo, setMessageInfo] = React.useState<
@@ -107,8 +108,13 @@ export const SnackbarTransitionConsecutive = () => {
         autoHideDuration={6000}
         onClose={handleClose}
         onExited={handleExited}
+        {...props}
       >
-        <Alert severity="success" onClose={handleClose}>
+        <Alert
+          className="MuiAlert-snackbar"
+          severity="success"
+          onClose={handleClose}
+        >
           <AlertTitle>success</AlertTitle>
           This is a success alert {messageInfo?.message} — check it out!
           <div className="MuiButtonWrapper-root">
@@ -124,13 +130,4 @@ export const SnackbarTransitionConsecutive = () => {
     </div>
   );
 };
-
-const SnackbarTransitionsConsecutive = () => (
-  <>
-    <SnackbarTransitionConsecutive />
-  </>
-);
-
-export default SnackbarTransitionsConsecutive;
-
 ```
