@@ -21,6 +21,9 @@ import ButtonWithIconDocs from './button-with-icon/docs.mdx';
 import IconButton from './icon-button';
 import IconButtonDocs from './icon-button/docs.mdx';
 
+import FullWidth from './full-width';
+import FullWidthDocs from './full-width/docs.mdx';
+
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     '& > *': {
@@ -37,7 +40,7 @@ const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 export default {
   title: 'Components/Inputs/Button/Example',
   parameters: {
-    design: { disabled: true },
+    design: { disable: true },
     options: { showPanel: false },
   },
 };
@@ -103,6 +106,19 @@ iconButton.story = {
   parameters: {
     docs: {
       page: IconButtonDocs,
+    },
+  },
+};
+
+export const fullWidth = () => (
+  <Wrapper>
+    <FullWidth />
+  </Wrapper>
+);
+fullWidth.story = {
+  parameters: {
+    docs: {
+      page: FullWidthDocs,
     },
   },
 };

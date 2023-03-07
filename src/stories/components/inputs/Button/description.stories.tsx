@@ -15,6 +15,13 @@ export default {
    */
   title: 'Components/Inputs/Button',
   component: Button,
+  parameters: {
+    design: { disable: true },
+    options: { showPanel: true },
+    actions: {
+      handles: ['click'],
+    },
+  },
   argTypes: {
     text: {
       name: 'Text',
@@ -127,7 +134,7 @@ description.args = {
   color: 'primary',
   size: 'medium',
   disabled: false,
-  disableElevation: false,
+  disableElevation: true,
   disableRipple: false,
   showIcon: false,
   iconPosition: 'start',

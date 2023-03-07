@@ -5,16 +5,16 @@ import React from 'react';
 import Button from '@components/inputs/Button';
 import { IButtonProps } from '@components/inputs/Button/Button';
 
-export const ButtonContained = (props: IButtonProps) => (
+export const ButtonFullWidth = (props: IButtonProps) => (
   <Button variant="contained" {...props}>
     {props.children}
   </Button>
 );
 
-const ButtonContainedCanvas = (props: IButtonProps) => (
-  <Button variant="contained" {...props}>
+const ButtonFullWidthCanvas = (props: IButtonProps) => (
+  <Button fullWidth variant="contained" {...props}>
     Button
   </Button>
 );
 
-export default ButtonContainedCanvas;
+export default ButtonFullWidthCanvas;

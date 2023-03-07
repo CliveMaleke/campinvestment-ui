@@ -7,9 +7,14 @@ import { IButtonProps } from '@components/inputs/Button/Button';
 
 export const ButtonOutlined = (props: IButtonProps) => (
   <Button variant="outlined" {...props}>
+    {props.children}
+  </Button>
+);
+const ButtonOutlinedCanvas = (props: IButtonProps) => (
+  <Button variant="outlined" {...props}>
     Button
   </Button>
 );
 
 
-export default ButtonOutlined;
+export default ButtonOutlinedCanvas;

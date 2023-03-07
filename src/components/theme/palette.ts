@@ -1,8 +1,8 @@
 import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 
 import {
-  backgroundLight,
   backgroundDark,
+  backgroundLight,
 
   blue50,
   blue60,
@@ -45,6 +45,12 @@ interface ButtonContainedColors {
   bgPressed: string;
   bgDisabled: string;
 }
+interface IconButton {
+  primary: string;
+  secondary: string;
+  disabled: string;
+  default: string;
+}
 interface ButtonOutlinedColors {
   textDefault: string;
   textHover: string;
@@ -58,6 +64,14 @@ interface ButtonOutlinedColors {
   outlineHover: string;
   outlinePressed: string;
   outlineDisabled: string;
+}
+interface ButtonTextColors {
+  textMain: string;
+  textDisabled: string;
+  bgDefault: string;
+  bgHover: string;
+  bgPressed: string;
+  bgDisabled: string;
 }
 
 interface PaletteColors {
@@ -75,9 +89,11 @@ interface PaletteColors {
   button: {
     containedPrimary: ButtonContainedColors;
     containedSecondary: ButtonContainedColors;
+    iconButton: IconButton;
     outlinedPrimary: ButtonOutlinedColors;
     outlinedSecondary: ButtonOutlinedColors;
-    text: ButtonContainedColors;
+    textPrimary: ButtonTextColors;
+    textSecondary: ButtonTextColors;
   };
   icon: {
     primary: string;
@@ -124,6 +140,12 @@ const MuiPaletteTheme = {
         bgPressed: red70,
         bgDisabled: lightGray40,
       },
+      iconButton: {
+        primary: blue50,
+        secondary: red50,
+        disabled: gray50,
+        default: gray70,
+      },
       outlinedPrimary: {
         textDefault: blue50,
         textHover: blue60,
@@ -152,12 +174,20 @@ const MuiPaletteTheme = {
         outlinePressed: red70,
         outlineDisabled: gray50,
       },
-      text: {
+      textPrimary: {
         textMain: blue50,
         textDisabled: gray50,
         bgDefault: 'transparent',
         bgHover: lightBlue20,
         bgPressed: lightBlue50,
+        bgDisabled: 'transparent',
+      },
+      textSecondary: {
+        textMain: red50,
+        textDisabled: gray50,
+        bgDefault: 'transparent',
+        bgHover: red10,
+        bgPressed: red20,
         bgDisabled: 'transparent',
       },
     },
@@ -221,6 +251,12 @@ const MuiPaletteTheme = {
         bgPressed: red70,
         bgDisabled: lightGray40,
       },
+      iconButton: {
+        primary: blue50,
+        secondary: red50,
+        disabled: gray50,
+        default: white,
+      },
       outlinedPrimary: {
         textDefault: blue50,
         textHover: blue60,
@@ -249,12 +285,20 @@ const MuiPaletteTheme = {
         outlinePressed: red70,
         outlineDisabled: gray50,
       },
-      text: {
+      textPrimary: {
         textMain: blue50,
         textDisabled: gray50,
         bgDefault: 'transparent',
         bgHover: blue70,
         bgPressed: blue80,
+        bgDisabled: 'transparent',
+      },
+      textSecondary: {
+        textMain: red50,
+        textDisabled: gray50,
+        bgDefault: 'transparent',
+        bgHover: red10,
+        bgPressed: red20,
         bgDisabled: 'transparent',
       },
     },

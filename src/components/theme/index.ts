@@ -47,7 +47,7 @@ const theme = createTheme({
     // Inputs
     MuiFormLabel: MuiFormLabelStyled(defaultTheme, modifyTheme),
     MuiButton: MuiButtonStyled(defaultTheme, modifyTheme),
-    MuiIconButton: MuiButtonStyled(defaultTheme, modifyTheme),
+    MuiIconButton: MuiIconButtonStyled(defaultTheme, modifyTheme),
     // Navigation
     // Data display
     MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
