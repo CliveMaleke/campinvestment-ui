@@ -38,7 +38,7 @@ const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 export default {
   title: 'Components/Layout/Grid',
   parameters: {
-    design: { disabled: true },
+    design: { disable: true },
     options: { showPanel: true },
   },
   argTypes: {
