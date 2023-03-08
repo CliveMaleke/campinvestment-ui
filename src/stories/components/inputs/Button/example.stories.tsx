@@ -90,6 +90,7 @@ export const buttonWithIcon = () => (
   </Wrapper>
 );
 buttonWithIcon.story = {
+  name: 'With Icons & Label',
   parameters: {
     docs: {
       page: ButtonWithIconDocs,
