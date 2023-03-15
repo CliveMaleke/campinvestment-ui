@@ -48,6 +48,11 @@ export default {
         options: ['small', 'medium', 'large', 'extra large', '2x extra large'],
       },
     },
+    darkMode: {
+      name: 'Dark Mode',
+      control: 'boolean',
+      defaultValue: false,
+    },
     disabled: {
       name: 'Disabled',
       control: 'boolean',
@@ -91,6 +96,7 @@ export const description = ({
   disableRipple,
   showIcon,
   size,
+  darkMode,
   iconPosition,
   text,
   variant,
@@ -107,14 +113,27 @@ export const description = ({
 
   return (
     <Wrapper>
-      <Button
-        className={`${size === 'extra large' && 'MuiButton-sizeExtraLarge'} ${
-          size === '2x extra large' && 'MuiButton-sizeExtraLarge2x'
-        }`}
-        {...props}
-      >
-        {text}
-      </Button>
+      {darkMode ? (
+        <div className="theme-dark" style={{ margin: 0 }}>
+          <Button
+            className={`${
+              size === 'extra large' ? 'MuiButton-sizeExtraLarge' : ''
+            } ${size === '2x extra large' ? 'MuiButton-sizeExtraLarge2x' : ''}`}
+            {...props}
+          >
+            {text}
+          </Button>
+        </div>
+      ) : (
+        <Button
+          className={`${
+            size === 'extra large' ? 'MuiButton-sizeExtraLarge' : ''
+          } ${size === '2x extra large' ? 'MuiButton-sizeExtraLarge2x' : ''}`}
+          {...props}
+        >
+          {text}
+        </Button>
+      )}
     </Wrapper>
   );
 };
@@ -132,6 +151,7 @@ description.args = {
   variant: 'contained',
   color: 'primary',
   size: 'medium',
+  darkMode: false,
   disabled: false,
   disableRipple: false,
   showIcon: false,
