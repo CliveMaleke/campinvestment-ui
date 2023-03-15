@@ -120,6 +120,7 @@ export const description = ({
               size === 'extra large' ? 'MuiButton-sizeExtraLarge' : ''
             } ${size === '2x extra large' ? 'MuiButton-sizeExtraLarge2x' : ''}`}
             {...props}
+            style={{ margin: 0 }}
           >
             {text}
           </Button>
@@ -130,6 +131,7 @@ export const description = ({
             size === 'extra large' ? 'MuiButton-sizeExtraLarge' : ''
           } ${size === '2x extra large' ? 'MuiButton-sizeExtraLarge2x' : ''}`}
           {...props}
+          style={{ margin: 0 }}
         >
           {text}
         </Button>
