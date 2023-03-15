@@ -38,7 +38,7 @@ export default {
       name: 'Color',
       control: {
         type: 'select',
-        options: ['primary', 'secondary', 'default'],
+        options: ['primary', 'secondary'],
       },
     },
     size: {
