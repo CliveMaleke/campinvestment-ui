@@ -45,7 +45,7 @@ export default {
       name: 'Size',
       control: {
         type: 'select',
-        options: ['small', 'medium', 'large'],
+        options: ['small', 'medium', 'large', 'extra large', '2x extra large'],
       },
     },
     disabled: {
@@ -53,14 +53,8 @@ export default {
       control: 'boolean',
       defaultValue: false,
     },
-    disableElevation: {
-      name: 'Disable Elevation',
-      control: 'boolean',
-      defaultValue: true,
-      if: { arg: 'variant', eq: 'contained' },
-    },
     disableRipple: {
-      name: 'Disable Ripple',
+      name: 'Enable Ripple',
       control: 'boolean',
       defaultValue: false,
     },
@@ -95,7 +89,6 @@ export const description = ({
   color,
   disabled,
   disableRipple,
-  disableElevation,
   showIcon,
   size,
   iconPosition,
@@ -104,9 +97,8 @@ export const description = ({
 }) => {
   const props = {
     color,
-    disableElevation,
     disabled,
-    disableRipple,
+    disableRipple: !disableRipple,
     size,
     variant,
     ...(showIcon && iconPosition === 'start' && { startIcon: <DeleteIcon /> }),
@@ -115,7 +107,14 @@ export const description = ({
 
   return (
     <Wrapper>
-      <Button {...props}>{text}</Button>
+      <Button
+        className={`${size === 'extra large' && 'MuiButton-sizeExtraLarge'} ${
+          size === '2x extra large' && 'MuiButton-sizeExtraLarge2x'
+        }`}
+        {...props}
+      >
+        {text}
+      </Button>
     </Wrapper>
   );
 };
@@ -134,7 +133,6 @@ description.args = {
   color: 'primary',
   size: 'medium',
   disabled: false,
-  disableElevation: true,
   disableRipple: false,
   showIcon: false,
   iconPosition: 'start',

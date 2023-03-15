@@ -6,10 +6,10 @@ import theme from '../../theme';
 
 export interface IButtonProps extends ButtonProps {}
 
-export default (props: ButtonProps) => {
+export default (props: IButtonProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <Button color='primary' {...props} />
+      <Button color="primary" disableElevation {...props} />
     </ThemeProvider>
   );
 };
