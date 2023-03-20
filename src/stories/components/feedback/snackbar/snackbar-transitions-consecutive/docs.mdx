@@ -11,11 +11,10 @@ import { SnackbarTransitionConsecutive } from './index';
 
 ```jsx
 // Vendors
-import React, { FC } from 'react';
+import React from 'react';
 
 // Components
-import { SnackbarProps } from '@material-ui/core/Snackbar';
-import Button from '@material-ui/core/Button';
+import Button from 'tokenomy-ui/inputs/Button';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Alert from 'tokenomy-ui/feedback/Alert';
 import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
@@ -26,23 +25,10 @@ import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
 <SnackbarTransitionConsecutive />
 
 ```jsx
-export interface SnackbarMessage {
-  message: string;
-  key: number;
-}
-
-export interface State {
-  open: boolean;
-  snackPack: SnackbarMessage[];
-  messageInfo?: SnackbarMessage;
-}
-
-export const SnackbarTransitionConsecutive: FC<SnackbarProps> = (props) => {
-  const [snackPack, setSnackPack] = React.useState<SnackbarMessage[]>([]);
+export const SnackbarTransitionConsecutive = (props) => {
+  const [snackPack, setSnackPack] = React.useState([]);
   const [open, setOpen] = React.useState(false);
-  const [messageInfo, setMessageInfo] = React.useState<
-    SnackbarMessage | undefined
-  >(undefined);
+  const [messageInfo, setMessageInfo] = React.useState(SnackbarMessage);
 
   React.useEffect(() => {
     if (snackPack.length && !messageInfo) {
@@ -56,14 +42,11 @@ export const SnackbarTransitionConsecutive: FC<SnackbarProps> = (props) => {
     }
   }, [snackPack, messageInfo, open]);
 
-  const handleClick = (message: string) => () => {
+  const handleClick = (message) => () => {
     setSnackPack((prev) => [...prev, { message, key: new Date().getTime() }]);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | MouseEvent,
-    reason?: string,
-  ) => {
+  const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }

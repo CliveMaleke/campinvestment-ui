@@ -4,8 +4,8 @@ import Slide, { SlideProps } from '@material-ui/core/Slide';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
-import Button from '@material-ui/core/Button';
 import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from '@components/inputs/Button';
 
 type TransitionProps = Omit<SlideProps, 'direction'>;
 

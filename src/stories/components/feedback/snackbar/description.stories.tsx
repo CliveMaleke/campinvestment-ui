@@ -3,10 +3,10 @@ import React, { useEffect } from 'react';
 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import { TransitionProps } from '@material-ui/core/transitions';
 import Fade from '@material-ui/core/Fade';
 import Grow from '@material-ui/core/Grow';
+import Slide from '@material-ui/core/Slide';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
@@ -19,6 +19,7 @@ import AlertIcon from '@components/data-display/Icon/AlertIcon';
 import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
 import InfoIcon from '@components/data-display/Icon/InfoIcon';
 import { SvgIconProps } from '@material-ui/core';
+import Button from '@components/inputs/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,19 +41,36 @@ export default {
     options: { showPanel: true },
   },
   argTypes: {
-    title: {
+    variants: {
+      name: 'Variants',
+      control: {
+        type: 'radio',
+        options: ['Snackbar', 'Toast'],
+      },
+    },
+    snackbarTitle: {
       name: 'Title',
       control: 'text',
-      table: {
-        category: 'Texts',
-      },
+      if: { arg: 'variants', eq: 'Snackbar' },
+      // table: {
+      //   category: 'Texts',
+      // },
+    },
+    toastTitle: {
+      name: 'Title',
+      control: 'text',
+      if: { arg: 'variants', eq: 'Toast' },
+      // table: {
+      //   category: 'Texts',
+      // },
     },
     body: {
       name: 'Body',
       control: 'text',
-      table: {
-        category: 'Texts',
-      },
+      if: { arg: 'variants', eq: 'Snackbar' },
+      // table: {
+      //   category: 'Texts',
+      // },
     },
     types: {
       name: 'types',
@@ -60,12 +78,12 @@ export default {
         type: 'select',
         options: ['general', 'error', 'warning', 'info', 'success'],
       },
-      table: {
-        category: 'Style',
-      },
+      // table: {
+      //   category: 'Style',
+      // },
     },
-    positions: {
-      name: 'positions',
+    toastPositions: {
+      name: 'Position',
       control: {
         type: 'select',
         options: [
@@ -77,26 +95,80 @@ export default {
           'top-left',
         ],
       },
-      table: {
-        category: 'Style',
+      if: { arg: 'variants', eq: 'Toast' },
+      // table: {
+      //   category: 'Style',
+      // },
+    },
+    snackbarPositions: {
+      name: 'Position',
+      control: {
+        type: 'select',
+        options: [
+          'top-center',
+          'top-right',
+          'bottom-right',
+          'bottom-center',
+          'bottom-left',
+          'top-left',
+        ],
       },
+      if: { arg: 'variants', eq: 'Snackbar' },
+      // table: {
+      //   category: 'Style',
+      // },
     },
     duration: {
       name: 'Duration',
       control: 'number',
-      table: {
-        category: 'Animation',
-      },
+      if: { arg: 'variants', eq: 'Toast' },
+      // table: {
+      //   category: 'Animation',
+      // },
     },
-    transitions: {
+    snackbarTransitions: {
       name: 'Transition',
       control: {
         type: 'select',
-        options: ['grow', 'fade'],
+        options: ['grow', 'fade', 'slide'],
       },
-      table: {
-        category: 'Animation',
+      if: { arg: 'variants', eq: 'Snackbar' },
+      // table: {
+      //   category: 'Animation',
+      // },
+    },
+    toastTransitions: {
+      name: 'Transition',
+      control: {
+        type: 'select',
+        options: ['grow', 'fade', 'slide'],
       },
+      if: { arg: 'variants', eq: 'Toast' },
+      // table: {
+      //   category: 'Animation',
+      // },
+    },
+    toastSlideDirection: {
+      name: 'Slide direction',
+      control: {
+        type: 'select',
+        options: ['right', 'up', 'left', 'down'],
+      },
+      if: { arg: 'variants', eq: 'Toast' },
+      // table: {
+      //   category: 'Animation',
+      // },
+    },
+    snackbarSlideDirection: {
+      name: 'Slide direction',
+      control: {
+        type: 'select',
+        options: ['right', 'up', 'left', 'down'],
+      },
+      if: { arg: 'variants', eq: 'Snackbar' },
+      // table: {
+      //   category: 'Animation',
+      // },
     },
   },
 };
@@ -105,30 +177,45 @@ function GrowTransition(props: TransitionProps) {
   return <Grow {...props} />;
 }
 
+function TransitionLeft(props: TransitionProps) {
+  return <Slide {...props} direction="left" />;
+}
+
+function TransitionUp(props: TransitionProps) {
+  return <Slide {...props} direction="up" />;
+}
+
+function TransitionRight(props: TransitionProps) {
+  return <Slide {...props} direction="right" />;
+}
+
+function TransitionDown(props: TransitionProps) {
+  return <Slide {...props} direction="down" />;
+}
+
 export const description = ({
-  title,
+  variants,
+  snackbarTitle,
+  toastTitle,
   body,
-  positions,
+  toastPositions,
+  snackbarPositions,
   types,
   duration,
-  transitions,
+  snackbarTransitions,
+  toastTransitions,
+  toastSlideDirection,
+  snackbarSlideDirection,
 }) => {
-  const splittedPosition = positions?.split('-');
-  const [state, setState] = React.useState<{
-    open: boolean;
-    Transition: React.ComponentType<
-      TransitionProps & { children?: React.ReactElement<any, any> }
-    >;
-  }>({
-    open: false,
-    Transition: Fade,
-  });
+  const splittedToastPosition = toastPositions?.split('-');
+  const splittedSnackbarPosition = snackbarPositions?.split('-');
   const [icon, setIcon] = React.useState<{
     Icon: React.ComponentType<SvgIconProps>;
   }>({
     Icon: CheckFilledIcon,
   });
 
+  // render when types change
   useEffect(() => {
     if (types === 'error') {
       setIcon({
@@ -152,23 +239,74 @@ export const description = ({
     }
   }, [types]);
 
+  // Toast
+  const toastSlideRef = React.useRef(null);
+  const [toastState, setToastState] = React.useState<{
+    open: boolean;
+    Transition: React.ComponentType<
+      TransitionProps & { children?: React.ReactElement<any, any> }
+    >;
+  }>({
+    open: false,
+    Transition: Fade,
+  });
+
+  // set toast transition and slide direction
   useEffect(() => {
-    if (transitions === 'grow') {
-      setState({
-        ...state,
+    if (toastTransitions === 'grow') {
+      setToastState({
+        ...toastState,
         Transition: GrowTransition,
       });
-    } else {
-      setState({
-        ...state,
+      return;
+    }
+
+    if (toastTransitions === 'fade') {
+      setToastState({
+        ...toastState,
         Transition: Fade,
       });
+      return;
     }
-  }, [transitions]);
+
+    if (toastTransitions === 'slide') {
+      if (toastSlideDirection === 'left') {
+        setToastState({
+          ...toastState,
+          Transition: TransitionLeft,
+        });
+        return;
+      }
+
+      if (toastSlideDirection === 'right') {
+        setToastState({
+          ...toastState,
+          Transition: TransitionRight,
+        });
+        return;
+      }
+
+      if (toastSlideDirection === 'up') {
+        setToastState({
+          ...toastState,
+          Transition: TransitionUp,
+        });
+        return;
+      }
+
+      if (toastSlideDirection === 'down') {
+        setToastState({
+          ...toastState,
+          Transition: TransitionDown,
+        });
+        return;
+      }
+    }
+  }, [toastTransitions, toastSlideDirection]);
 
   const handleClick = () => {
-    setState({
-      ...state,
+    setToastState({
+      ...toastState,
       open: true,
     });
   };
@@ -181,69 +319,196 @@ export const description = ({
       return;
     }
 
-    setState({
-      ...state,
+    setToastState({
+      ...toastState,
+      open: false,
+    });
+  };
+
+  // Snackbar
+  const snackbarSlideRef = React.useRef(null);
+  const [snackbarState, setSnackbarState] = React.useState<{
+    open: boolean;
+    Transition: React.ComponentType<
+      TransitionProps & { children?: React.ReactElement<any, any> }
+    >;
+  }>({
+    open: false,
+    Transition: Fade,
+  });
+
+  // set snackbar transition and slide direction
+  useEffect(() => {
+    if (snackbarTransitions === 'grow') {
+      setSnackbarState({
+        ...snackbarState,
+        Transition: GrowTransition,
+      });
+      return;
+    }
+
+    if (snackbarTransitions === 'fade') {
+      setSnackbarState({
+        ...snackbarState,
+        Transition: Fade,
+      });
+      return;
+    }
+
+    if (snackbarTransitions === 'slide') {
+      if (snackbarSlideDirection === 'left') {
+        setSnackbarState({
+          ...snackbarState,
+          Transition: TransitionLeft,
+        });
+        return;
+      }
+
+      if (snackbarSlideDirection === 'right') {
+        setSnackbarState({
+          ...snackbarState,
+          Transition: TransitionRight,
+        });
+        return;
+      }
+
+      if (snackbarSlideDirection === 'up') {
+        setSnackbarState({
+          ...snackbarState,
+          Transition: TransitionUp,
+        });
+        return;
+      }
+
+      if (snackbarSlideDirection === 'down') {
+        setSnackbarState({
+          ...snackbarState,
+          Transition: TransitionDown,
+        });
+        return;
+      }
+    }
+  }, [snackbarTransitions, snackbarSlideDirection]);
+
+  const handleClickSnackar = () => {
+    setSnackbarState({
+      ...snackbarState,
+      open: true,
+    });
+  };
+
+  const handleCloseSnackbar = (
+    event: React.SyntheticEvent | React.MouseEvent,
+    reason?: string,
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbarState({
+      ...snackbarState,
       open: false,
     });
   };
 
   return (
     <Wrapper>
-      <Button variant="contained" color="primary" onClick={handleClick}>
-        Open snackbar
-      </Button>
-      <Snackbar
-        anchorOrigin={{
-          vertical: splittedPosition[0],
-          horizontal: splittedPosition[1],
-        }}
-        key={splittedPosition[0] + splittedPosition[1]}
-        open={state.open}
-        autoHideDuration={duration}
-        onClose={handleClose}
-        TransitionComponent={state.Transition}
-        children={
-          <Alert
-            severity={types}
-            className={`MuiAlert-snackbar ${
-              types === 'general' && 'MuiAlert-standardGeneral'
-            }`}
-            action={
-              <span aria-label="close" color="inherit" onClick={handleClose}>
-                <CloseIcon fontSize="small" />
-              </span>
-            }
-            icon={types !== 'general' && <icon.Icon />}
+      {variants === 'Toast' ? (
+        <>
+          <Button variant="contained" color="primary" onClick={handleClick}>
+            Open Toast
+          </Button>
+          <Snackbar
+            anchorOrigin={{
+              vertical: splittedToastPosition[0],
+              horizontal: splittedToastPosition[1],
+            }}
+            key={splittedToastPosition[0] + splittedToastPosition[1]}
+            open={toastState.open}
+            autoHideDuration={duration}
+            onClose={handleClose}
+            TransitionComponent={toastState.Transition}
           >
-            <AlertTitle>{title}</AlertTitle>
-            {body}
-            <div className="MuiButtonWrapper-root">
-              <Button
-                variant="text"
-                onClick={() => {
-                  window.open(
-                    'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
-                    '_blank',
-                  );
-                }}
+            <div ref={toastSlideRef}>
+              <Alert
+                severity={types}
+                className={`MuiAlert-toast ${
+                  types === 'general' && 'MuiAlert-standardGeneral'
+                }`}
+                icon={types !== 'general' && <icon.Icon />}
               >
-                Button 1
-              </Button>
-              <Button
-                variant="text"
-                onClick={() => {
-                  window.open(
-                    'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
-                    '_blank',
-                  );
-                }}
-              >
-                Button 2
-              </Button>
+                <AlertTitle>{toastTitle}</AlertTitle>
+              </Alert>
             </div>
-          </Alert>
-        }
-      />
+          </Snackbar>
+        </>
+      ) : (
+        <>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleClickSnackar}
+          >
+            Open snackbar
+          </Button>
+          <Snackbar
+            anchorOrigin={{
+              vertical: splittedSnackbarPosition[0],
+              horizontal: splittedSnackbarPosition[1],
+            }}
+            key={splittedSnackbarPosition[0] + splittedSnackbarPosition[1]}
+            open={snackbarState.open}
+            onClose={handleCloseSnackbar}
+            TransitionComponent={snackbarState.Transition}
+          >
+            <div ref={snackbarSlideRef}>
+              <Alert
+                severity={types}
+                className={`MuiAlert-snackbar ${
+                  types === 'general' && 'MuiAlert-standardGeneral'
+                }`}
+                action={
+                  <span
+                    aria-label="close"
+                    color="inherit"
+                    onClick={handleCloseSnackbar}
+                  >
+                    <CloseIcon fontSize="small" />
+                  </span>
+                }
+                icon={types !== 'general' && <icon.Icon />}
+              >
+                <AlertTitle>{snackbarTitle}</AlertTitle>
+                <p className="MuiAlert-description">{body}</p>
+                <div className="MuiButtonWrapper-root">
+                  <Button
+                    variant="text"
+                    onClick={() => {
+                      window.open(
+                        'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+                        '_blank',
+                      );
+                    }}
+                  >
+                    Button 1
+                  </Button>
+                  <Button
+                    variant="text"
+                    onClick={() => {
+                      window.open(
+                        'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+                        '_blank',
+                      );
+                    }}
+                  >
+                    Button 2
+                  </Button>
+                </div>
+              </Alert>
+            </div>
+          </Snackbar>
+        </>
+      )}
     </Wrapper>
   );
 };
@@ -257,10 +522,16 @@ description.story = {
 };
 
 description.args = {
-  title: 'This is a success snackbar message',
+  variants: 'Toast',
+  snackbarTitle: 'This is a success snackbar message',
+  toastTitle: 'This is a success toast message',
   body: 'description',
   types: 'success',
-  positions: 'top-center',
+  toastPositions: 'top-center',
+  snackbarPositions: 'bottom-left',
   duration: 3000,
-  transitions: 'grow',
+  snackbarTransitions: 'slide',
+  toastTransitions: 'slide',
+  toastSlideDirection: 'down',
+  snackbarSlideDirection: 'right',
 };

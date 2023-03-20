@@ -3,12 +3,12 @@ import React, { FC } from 'react';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
-import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import AlertTitle from '@components/lab/AlertTitle';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
 import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
 import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from '@components/inputs/Button';
 
 export const SnackbarSimple: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);

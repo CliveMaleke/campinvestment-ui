@@ -12,8 +12,8 @@ import {
 ### Import
 
 ```jsx
-import { SnackbarProps } from '@material-ui/core/Snackbar';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
+import Button from 'tokenomy-ui/inputs/Button';
 ```
 
 ### Usage
@@ -21,8 +21,12 @@ import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 <SnackbarMessageShorWithButton />
 
 ```jsx
-export const SnackbarMessageShorWithButton: FC<SnackbarProps> = (props) => {
-  const action = <button>lorem ipsum dolorem</button>;
+export const SnackbarMessageShorWithButton = (props) => {
+  const action = (
+    <Button variant="contained" color="primary">
+      lorem ipsum dolorem
+    </Button>
+  );
 
   return (
     <SnackbarContent message="I love snacks." action={action} {...props} />
@@ -33,7 +37,7 @@ export const SnackbarMessageShorWithButton: FC<SnackbarProps> = (props) => {
 <SnackbarMessageLong />
 
 ```jsx
-export const SnackbarMessageLong: FC<SnackbarProps> = (props) => {
+export const SnackbarMessageLong = (props) => {
   return (
     <SnackbarContent
       message={
@@ -49,8 +53,12 @@ export const SnackbarMessageLong: FC<SnackbarProps> = (props) => {
 <SnackbarMessageRegularWithButton />
 
 ```jsx
-export const SnackbarMessageRegularWithButton: FC<SnackbarProps> = (props) => {
-  const action = <button>lorem ipsum dolorem</button>;
+export const SnackbarMessageRegularWithButton = (props) => {
+  const action = (
+    <Button variant="contained" color="primary">
+      lorem ipsum dolorem
+    </Button>
+  );
 
   return (
     <SnackbarContent
@@ -65,8 +73,12 @@ export const SnackbarMessageRegularWithButton: FC<SnackbarProps> = (props) => {
 <SnackbarMessageLongWithButton />
 
 ```jsx
-export const SnackbarMessageLongWithButton: FC<SnackbarProps> = (props) => {
-  const action = <button>lorem ipsum dolorem</button>;
+export const SnackbarMessageLongWithButton = (props) => {
+  const action = (
+    <Button variant="contained" color="primary">
+      lorem ipsum dolorem
+    </Button>
+  );
 
   return (
     <SnackbarContent

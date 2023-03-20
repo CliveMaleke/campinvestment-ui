@@ -3,28 +3,23 @@ import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 import {
   backgroundDark,
   backgroundLight,
-
+  blue10,
   blue50,
   blue60,
   blue70,
   blue80,
   blue90,
-
   gray30,
   gray40,
   gray50,
   gray60,
   gray70,
-
   green50,
-
   lightBlue20,
   lightBlue30,
   lightBlue40,
   lightBlue50,
-  
   lightGray40,
-
   red10,
   red20,
   red50,
@@ -32,9 +27,7 @@ import {
   red70,
   red80,
   red90,
-
   white,
-  
   yellow50,
 } from '../variables/colors';
 
@@ -201,6 +194,11 @@ const MuiPaletteTheme = {
       disabled: gray50,
     },
     alert: {
+      default: {
+        background: blue10,
+        text: blue50,
+        icon: blue50,
+      },
       background: {
         regular: gray60,
         success: green50,
@@ -313,6 +311,11 @@ const MuiPaletteTheme = {
       disabled: gray50,
     },
     alert: {
+      default: {
+        background: blue10,
+        text: blue50,
+        icon: blue50,
+      },
       background: {
         regular: gray60,
         success: green50,

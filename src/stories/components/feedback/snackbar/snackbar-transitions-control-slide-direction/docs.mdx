@@ -13,11 +13,9 @@ import { SnackbarTransitionControlSlideDirection } from './index';
 ### Import
 
 ```jsx
-import React, { FC } from 'react';
-import Slide, { SlideProps } from '@material-ui/core/Slide';
+import React from 'react';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
-import Button from '@material-ui/core/Button';
-import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from 'tokenomy-ui/inputs/Button';
 ```
 
 ### Usage
@@ -25,19 +23,14 @@ import { SnackbarProps } from '@material-ui/core/Snackbar';
 <SnackbarTransitionControlSlideDirection />
 
 ```jsx
-export const SnackbarTransitionControlSlideDirection: FC<SnackbarProps> = (
-  props,
-) => {
+export const SnackbarTransitionControlSlideDirection = (props) => {
   const [open, setOpen] = React.useState(false);
-  const [transition, setTransition] = React.useState<
-    React.ComponentType<TransitionProps> | undefined
-  >(undefined);
+  const [transition, setTransition] = React.useState();
 
-  const handleClick =
-    (Transition: React.ComponentType<TransitionProps>) => () => {
-      setTransition(() => Transition);
-      setOpen(true);
-    };
+  const handleClick = (Transition) => {
+    setTransition(() => Transition);
+    setOpen(true);
+  };
 
   const handleClose = () => {
     setOpen(false);

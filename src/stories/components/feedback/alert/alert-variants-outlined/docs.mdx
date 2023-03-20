@@ -15,8 +15,12 @@ import {
 ### Import
 
 ```jsx
-import { AlertProps } from '@material-ui/lab/Alert';
+import React from 'react';
 import Alert from 'tokenomy-ui/feedback/Alert';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import AlertIcon from '@components/data-display/Icon/AlertIcon';
+import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
+import InfoIcon from '@components/data-display/Icon/InfoIcon';
 ```
 
 ### Usage
@@ -24,7 +28,7 @@ import Alert from 'tokenomy-ui/feedback/Alert';
 <AlertOutlinedGeneral />
 
 ```jsx
-export const AlertOutlinedGeneral: FC<AlertProps> = (props) => (
+export const AlertOutlinedGeneral = (props) => (
   <Alert className="MuiAlert-standardOutlinedGeneral" {...props}>
     This is a general alert — check it out!
   </Alert>
@@ -34,8 +38,13 @@ export const AlertOutlinedGeneral: FC<AlertProps> = (props) => (
 <AlertOutlinedError />
 
 ```jsx
-export const AlertOutlinedError: FC<AlertProps> = (props) => (
-  <Alert variant="outlined" severity="error" {...props}>
+export const AlertOutlinedError = (props) => (
+  <Alert
+    variant="outlined"
+    severity="error"
+    icon={<CloseFilledIcon />}
+    {...props}
+  >
     This is an error alert — check it out!
   </Alert>
 );
@@ -44,8 +53,8 @@ export const AlertOutlinedError: FC<AlertProps> = (props) => (
 <AlertOutlinedWarning />
 
 ```jsx
-export const AlertOutlinedWarning: FC<AlertProps> = (props) => (
-  <Alert variant="outlined" severity="warning" {...props}>
+export const AlertOutlinedWarning = (props) => (
+  <Alert variant="outlined" severity="warning" icon={<AlertIcon />} {...props}>
     This is a warning alert — check it out!
   </Alert>
 );
@@ -54,8 +63,8 @@ export const AlertOutlinedWarning: FC<AlertProps> = (props) => (
 <AlertOutlinedInfo />
 
 ```jsx
-export const AlertOutlinedInfo: FC<AlertProps> = (props) => (
-  <Alert variant="outlined" severity="info" {...props}>
+export const AlertOutlinedInfo = (props) => (
+  <Alert variant="outlined" severity="info" icon={<InfoIcon />} {...props}>
     This is an info alert — check it out!
   </Alert>
 );
@@ -64,8 +73,13 @@ export const AlertOutlinedInfo: FC<AlertProps> = (props) => (
 <AlertOutlinedSuccess />
 
 ```jsx
-export const AlertOutlinedSuccess: FC<AlertProps> = (props) => (
-  <Alert variant="outlined" severity="success" {...props}>
+export const AlertOutlinedSuccess = (props) => (
+  <Alert
+    variant="outlined"
+    severity="success"
+    icon={<CheckFilledIcon />}
+    {...props}
+  >
     This is a success alert — check it out!
   </Alert>
 );

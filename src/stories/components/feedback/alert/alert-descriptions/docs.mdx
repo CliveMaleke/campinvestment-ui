@@ -1,79 +1,373 @@
 import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { TabsState } from '@storybook/components';
 import {
-  AlertDescriptionGeneral,
-  AlertDescriptionError,
-  AlertDescriptionWarning,
-  AlertDescriptionInfo,
-  AlertDescriptionSuccess,
+  AlertToastDescriptionGeneral,
+  AlertToastDescriptionError,
+  AlertToastDescriptionWarning,
+  AlertToastDescriptionInfo,
+  AlertToastDescriptionSuccess,
+  AlertSnackbarDescriptionGeneral,
+  AlertSnackbarDescriptionError,
+  AlertSnackbarDescriptionWarning,
+  AlertSnackbarDescriptionInfo,
+  AlertSnackbarDescriptionSuccess,
 } from './index';
 
-<Title>Alert Types</Title>
+<Title>Description</Title>
 <Subtitle>
-  The alert offers four severity levels that set a distinctive icon and color.
+  You can use the <code>AlertTitle</code> component to display a formatted title
+  above the content.
 </Subtitle>
 
 ### Import
 
+<TabsState initial="toast">
+  <div id="toast" title="Toast"><div>
+
 ```jsx
-import React, { FC } from 'react';
-import { AlertProps } from '@material-ui/lab/Alert';
+import React from 'react';
 import Alert from 'tokenomy-ui/feedback/Alert';
-import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
 ```
+
+  </div></div>
+  <div id="snackbar" title="Snackbar"><div>
+
+```jsx
+import React from 'react';
+import Alert from 'tokenomy-ui/feedback/Alert';
+import Button from 'tokenomy-ui/inputs/Button';
+import CloseIcon from '@components/data-display/Icon/CloseIcon';
+import AlertTitle from '@components/lab/AlertTitle';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import AlertIcon from '@components/data-display/Icon/AlertIcon';
+import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
+import InfoIcon from '@components/data-display/Icon/InfoIcon';
+```
+
+  </div></div>
+</TabsState>
 
 ### Usage
 
-<AlertDescriptionGeneral />
+<TabsState initial="toast">
+  <div id="toast" title="Toast"><div>
+
+<AlertToastDescriptionGeneral />
 
 ```jsx
-export const AlertDescriptionGeneral: FC<AlertProps> = (props) => (
-  <Alert className="MuiAlert-standardGeneral" {...props}>
-    <AlertTitle>General</AlertTitle>
-    This is an general alert — <strong>check it out!</strong>
+export const AlertToastDescriptionGeneral = (props) => (
+  <Alert className="MuiAlert-toast MuiAlert-standardGeneral" {...props}>
+    This is a general alert — check it out!
   </Alert>
 );
 ```
 
-<AlertDescriptionError />
+<AlertToastDescriptionError />
 
 ```jsx
-export const AlertDescriptionError: FC<AlertProps> = (props) => (
-  <Alert severity="error" {...props}>
-    <AlertTitle>Error</AlertTitle>
+export const AlertToastDescriptionError = (props) => (
+  <Alert
+    className="MuiAlert-toast"
+    severity="error"
+    icon={<CloseFilledIcon />}
+    {...props}
+  >
     This is an error alert — check it out!
   </Alert>
 );
 ```
 
-<AlertDescriptionWarning />
+<AlertToastDescriptionWarning />
 
 ```jsx
-export const AlertDescriptionWarning: FC<AlertProps> = (props) => (
-  <Alert severity="warning" {...props}>
-    <AlertTitle>Warning</AlertTitle>
+export const AlertToastDescriptionWarning = (props) => (
+  <Alert
+    className="MuiAlert-toast"
+    severity="warning"
+    icon={<AlertIcon />}
+    {...props}
+  >
     This is a warning alert — check it out!
   </Alert>
 );
 ```
 
-<AlertDescriptionInfo />
+<AlertToastDescriptionInfo />
 
 ```jsx
-export const AlertDescriptionInfo: FC<AlertProps> = (props) => (
-  <Alert severity="info" {...props}>
-    <AlertTitle>Info</AlertTitle>
+export const AlertToastDescriptionInfo = (props) => (
+  <Alert
+    className="MuiAlert-toast"
+    severity="info"
+    icon={<InfoIcon />}
+    {...props}
+  >
     This is an info alert — check it out!
   </Alert>
 );
 ```
 
-<AlertDescriptionSuccess />
+<AlertToastDescriptionSuccess />
 
 ```jsx
-export const AlertDescriptionSuccess: FC<AlertProps> = (props) => (
-  <Alert severity="success" {...props}>
-    <AlertTitle>success</AlertTitle>
+export const AlertToastDescriptionSuccess = (props) => (
+  <Alert
+    className="MuiAlert-toast"
+    severity="success"
+    icon={<CheckFilledIcon />}
+    {...props}
+  >
     This is a success alert — check it out!
   </Alert>
 );
 ```
+
+  </div></div>
+  <div id="snackbar" title="Snackbar"><div>
+
+<AlertSnackbarDescriptionGeneral />
+
+```jsx
+export const AlertSnackbarDescriptionGeneral = (props) => (
+  <Alert
+    className="MuiAlert-snackbar MuiAlert-standardGeneral"
+    action={
+      <span
+        aria-label="close"
+        color="inherit"
+        onClick={() => alert('this will close the snackbar')}
+      >
+        <CloseIcon fontSize="small" />
+      </span>
+    }
+    icon={false}
+    {...props}
+  >
+    <AlertTitle>This is a regular snackbar message</AlertTitle>
+    <p className="MuiAlert-description">Description</p>
+    <div className="MuiButtonWrapper-root">
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 1
+      </Button>
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 2
+      </Button>
+    </div>
+  </Alert>
+);
+```
+
+<AlertSnackbarDescriptionError />
+
+```jsx
+export const AlertSnackbarDescriptionError = (props) => (
+  <Alert
+    className="MuiAlert-snackbar"
+    severity="error"
+    action={
+      <span
+        aria-label="close"
+        color="inherit"
+        onClick={() => alert('this will close the snackbar')}
+      >
+        <CloseIcon fontSize="small" />
+      </span>
+    }
+    icon={<CloseFilledIcon />}
+    {...props}
+  >
+    <AlertTitle>This is a error snackbar message</AlertTitle>
+    <p className="MuiAlert-description">Description</p>
+    <div className="MuiButtonWrapper-root">
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 1
+      </Button>
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 2
+      </Button>
+    </div>
+  </Alert>
+);
+```
+
+<AlertSnackbarDescriptionWarning />
+
+```jsx
+export const AlertSnackbarDescriptionWarning = (props) => (
+  <Alert
+    className="MuiAlert-snackbar"
+    severity="warning"
+    action={
+      <span
+        aria-label="close"
+        color="inherit"
+        onClick={() => alert('this will close the snackbar')}
+      >
+        <CloseIcon fontSize="small" />
+      </span>
+    }
+    icon={<AlertIcon />}
+    {...props}
+  >
+    <AlertTitle>This is a warning snackbar message</AlertTitle>
+    <p className="MuiAlert-description">Description</p>
+    <div className="MuiButtonWrapper-root">
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 1
+      </Button>
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 2
+      </Button>
+    </div>
+  </Alert>
+);
+```
+
+<AlertSnackbarDescriptionInfo />
+
+```jsx
+export const AlertSnackbarDescriptionInfo = (props) => (
+  <Alert
+    className="MuiAlert-snackbar"
+    severity="info"
+    action={
+      <span
+        aria-label="close"
+        color="inherit"
+        onClick={() => alert('this will close the snackbar')}
+      >
+        <CloseIcon fontSize="small" />
+      </span>
+    }
+    icon={<InfoIcon />}
+    {...props}
+  >
+    <AlertTitle>This is a info snackbar message</AlertTitle>
+    <p className="MuiAlert-description">Description</p>
+    <div className="MuiButtonWrapper-root">
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 1
+      </Button>
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 2
+      </Button>
+    </div>
+  </Alert>
+);
+```
+
+<AlertSnackbarDescriptionSuccess />
+
+```jsx
+export const AlertSnackbarDescriptionSuccess = (props) => (
+  <Alert
+    className="MuiAlert-snackbar"
+    severity="success"
+    action={
+      <span
+        aria-label="close"
+        color="inherit"
+        onClick={() => alert('this will close the snackbar')}
+      >
+        <CloseIcon fontSize="small" />
+      </span>
+    }
+    icon={<CheckFilledIcon />}
+    {...props}
+  >
+    <AlertTitle>This is a success snackbar message</AlertTitle>
+    <p className="MuiAlert-description">Description</p>
+    <div className="MuiButtonWrapper-root">
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 1
+      </Button>
+      <Button
+        variant="text"
+        onClick={() => {
+          window.open(
+            'https://develop--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/components-data-display-typography-example--button',
+            '_blank',
+          );
+        }}
+      >
+        Button 2
+      </Button>
+    </div>
+  </Alert>
+);
+```
+
+  </div></div>
+</TabsState>

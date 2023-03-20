@@ -16,9 +16,12 @@ import {
 ### Import
 
 ```jsx
-import React, { FC } from 'react';
-import { AlertProps } from '@material-ui/lab/Alert';
+import React from 'react';
 import Alert from 'tokenomy-ui/feedback/Alert';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import AlertIcon from '@components/data-display/Icon/AlertIcon';
+import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
+import InfoIcon from '@components/data-display/Icon/InfoIcon';
 ```
 
 ### Usage
@@ -26,7 +29,7 @@ import Alert from 'tokenomy-ui/feedback/Alert';
 <AlertColorGeneral />
 
 ```jsx
-export const AlertColorGeneral = (props: AlertProps) => (
+export const AlertColorGeneral = (props) => (
   <Alert className="MuiAlert-standardGeneral" color="error" {...props}>
     This is a general alert — check it out!
   </Alert>
@@ -36,8 +39,8 @@ export const AlertColorGeneral = (props: AlertProps) => (
 <AlertColorError />
 
 ```jsx
-export const AlertColorError = (props: AlertProps) => (
-  <Alert severity="error" color="error" {...props}>
+export const AlertColorError = (props) => (
+  <Alert severity="error" color="error" icon={<CloseFilledIcon />} {...props}>
     This is a error alert — check it out!
   </Alert>
 );
@@ -46,8 +49,8 @@ export const AlertColorError = (props: AlertProps) => (
 <AlertColorWarning />
 
 ```jsx
-export const AlertColorWarning = (props: AlertProps) => (
-  <Alert severity="warning" color="warning" {...props}>
+export const AlertColorWarning = (props) => (
+  <Alert severity="warning" color="warning" icon={<AlertIcon />} {...props}>
     This is a warning alert — check it out!
   </Alert>
 );
@@ -56,8 +59,8 @@ export const AlertColorWarning = (props: AlertProps) => (
 <AlertColorInfo />
 
 ```jsx
-export const AlertColorInfo: FC<AlertProps> = (props) => (
-  <Alert severity="info" color="info" {...props}>
+export const AlertColorInfo = (props) => (
+  <Alert severity="info" color="info" icon={<InfoIcon />} {...props}>
     This is a info alert — check it out!
   </Alert>
 );
@@ -66,8 +69,13 @@ export const AlertColorInfo: FC<AlertProps> = (props) => (
 <AlertColorSuccess />
 
 ```jsx
-export const AlertColorSuccess: FC<AlertProps> = (props) => (
-  <Alert severity="success" color="success" {...props}>
+export const AlertColorSuccess = (props) => (
+  <Alert
+    severity="success"
+    color="success"
+    icon={<CheckFilledIcon />}
+    {...props}
+  >
     This is a success alert — check it out!
   </Alert>
 );

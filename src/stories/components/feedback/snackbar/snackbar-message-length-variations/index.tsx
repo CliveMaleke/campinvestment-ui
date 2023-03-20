@@ -4,9 +4,14 @@ import React, { FC } from 'react';
 // Components
 import SnackbarContent from '@components/feedback/SnackbarContent';
 import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from '@components/inputs/Button';
 
 export const SnackbarMessageShorWithButton: FC<SnackbarProps> = (props) => {
-  const action = <button>lorem ipsum dolorem</button>;
+  const action = (
+    <Button variant="contained" color="primary">
+      Button
+    </Button>
+  );
 
   return (
     <SnackbarContent message="I love snacks." action={action} {...props} />
@@ -26,7 +31,11 @@ export const SnackbarMessageLong: FC<SnackbarProps> = (props) => {
 };
 
 export const SnackbarMessageRegularWithButton: FC<SnackbarProps> = (props) => {
-  const action = <button>lorem ipsum dolorem</button>;
+  const action = (
+    <Button variant="contained" color="primary">
+      Button
+    </Button>
+  );
 
   return (
     <SnackbarContent
@@ -38,7 +47,11 @@ export const SnackbarMessageRegularWithButton: FC<SnackbarProps> = (props) => {
 };
 
 export const SnackbarMessageLongWithButton: FC<SnackbarProps> = (props) => {
-  const action = <button>lorem ipsum dolorem</button>;
+  const action = (
+    <Button variant="contained" color="primary">
+      Button
+    </Button>
+  );
 
   return (
     <SnackbarContent

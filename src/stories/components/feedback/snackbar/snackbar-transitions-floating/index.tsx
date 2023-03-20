@@ -9,10 +9,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
-import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
 import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from '@components/inputs/Button';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -64,7 +64,7 @@ export const SnackbarTransitionFloating: FC<SnackbarProps> = (props) => {
         >
           <Alert
             severity="info"
-            className="MuiAlert-standardGeneral MuiAlert-snackbar"
+            className="MuiAlert-snackbar MuiAlert-standardGeneral"
             action={
               <span aria-label="close" color="inherit" onClick={() => {}}>
                 <CloseIcon fontSize="small" />

@@ -9,9 +9,8 @@ import { SnackbarSimple } from './index';
 ### Import
 
 ```jsx
-import React, { FC } from 'react';
-import Button from '@material-ui/core/Button';
-import { SnackbarProps } from '@material-ui/core/Snackbar';
+import React from 'react';
+import Button from 'tokenomy-ui/inputs/Button';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Alert from 'tokenomy-ui/feedback/Alert';
 import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
@@ -24,7 +23,7 @@ import CheckFilledIcon from 'tokenomy-ui/data-display/Icon/CheckFilledIcon';
 <SnackbarSimple />
 
 ```jsx
-export const SnackbarSimple: FC<SnackbarProps> = (props) => {
+export const SnackbarSimple = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {

@@ -3,11 +3,33 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
 
   return {
     root: {
-      minWidth: '370px',
       padding: '10px 12px',
-      display: 'flex',
-      flexDirection: 'row',
 
+      '&.MuiAlert-alertDefault': {
+        display: 'inline-flex',
+        alignItems: 'center',
+        backgroundColor: modifyTheme.palette.light.alert.default.background,
+
+        '& .MuiAlert-icon': {
+          '& svg': {
+            width: '24px',
+            height: '24px',
+            color: modifyTheme.palette.light.alert.default.icon,
+          },
+        },
+
+        '& .MuiAlert-message': {
+          color: modifyTheme.palette.light.alert.default.text,
+        },
+      },
+      '&.MuiAlert-snackbar': {
+        padding: '14px 12px 16px',
+        width: '370px',
+      },
+      '&.MuiAlert-toast': {
+        display: 'inline-flex',
+        alignItems: 'center',
+      },
       '&.MuiAlert-standardGeneral': {
         backgroundColor: modifyTheme.palette.light.alert.background.regular,
         color: colorPrimary,
@@ -28,6 +50,7 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
           color: modifyTheme.palette.light.alert.text.regular,
           padding: 0,
           fontSize: '14px',
+          wordBreak: 'break-all',
         },
       },
       '&.MuiAlert-standardFilledGeneral': {
@@ -51,6 +74,7 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
           color: modifyTheme.palette.light.alert.text.error,
           padding: 0,
           fontSize: '14px',
+          wordBreak: 'break-all',
         },
       },
       '&.MuiAlert-outlinedWarning': {
@@ -66,6 +90,7 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
           color: modifyTheme.palette.light.alert.text.warning,
           padding: 0,
           fontSize: '14px',
+          wordBreak: 'break-all',
         },
       },
       '&.MuiAlert-outlinedInfo': {
@@ -81,6 +106,7 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
           color: modifyTheme.palette.light.alert.text.info,
           padding: 0,
           fontSize: '14px',
+          wordBreak: 'break-all',
         },
       },
       '&.MuiAlert-outlinedSuccess': {
@@ -96,6 +122,7 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
           color: modifyTheme.palette.light.alert.text.success,
           padding: 0,
           fontSize: '14px',
+          wordBreak: 'break-all',
         },
       },
       '&.MuiAlert-filledError': {
@@ -117,9 +144,9 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
       '& .MuiAlert-message': {
         color: modifyTheme.palette.light.alert.text.default,
         fontSize: '14px',
-        marginTop: '2px',
         fontWeight: 500,
         padding: 0,
+        wordBreak: 'break-all',
       },
       '& .MuiAlert-icon': {
         alignSelf: 'flex-start',
@@ -127,6 +154,8 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
         padding: 0,
 
         '& svg': {
+          width: '20px',
+          height: '20px',
           color: '#fff',
         },
       },
@@ -151,14 +180,56 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
         gridTemplateColumns: 'min-content min-content',
         marginTop: '22px',
 
-        '& .MuiButtonBase-root': {
+        '& button': {
           padding: 0,
           color: '#fff',
           fontSize: '14px',
+          margin: 0,
+          height: 'auto',
+
+          '&:hover': {
+            backgroundColor: 'transparent',
+          },
         },
       },
-      '&.MuiAlert-snackbar': {
-        padding: '14px 12px 16px;',
+      '& .MuiAlertTitle-root': {
+        marginTop: 0,
+      },
+      '& .MuiTypography-gutterBottom': {
+        marginBottom: 0,
+      },
+      '& .MuiAlert-description': {
+        marginTop: '8px',
+        lineHeight: '18px',
+        marginBottom: 0,
+      },
+    },
+    outlinedError: {
+      '& .MuiAlert-icon': {
+        '& svg': {
+          color: modifyTheme.palette.light.alert.icon.error,
+        },
+      },
+    },
+    outlinedWarning: {
+      '& .MuiAlert-icon': {
+        '& svg': {
+          color: modifyTheme.palette.light.alert.icon.warning,
+        },
+      },
+    },
+    outlinedInfo: {
+      '& .MuiAlert-icon': {
+        '& svg': {
+          color: modifyTheme.palette.light.alert.icon.info,
+        },
+      },
+    },
+    outlinedSuccess: {
+      '& .MuiAlert-icon': {
+        '& svg': {
+          color: modifyTheme.palette.light.alert.icon.success,
+        },
       },
     },
     standardError: {

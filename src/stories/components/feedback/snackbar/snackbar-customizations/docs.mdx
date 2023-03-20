@@ -20,9 +20,8 @@ import {
 ### Import
 
 ```jsx
-import React, { FC } from 'react';
-import { SnackbarProps } from '@material-ui/core/Snackbar';
-import Button from '@material-ui/core/Button';
+import React from 'react';
+import Button from 'tokenomy-ui/inputs/Button';
 import AlertTitle from 'tokenomy-ui/lab/AlertTitle';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Alert from 'tokenomy-ui/feedback/Alert';
@@ -38,7 +37,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <SnackbarCustomizedGeneral />
 
 ```jsx
-export const SnackbarCustomizedGeneral: FC<SnackbarProps> = (props) => {
+export const SnackbarCustomizedGeneral = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -69,7 +68,7 @@ export const SnackbarCustomizedGeneral: FC<SnackbarProps> = (props) => {
       >
         <Alert
           onClose={handleClose}
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-snackbar MuiAlert-standardGeneral"
           action={
             <span aria-label="close" color="inherit" onClick={handleClose}>
               <CloseIcon fontSize="small" />
@@ -96,7 +95,7 @@ export const SnackbarCustomizedGeneral: FC<SnackbarProps> = (props) => {
 <SnackbarCustomizedError />
 
 ```jsx
-export const SnackbarCustomizedError: FC<SnackbarProps> = (props) => {
+export const SnackbarCustomizedError = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -156,7 +155,7 @@ export const SnackbarCustomizedError: FC<SnackbarProps> = (props) => {
 <SnackbarCustomizedWarning />
 
 ```jsx
-export const SnackbarCustomizedWarning: FC<SnackbarProps> = (props) => {
+export const SnackbarCustomizedWarning = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -215,7 +214,7 @@ export const SnackbarCustomizedWarning: FC<SnackbarProps> = (props) => {
 <SnackbarCustomizedInfo />
 
 ```jsx
-export const SnackbarCustomizedInfo: FC<SnackbarProps> = (props) => {
+export const SnackbarCustomizedInfo = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -274,7 +273,7 @@ export const SnackbarCustomizedInfo: FC<SnackbarProps> = (props) => {
 <SnackbarCustomizedSuccess />
 
 ```jsx
-export const SnackbarCustomizedSuccess: FC<SnackbarProps> = (props) => {
+export const SnackbarCustomizedSuccess = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
