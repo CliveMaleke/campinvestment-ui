@@ -5,13 +5,13 @@ import React, { FC } from 'react';
 import Snackbar from '@components/feedback/Snackbar';
 import Alert from '@components/feedback/Alert';
 import AlertTitle from '@components/lab/AlertTitle';
-import Button from '@material-ui/core/Button';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
 import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
 import AlertIcon from '@components/data-display/Icon/AlertIcon';
 import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
 import InfoIcon from '@components/data-display/Icon/InfoIcon';
 import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from '@components/inputs/Button';
 
 export const SnackbarCustomizedGeneral: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -44,7 +44,7 @@ export const SnackbarCustomizedGeneral: FC<SnackbarProps> = (props) => {
       >
         <Alert
           onClose={handleClose}
-          className="MuiAlert-standardGeneral"
+          className="MuiAlert-snackbar MuiAlert-standardGeneral"
           action={
             <span aria-label="close" color="inherit" onClick={handleClose}>
               <CloseIcon fontSize="small" />
@@ -153,6 +153,7 @@ export const SnackbarCustomizedWarning: FC<SnackbarProps> = (props) => {
         {...props}
       >
         <Alert
+          className="MuiAlert-snackbar"
           onClose={handleClose}
           severity="warning"
           icon={<AlertIcon fontSize="small" />}
@@ -208,6 +209,7 @@ export const SnackbarCustomizedInfo: FC<SnackbarProps> = (props) => {
         {...props}
       >
         <Alert
+          className="MuiAlert-snackbar"
           onClose={handleClose}
           severity="info"
           icon={<InfoIcon fontSize="small" />}
@@ -263,6 +265,7 @@ export const SnackbarCustomizedSuccess: FC<SnackbarProps> = (props) => {
         {...props}
       >
         <Alert
+          className="MuiAlert-snackbar"
           onClose={handleClose}
           severity="success"
           icon={<CheckFilledIcon fontSize="small" />}

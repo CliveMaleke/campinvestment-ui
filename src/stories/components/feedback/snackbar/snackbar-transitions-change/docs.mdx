@@ -12,13 +12,12 @@ import { SnackbarTransitionChange } from './index';
 ### Import
 
 ```jsx
-import React, { FC } from 'react';
-import { TransitionProps } from '@material-ui/core/transitions';
+import React from 'react';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
 import Grow from '@material-ui/core/Grow';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
-import Button from '@material-ui/core/Button';
+import Button from 'tokenomy-ui/inputs/Button';
 import Alert from 'tokenomy-ui/feedback/Alert';
 import CloseIcon from 'tokenomy-ui/data-display/Icon/CloseIcon';
 import { SnackbarProps } from '@material-ui/core/Snackbar';
@@ -29,31 +28,25 @@ import { SnackbarProps } from '@material-ui/core/Snackbar';
 <SnackbarTransitionChange />
 
 ```jsx
-function SlideTransition(props: TransitionProps) {
+function SlideTransition(props) {
   return <Slide {...props} direction="up" />;
 }
 
-function GrowTransition(props: TransitionProps) {
+function GrowTransition(props) {
   return <Grow {...props} />;
 }
 
-export const SnackbarTransitionChange: FC<SnackbarProps> = (props) => {
+export const SnackbarTransitionChange = (props) => {
   const [state, setState] = React.useState<{
     open: boolean;
-    Transition: React.ComponentType<
-      TransitionProps & { children?: React.ReactElement<any, any> }
-    >;
+    Transition;
   }>({
     open: false,
     Transition: Fade,
   });
 
   const handleClick =
-    (
-      Transition: React.ComponentType<
-        TransitionProps & { children?: React.ReactElement<any, any> }
-      >,
-    ) =>
+    (Transition) =>
     () => {
       setState({
         open: true,
@@ -104,7 +97,7 @@ export const SnackbarTransitionChange: FC<SnackbarProps> = (props) => {
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral MuiAlert-snackbar"
+          className="MuiAlert-snackbar MuiAlert-standardGeneral"
           action={
             <span aria-label="close" color="inherit" onClick={handleClose}>
               <CloseIcon fontSize="small" />

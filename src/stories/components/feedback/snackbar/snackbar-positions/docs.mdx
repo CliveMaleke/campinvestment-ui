@@ -24,8 +24,7 @@ import {
 import React from 'react';
 
 // Components
-import { SnackbarProps } from '@material-ui/core/Snackbar';
-import Button from '@material-ui/core/Button';
+import Button from 'tokenomy-ui/inputs/Button';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Alert from 'tokenomy-ui/feedback/Alert';
 import CloseIcon from 'tokenomy-ui/data-display/Icon/CloseIcon';
@@ -36,7 +35,7 @@ import CloseIcon from 'tokenomy-ui/data-display/Icon/CloseIcon';
 <SnackbarPositionTopCenter />
 
 ```jsx
-export const SnackbarPositionTopCenter: FC<SnackbarProps> = (props) => {
+export const SnackbarPositionTopCenter = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -54,7 +53,7 @@ export const SnackbarPositionTopCenter: FC<SnackbarProps> = (props) => {
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral MuiAlert-snackbar"
+          className="MuiAlert-snackbar MuiAlert-standardGeneral"
           action={
             <span
               aria-label="close"
@@ -84,7 +83,7 @@ export const SnackbarPositionTopCenter: FC<SnackbarProps> = (props) => {
 <SnackbarPositionTopRight />
 
 ```jsx
-export const SnackbarPositionTopRight: FC<SnackbarProps> = (props) => {
+export const SnackbarPositionTopRight = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -132,7 +131,7 @@ export const SnackbarPositionTopRight: FC<SnackbarProps> = (props) => {
 <SnackbarPositionBottomRight />
 
 ```jsx
-export const SnackbarPositionBottomRight: FC<SnackbarProps> = (props) => {
+export const SnackbarPositionBottomRight = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -180,7 +179,7 @@ export const SnackbarPositionBottomRight: FC<SnackbarProps> = (props) => {
 <SnackbarPositionBottomCenter />
 
 ```jsx
-export const SnackbarPositionBottomCenter: FC<SnackbarProps> = (props) => {
+export const SnackbarPositionBottomCenter = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -228,7 +227,7 @@ export const SnackbarPositionBottomCenter: FC<SnackbarProps> = (props) => {
 <SnackbarPositionBottomLeft />
 
 ```jsx
-export const SnackbarPositionBottomLeft: FC<SnackbarProps> = (props) => {
+export const SnackbarPositionBottomLeft = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -276,7 +275,7 @@ export const SnackbarPositionBottomLeft: FC<SnackbarProps> = (props) => {
 <SnackbarPositionTopLeft />
 
 ```jsx
-export const SnackbarPositionTopLeft: FC<SnackbarProps> = (props) => {
+export const SnackbarPositionTopLeft = (props) => {
   const [open, setOpen] = React.useState(false);
 
   return (

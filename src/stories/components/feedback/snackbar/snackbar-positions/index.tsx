@@ -3,10 +3,10 @@ import React, { FC } from 'react';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
-import Button from '@material-ui/core/Button';
 import Alert from '@components/feedback/Alert';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
 import { SnackbarProps } from '@material-ui/core/Snackbar';
+import Button from '@components/inputs/Button';
 
 export const SnackbarPositionTopCenter: FC<SnackbarProps> = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -26,7 +26,7 @@ export const SnackbarPositionTopCenter: FC<SnackbarProps> = (props) => {
       >
         <Alert
           severity="info"
-          className="MuiAlert-standardGeneral MuiAlert-snackbar"
+          className="MuiAlert-snackbar MuiAlert-standardGeneral"
           action={
             <span
               aria-label="close"

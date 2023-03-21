@@ -15,9 +15,12 @@ import {
 ### Import
 
 ```jsx
-import React, { FC } from 'react';
-import { AlertProps } from '@material-ui/lab/Alert';
+import React from 'react';
 import Alert from 'tokenomt-ui/feedback/Alert';
+import CheckFilledIcon from 'tokenomy-ui/data-display/Icon/CheckFilledIcon';
+import AlertIcon from 'tokenomy-ui/data-display/Icon/AlertIcon';
+import CloseFilledIcon from 'tokenomy-ui/data-display/Icon/CloseFilledIcon';
+import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 ```
 
 ### Usage
@@ -25,7 +28,7 @@ import Alert from 'tokenomt-ui/feedback/Alert';
 <AlertFilledGeneral />
 
 ```jsx
-export const AlertFilledGeneral: FC<AlertProps> = (props) => (
+export const AlertFilledGeneral = (props) => (
   <Alert className="MuiAlert-standardFilledGeneral" {...props}>
     This is a general alert — check it out!
   </Alert>
@@ -35,8 +38,13 @@ export const AlertFilledGeneral: FC<AlertProps> = (props) => (
 <AlertFilledError />
 
 ```jsx
-export const AlertFilledError: FC<AlertProps> = (props) => (
-  <Alert variant="filled" severity="error" {...props}>
+export const AlertFilledError = (props) => (
+  <Alert
+    variant="filled"
+    severity="error"
+    icon={<CloseFilledIcon />}
+    {...props}
+  >
     This is an error alert — check it out!
   </Alert>
 );
@@ -45,8 +53,8 @@ export const AlertFilledError: FC<AlertProps> = (props) => (
 <AlertFilledWarning />
 
 ```jsx
-export const AlertFilledWarning: FC<AlertProps> = (props) => (
-  <Alert variant="filled" severity="warning" {...props}>
+export const AlertFilledWarning = (props) => (
+  <Alert variant="filled" severity="warning" icon={<AlertIcon />} {...props}>
     This is a warning alert — check it out!
   </Alert>
 );
@@ -55,8 +63,8 @@ export const AlertFilledWarning: FC<AlertProps> = (props) => (
 <AlertFilledInfo />
 
 ```jsx
-export const AlertFilledInfo: FC<AlertProps> = (props) => (
-  <Alert variant="filled" severity="info" {...props}>
+export const AlertFilledInfo = (props) => (
+  <Alert variant="filled" severity="info" icon={<InfoIcon />} {...props}>
     This is an info alert — check it out!
   </Alert>
 );
@@ -65,8 +73,13 @@ export const AlertFilledInfo: FC<AlertProps> = (props) => (
 <AlertFilledSuccess />
 
 ```jsx
-export const AlertFilledSuccess: FC<AlertProps> = (props) => (
-  <Alert variant="filled" severity="success" {...props}>
+export const AlertFilledSuccess = (props) => (
+  <Alert
+    variant="filled"
+    severity="success"
+    icon={<CheckFilledIcon />}
+    {...props}
+  >
     This is a success alert — check it out!
   </Alert>
 );

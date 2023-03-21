@@ -5,8 +5,9 @@ import { Collapse, createStyles, makeStyles, Theme } from '@material-ui/core';
 // Components
 import Alert from '@components/feedback/Alert';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
-import Button from '@material-ui/core/Button';
 import { AlertProps } from '@material-ui/lab/Alert';
+import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
+import Button from '@components/inputs/Button';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,14 +28,15 @@ export const AlertTransition: FC<AlertProps> = (props) => {
       <Collapse in={open}>
         <Alert
           action={
-            <CloseIcon
-              onClick={() => {
-                setOpen(false);
-              }}
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
             >
-              x
-            </CloseIcon>
+              <CloseIcon fontSize="small" />
+            </span>
           }
+          icon={<CheckFilledIcon />}
           {...props}
         >
           This is a success alert — check it out!

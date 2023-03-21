@@ -56,12 +56,12 @@ simples.story = {
   },
 };
 
-export const cutomizations = () => (
+export const customizations = () => (
   <Wrapper>
     <SnackbarCustomizations />
   </Wrapper>
 );
-cutomizations.story = {
+customizations.story = {
   parameters: {
     docs: {
       page: SnackbarCustomizationsDocs,

@@ -7,8 +7,7 @@ import { SnackbarTransitionFloating } from './index';
 ### Import
 
 ```jsx
-import { SnackbarProps } from '@material-ui/core/Snackbar';
-import Button from '@material-ui/core/Button';
+import Button from 'tokenomy-ui/inputs/Button';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Alert from 'tokenomy-ui/feedback/Alert';
@@ -20,7 +19,7 @@ import CloseIcon from 'tokenomy-ui/data-display/Icon/CloseIcon';
 <SnackbarTransitionFloating />
 
 ```jsx
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     '@global': {
       body: {
@@ -43,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const SnackbarTransitionFloating: FC<SnackbarProps> = (props) => {
+export const SnackbarTransitionFloating = (props) => {
   const classes = useStyles();
 
   return (
@@ -70,7 +69,7 @@ export const SnackbarTransitionFloating: FC<SnackbarProps> = (props) => {
         >
           <Alert
             severity="info"
-            className="MuiAlert-standardGeneral MuiAlert-snackbar"
+            className="MuiAlert-snackbar MuiAlert-standardGeneral"
             action={
               <span aria-label="close" color="inherit" onClick={() => {}}>
                 <CloseIcon fontSize="small" />

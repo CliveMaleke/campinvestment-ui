@@ -22,7 +22,6 @@ import MuiTypographyStyled from '../data-display/Typography/style';
 import MuiIconStyled from '../data-display/Icon/style';
 // Feedback
 import MuiAlertStyled from '../feedback/Alert/style';
-import MuiSnackbarStyled from '../feedback/Snackbar/style';
 
 const defaultTheme = createTheme();
 
@@ -54,7 +53,6 @@ const theme = createTheme({
     MuiSvgIcon: MuiIconStyled(defaultTheme, modifyTheme),
     // Feedback
     MuiAlert: MuiAlertStyled(defaultTheme, modifyTheme),
-    MuiSnackbar: MuiSnackbarStyled(defaultTheme, modifyTheme),
     // Icon
   },
 });

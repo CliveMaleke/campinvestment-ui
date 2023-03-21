@@ -3,28 +3,23 @@ import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 import {
   backgroundDark,
   backgroundLight,
-
+  blue10,
   blue50,
   blue60,
   blue70,
   blue80,
   blue90,
-
   gray30,
   gray40,
   gray50,
   gray60,
   gray70,
-
   green50,
-
   lightBlue20,
   lightBlue30,
   lightBlue40,
   lightBlue50,
-  
   lightGray40,
-
   red10,
   red20,
   red50,
@@ -32,48 +27,9 @@ import {
   red70,
   red80,
   red90,
-
   white,
-  
   yellow50,
-} from '../variables/colors';
-
-interface ButtonContainedColors {
-  textMain: string;
-  textDisabled: string;
-  bgDefault: string;
-  bgHover: string;
-  bgPressed: string;
-  bgDisabled: string;
-}
-interface IconButton {
-  primary: string;
-  secondary: string;
-  disabled: string;
-  default: string;
-}
-interface ButtonOutlinedColors {
-  textDefault: string;
-  textHover: string;
-  textPressed: string;
-  textDisabled: string;
-  bgDefault: string;
-  bgHover: string;
-  bgPressed: string;
-  bgDisabled: string;
-  outlineDefault: string;
-  outlineHover: string;
-  outlinePressed: string;
-  outlineDisabled: string;
-}
-interface ButtonTextColors {
-  textMain: string;
-  textDisabled: string;
-  bgDefault: string;
-  bgHover: string;
-  bgPressed: string;
-  bgDisabled: string;
-}
+} from '../../variables/colors';
 
 interface PaletteColors {
   background: {
@@ -103,6 +59,12 @@ interface PaletteColors {
     warning: string;
     danger: string;
     disabled: string;
+  };
+  alert: {
+    default: AlertDefaultColors;
+    background: AlertBackgroundColors;
+    text: AlertTextColors;
+    icon: AlertIconColors;
   };
 }
 
@@ -201,6 +163,11 @@ const MuiPaletteTheme = {
       disabled: gray50,
     },
     alert: {
+      default: {
+        background: blue10,
+        text: blue50,
+        icon: blue50,
+      },
       background: {
         regular: gray60,
         success: green50,
@@ -313,6 +280,11 @@ const MuiPaletteTheme = {
       disabled: gray50,
     },
     alert: {
+      default: {
+        background: blue10,
+        text: blue50,
+        icon: blue50,
+      },
       background: {
         regular: gray60,
         success: green50,
@@ -320,7 +292,14 @@ const MuiPaletteTheme = {
         info: blue50,
         warning: yellow50,
       },
-      text: white,
+      text: {
+        default: white,
+        regular: gray60,
+        success: green50,
+        error: red50,
+        info: blue50,
+        warning: yellow50,
+      },
       icon: {
         regular: gray60,
         success: green50,

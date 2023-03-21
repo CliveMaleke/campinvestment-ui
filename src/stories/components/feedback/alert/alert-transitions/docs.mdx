@@ -20,7 +20,7 @@ import { AlertTransition } from './index';
 import React, { FC } from 'react';
 import { Collapse, createStyles, makeStyles, Theme } from '@material-ui/core';
 import { AlertProps } from '@material-ui/lab/Alert';
-import Button from '@material-ui/core/Button';
+import Button from 'tokenomy-ui/inputs/Button';
 import Alert from 'tokenomy-ui/feedback/Alert';
 import CloseIcon from 'tokenomy-ui/data-display/Icon/CloseIcon';
 ```
@@ -49,14 +49,15 @@ export const AlertTransition: FC<AlertProps> = (props) => {
       <Collapse in={open}>
         <Alert
           action={
-            <CloseIcon
-              onClick={() => {
-                setOpen(false);
-              }}
+            <span
+              aria-label="close"
+              color="inherit"
+              onClick={() => setOpen(false)}
             >
-              x
-            </CloseIcon>
+              <CloseIcon fontSize="small" />
+            </span>
           }
+          icon={<CheckFilledIcon />}
           {...props}
         >
           This is a success alert — check it out!
