@@ -529,7 +529,7 @@ description.args = {
   types: 'success',
   toastPositions: 'top-center',
   snackbarPositions: 'bottom-left',
-  duration: 3000,
+  duration: 5000,
   snackbarTransitions: 'slide',
   toastTransitions: 'slide',
   toastSlideDirection: 'down',

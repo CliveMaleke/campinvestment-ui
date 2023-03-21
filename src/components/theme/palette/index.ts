@@ -29,44 +29,7 @@ import {
   red90,
   white,
   yellow50,
-} from '../variables/colors';
-
-interface ButtonContainedColors {
-  textMain: string;
-  textDisabled: string;
-  bgDefault: string;
-  bgHover: string;
-  bgPressed: string;
-  bgDisabled: string;
-}
-interface IconButton {
-  primary: string;
-  secondary: string;
-  disabled: string;
-  default: string;
-}
-interface ButtonOutlinedColors {
-  textDefault: string;
-  textHover: string;
-  textPressed: string;
-  textDisabled: string;
-  bgDefault: string;
-  bgHover: string;
-  bgPressed: string;
-  bgDisabled: string;
-  outlineDefault: string;
-  outlineHover: string;
-  outlinePressed: string;
-  outlineDisabled: string;
-}
-interface ButtonTextColors {
-  textMain: string;
-  textDisabled: string;
-  bgDefault: string;
-  bgHover: string;
-  bgPressed: string;
-  bgDisabled: string;
-}
+} from '../../variables/colors';
 
 interface PaletteColors {
   background: {
@@ -96,6 +59,12 @@ interface PaletteColors {
     warning: string;
     danger: string;
     disabled: string;
+  };
+  alert: {
+    default: AlertDefaultColors;
+    background: AlertBackgroundColors;
+    text: AlertTextColors;
+    icon: AlertIconColors;
   };
 }
 
@@ -323,7 +292,14 @@ const MuiPaletteTheme = {
         info: blue50,
         warning: yellow50,
       },
-      text: white,
+      text: {
+        default: white,
+        regular: gray60,
+        success: green50,
+        error: red50,
+        info: blue50,
+        warning: yellow50,
+      },
       icon: {
         regular: gray60,
         success: green50,

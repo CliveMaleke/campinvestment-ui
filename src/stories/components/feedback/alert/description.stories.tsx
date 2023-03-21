@@ -56,25 +56,16 @@ export default {
       defaultValue: 'alert',
       control: 'text',
       if: { arg: 'variants', neq: 'Snackbar' },
-      // table: {
-      //   category: 'Toast properties',
-      // },
     },
     title: {
       name: 'Title',
       control: 'text',
       if: { arg: 'variants', eq: 'Snackbar' },
-      // table: {
-      //   category: 'Snackbar properties',
-      // },
     },
     body: {
       name: 'Body',
       control: 'text',
       if: { arg: 'variants', eq: 'Snackbar' },
-      // table: {
-      //   category: 'Snackbar properties',
-      // },
     },
   },
 };
