@@ -190,6 +190,7 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
           alignSelf: 'flex-start',
           marginRight: '0',
           paddingLeft: '22px',
+          cursor: 'pointer',
 
           '& svg': {
             color: '#fff',

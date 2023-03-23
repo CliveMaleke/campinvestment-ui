@@ -115,6 +115,9 @@ export const transitionsFloating = () => (
 );
 transitionsFloating.story = {
   parameters: {
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
     docs: {
       page: SnackbarTransitionsFloatingDocs,
     },

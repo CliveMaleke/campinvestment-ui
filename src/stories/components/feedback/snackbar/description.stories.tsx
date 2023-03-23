@@ -52,25 +52,16 @@ export default {
       name: 'Title',
       control: 'text',
       if: { arg: 'variants', eq: 'Snackbar' },
-      // table: {
-      //   category: 'Texts',
-      // },
     },
     toastTitle: {
       name: 'Title',
       control: 'text',
       if: { arg: 'variants', eq: 'Toast' },
-      // table: {
-      //   category: 'Texts',
-      // },
     },
     body: {
       name: 'Body',
       control: 'text',
       if: { arg: 'variants', eq: 'Snackbar' },
-      // table: {
-      //   category: 'Texts',
-      // },
     },
     types: {
       name: 'types',
@@ -78,9 +69,6 @@ export default {
         type: 'select',
         options: ['general', 'error', 'warning', 'info', 'success'],
       },
-      // table: {
-      //   category: 'Style',
-      // },
     },
     toastPositions: {
       name: 'Position',
@@ -96,9 +84,6 @@ export default {
         ],
       },
       if: { arg: 'variants', eq: 'Toast' },
-      // table: {
-      //   category: 'Style',
-      // },
     },
     snackbarPositions: {
       name: 'Position',
@@ -114,17 +99,11 @@ export default {
         ],
       },
       if: { arg: 'variants', eq: 'Snackbar' },
-      // table: {
-      //   category: 'Style',
-      // },
     },
     duration: {
       name: 'Duration',
       control: 'number',
       if: { arg: 'variants', eq: 'Toast' },
-      // table: {
-      //   category: 'Animation',
-      // },
     },
     snackbarTransitions: {
       name: 'Transition',
@@ -133,9 +112,6 @@ export default {
         options: ['grow', 'fade', 'slide'],
       },
       if: { arg: 'variants', eq: 'Snackbar' },
-      // table: {
-      //   category: 'Animation',
-      // },
     },
     toastTransitions: {
       name: 'Transition',
@@ -144,9 +120,6 @@ export default {
         options: ['grow', 'fade', 'slide'],
       },
       if: { arg: 'variants', eq: 'Toast' },
-      // table: {
-      //   category: 'Animation',
-      // },
     },
     toastSlideDirection: {
       name: 'Slide direction',
@@ -155,9 +128,6 @@ export default {
         options: ['right', 'up', 'left', 'down'],
       },
       if: { arg: 'variants', eq: 'Toast' },
-      // table: {
-      //   category: 'Animation',
-      // },
     },
     snackbarSlideDirection: {
       name: 'Slide direction',
@@ -166,9 +136,6 @@ export default {
         options: ['right', 'up', 'left', 'down'],
       },
       if: { arg: 'variants', eq: 'Snackbar' },
-      // table: {
-      //   category: 'Animation',
-      // },
     },
   },
 };
