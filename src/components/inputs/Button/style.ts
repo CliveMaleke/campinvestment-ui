@@ -10,6 +10,9 @@ const MuiButtonStyled = (defaultTheme: any, modifyTheme: any) => ({
       cursor: 'not-allowed',
       pointerEvents: 'all',
     },
+    '&.MuiButton-outlined': {
+      padding: '8px 16px',
+    },
     '& .MuiButton-startIcon svg, & .MuiButton-endIcon svg,': {
       fontSize: '16px',
     },
@@ -37,6 +40,7 @@ const MuiButtonStyled = (defaultTheme: any, modifyTheme: any) => ({
     '&.MuiButton-sizeSmall': {
       fontSize: '12px',
       height: '24px',
+      padding: '4px 10px',
     },
     '&.MuiButton-sizeSmall .MuiButton-startIcon svg, &.MuiButton-sizeSmall .MuiButton-endIcon svg,': {
       fontSize: '14px',
