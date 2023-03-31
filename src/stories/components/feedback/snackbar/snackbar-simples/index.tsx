@@ -53,7 +53,9 @@ export const SnackbarSimple: FC<SnackbarProps> = (props) => {
             </span>
           }
         >
-          <AlertTitle>This is a success snackbar message</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">
+            This is a success snackbar message
+          </AlertTitle>
           Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>

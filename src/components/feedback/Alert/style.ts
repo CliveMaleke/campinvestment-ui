@@ -166,6 +166,10 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
       },
 
       '& .MuiAlert-': {
+        '&snackbarTitle': {
+          fontWeight: 600,
+        },
+
         '&message': {
           color: modifyTheme.palette.light.alert.text.default,
           fontSize: '14px',
@@ -180,8 +184,8 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
           padding: 0,
 
           '& svg': {
-            width: '20px',
-            height: '20px',
+            width: '24px',
+            height: '24px',
             color: '#fff',
           },
         },

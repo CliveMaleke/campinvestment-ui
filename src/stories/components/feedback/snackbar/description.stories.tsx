@@ -64,7 +64,7 @@ export default {
       if: { arg: 'variants', eq: 'Snackbar' },
     },
     types: {
-      name: 'types',
+      name: 'Types',
       control: {
         type: 'select',
         options: ['general', 'error', 'warning', 'info', 'success'],
@@ -445,7 +445,9 @@ export const description = ({
                 }
                 icon={types !== 'general' && <icon.Icon />}
               >
-                <AlertTitle>{snackbarTitle}</AlertTitle>
+                <AlertTitle className="MuiAlert-snackbarTitle">
+                  {snackbarTitle}
+                </AlertTitle>
                 <p className="MuiAlert-description">{body}</p>
                 <div className="MuiButtonWrapper-root">
                   <Button

@@ -118,7 +118,7 @@ export const description = ({ variants, types, label, title, body }) => {
           }
           icon={types !== 'general' && <icon.Icon />}
         >
-          <AlertTitle>{title}</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">{title}</AlertTitle>
           <p className="MuiAlert-description">{body}</p>
           <div className="MuiButtonWrapper-root">
             <Button

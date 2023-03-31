@@ -97,7 +97,7 @@ export const SnackbarTransitionConsecutive: FC<SnackbarProps> = (props) => {
           severity="success"
           onClose={handleClose}
         >
-          <AlertTitle>success</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">success</AlertTitle>
           This is a success alert {messageInfo?.message} — check it out!
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>

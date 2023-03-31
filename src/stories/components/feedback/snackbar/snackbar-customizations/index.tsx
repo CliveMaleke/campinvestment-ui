@@ -51,7 +51,9 @@ export const SnackbarCustomizedGeneral: FC<SnackbarProps> = (props) => {
             </span>
           }
         >
-          <AlertTitle>This is a general message!</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">
+            This is a general message!
+          </AlertTitle>
           Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
@@ -107,7 +109,9 @@ export const SnackbarCustomizedError: FC<SnackbarProps> = (props) => {
             </span>
           }
         >
-          <AlertTitle>This is a error message!</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">
+            This is a error message!
+          </AlertTitle>
           Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
@@ -163,7 +167,9 @@ export const SnackbarCustomizedWarning: FC<SnackbarProps> = (props) => {
             </span>
           }
         >
-          <AlertTitle>This is a warning message!</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">
+            This is a warning message!
+          </AlertTitle>
           Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
@@ -219,7 +225,9 @@ export const SnackbarCustomizedInfo: FC<SnackbarProps> = (props) => {
             </span>
           }
         >
-          <AlertTitle>This is a info message!</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">
+            This is a info message!
+          </AlertTitle>
           Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
@@ -275,7 +283,9 @@ export const SnackbarCustomizedSuccess: FC<SnackbarProps> = (props) => {
             </span>
           }
         >
-          <AlertTitle>This is a success message!</AlertTitle>
+          <AlertTitle className="MuiAlert-snackbarTitle">
+            This is a success message!
+          </AlertTitle>
           Description
           <div className="MuiButtonWrapper-root">
             <Button variant="text" onClick={() => {}}>
