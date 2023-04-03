@@ -56,11 +56,11 @@ import SaveIcon from '@components/data-display/Icon/SaveIcon';
 import EditIcon from '@components/data-display/Icon/EditIcon';
 import MoreMenuIcon from '@components/data-display/Icon/MoreMenuIcon';
 import HamburgerMenuIcon from '@components/data-display/Icon/HamburgerMenuIcon';
-import CarretSortIcon from '@components/data-display/Icon/CarretSortIcon';
-import CarretDownIcon from '@components/data-display/Icon/CarretDownIcon';
-import CarretUpIcon from '@components/data-display/Icon/CarretUpIcon';
-import CarretLeftIcon from '@components/data-display/Icon/CarretLeftIcon';
-import CarretRightIcon from '@components/data-display/Icon/CarretRightIcon';
+import CaretSortIcon from '@components/data-display/Icon/CaretSortIcon';
+import CaretDownIcon from '@components/data-display/Icon/CaretDownIcon';
+import CaretUpIcon from '@components/data-display/Icon/CaretUpIcon';
+import CaretLeftIcon from '@components/data-display/Icon/CaretLeftIcon';
+import CaretRightIcon from '@components/data-display/Icon/CaretRightIcon';
 import ArrowLeftIcon from '@components/data-display/Icon/ArrowLeftIcon';
 import ArrowRightIcon from '@components/data-display/Icon/ArrowRightIcon';
 import ArrowDownIcon from '@components/data-display/Icon/ArrowDownIcon';
@@ -214,306 +214,371 @@ function useDebounce(value, delay) {
   return debouncedValue;
 }
 
+const OUTLINED_UI_ICON: string = 'outlined-ui-icon';
+const FILLED_UI_ICON: string = 'filled-ui-icon';
+const SOCIAL_MEDIA_ICON: string = 'social-media-icon';
+const ASSET_ICON: string = 'asset-icon';
+
 const iconsTokenomy = [
   {
     name: 'home',
     element: <HomeIcon />,
     importName: 'HomeIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'portfolio',
     element: <PortfolioIcon />,
     importName: 'PortfolioIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'contract market',
     element: <ContractMarketIcon />,
     importName: 'ContractMarketIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'loan',
     element: <LoanIcon />,
     importName: 'LoanIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'exchange',
     element: <ExchangeIcon />,
     importName: 'ExchangeIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'history',
     element: <HistoryIcon />,
     importName: 'HistoryIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'search',
     element: <SearchIcon />,
     importName: 'SearchIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'settings',
     element: <SettingsIcon />,
     importName: 'SettingsIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'help',
     element: <HelpIcon />,
     importName: 'HelpIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'info',
     element: <InfoIcon />,
     importName: 'InfoIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'card holder',
     element: <CardHolderIcon />,
     importName: 'CardHolderIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'book',
     element: <BookIcon />,
     importName: 'BookIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'star',
     element: <StarIcon />,
     importName: 'StarIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'calendar',
     element: <CalendarIcon />,
     importName: 'CalendarIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'eye open',
     element: <EyeOpenIcon />,
     importName: 'EyeOpenIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'eye close',
     element: <EyeCloseIcon />,
     importName: 'EyeCloseIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'check',
     element: <CheckIcon />,
     importName: 'CheckIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'close',
     element: <CloseIcon />,
     importName: 'CloseIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'sync',
     element: <SyncIcon />,
     importName: 'SyncIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'copy',
     element: <CopyIcon />,
     importName: 'CopyIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'language',
     element: <LanguageIcon />,
     importName: 'LanguageIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'unlock',
     element: <UnlockIcon />,
     importName: 'UnlockIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'location',
     element: <LocationIcon />,
     importName: 'LocationIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'increase',
     element: <IncreaseIcon />,
     importName: 'IncreaseIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'decrease',
     element: <DecreaseIcon />,
     importName: 'DecreaseIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'delete',
     element: <DeleteIcon />,
     importName: 'DeleteIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'verified',
     element: <VerifiedIcon />,
     importName: 'VerifiedIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'save',
     element: <SaveIcon />,
     importName: 'SaveIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'edit',
     element: <EditIcon />,
     importName: 'EditIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'more menu',
     element: <MoreMenuIcon />,
     importName: 'MoreMenuIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'hamburger menu',
     element: <HamburgerMenuIcon />,
     importName: 'HamburgerMenuIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
-    name: 'carret sort',
-    element: <CarretSortIcon />,
-    importName: 'CarretSortIcon',
+    name: 'caret sort',
+    element: <CaretSortIcon />,
+    importName: 'CaretSortIcon',
+    category: FILLED_UI_ICON,
   },
   {
-    name: 'carret down',
-    element: <CarretDownIcon />,
-    importName: 'CarretDownIcon',
+    name: 'caret down',
+    element: <CaretDownIcon />,
+    importName: 'CaretDownIcon',
+    category: FILLED_UI_ICON,
   },
   {
-    name: 'carret up',
-    element: <CarretUpIcon />,
-    importName: 'CarretUpIcon',
+    name: 'caret up',
+    element: <CaretUpIcon />,
+    importName: 'CaretUpIcon',
+    category: FILLED_UI_ICON,
   },
   {
-    name: 'carret left',
-    element: <CarretLeftIcon />,
-    importName: 'CarretLeftIcon',
+    name: 'caret left',
+    element: <CaretLeftIcon />,
+    importName: 'CaretLeftIcon',
+    category: FILLED_UI_ICON,
   },
   {
-    name: 'carret right',
-    element: <CarretRightIcon />,
-    importName: 'CarretRightIcon',
+    name: 'caret right',
+    element: <CaretRightIcon />,
+    importName: 'CaretRightIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'arrow left',
     element: <ArrowLeftIcon />,
     importName: 'ArrowLeftIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'arrow right',
     element: <ArrowRightIcon />,
     importName: 'ArrowRightIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'arrow down',
     element: <ArrowDownIcon />,
     importName: 'ArrowDownIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'arrow up',
     element: <ArrowUpIcon />,
     importName: 'ArrowUpIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'chevron double left',
     element: <ChevronDoubleLeftIcon />,
     importName: 'ChevronDoubleLeftIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'chevron double right',
     element: <ChevronDoubleRightIcon />,
     importName: 'ChevronDoubleRightIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'notification',
     element: <NotificationIcon />,
     importName: 'NotificationIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'check filled',
     element: <CheckFilledIcon />,
     importName: 'CheckFilledIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'plus filled',
     element: <PlusFilledIcon />,
     importName: 'PlusFilledIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'alert',
     element: <AlertIcon />,
     importName: 'AlertIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'safe',
     element: <SafeIcon />,
     importName: 'SafeIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'cloud upload',
     element: <CloudUploadIcon />,
     importName: 'CloudUploadIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'plus',
     element: <PlusIcon />,
     importName: 'PlusIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'switch',
     element: <SwitchIcon />,
     importName: 'SwitchIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'close filled',
     element: <CloseFilledIcon />,
     importName: 'CloseFilledIcon',
+    category: FILLED_UI_ICON,
   },
   {
     name: 'resize',
     element: <ResizeIcon />,
     importName: 'ResizeIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'earn',
     element: <EarnIcon />,
     importName: 'EarnIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'transfer',
     element: <TransferIcon />,
     importName: 'TransferIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'increase up',
     element: <IncreaseUpIcon />,
     importName: 'IncreaseUpIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'multiple card',
     element: <MultipleCardIcon />,
     importName: 'MultipleCardIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'low interest',
     element: <LowInterestIcon />,
     importName: 'LowInterestIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'logout',
     element: <LogoutIcon />,
     importName: 'LogoutIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'institution',
     element: <InstitutionIcon />,
     importName: 'InstitutionIcon',
+    category: OUTLINED_UI_ICON,
   },
   {
     name: 'add people',
     element: <AddPeopleIcon />,
     importName: 'AddPeopleIcon',
+    category: OUTLINED_UI_ICON,
   },
 ];
 
@@ -690,13 +755,21 @@ const iconsAsset = [
   },
 ];
 
-const newIconsTokenomy = iconsTokenomy.map((v) => ({ ...v, codeName: '' }));
-const newIconsSocialMedia = iconsSocialMedia.map((v) => ({
+const newIconsTokenomy = iconsTokenomy.map((v) => ({
   ...v,
   codeName: '',
 }));
+const newIconsSocialMedia = iconsSocialMedia.map((v) => ({
+  ...v,
+  codeName: '',
+  category: SOCIAL_MEDIA_ICON,
+}));
+const newIconsAsset = iconsAsset.map((v) => ({
+  ...v,
+  category: ASSET_ICON,
+}));
 
-const icons = [...newIconsTokenomy, ...newIconsSocialMedia, ...iconsAsset];
+const icons = [...newIconsTokenomy, ...newIconsSocialMedia, ...newIconsAsset];
 
 const CustomDialogTitle = withStyles(styles)((props: DialogTitleProps) => {
   const { children, classes, onClose, ...other } = props;
@@ -776,6 +849,27 @@ const IconTokenomy = () => {
     }
   }, [debouncedSearchTerm]);
 
+  const groupedIcons = iconState.reduce((acc, icon) => {
+    if (!acc[icon.category]) {
+      acc[icon.category] = [];
+    }
+    acc[icon.category].push(icon);
+    return acc;
+  }, {});
+
+  const groupedIconsTitle = (title: string) => {
+    switch (title) {
+      case OUTLINED_UI_ICON:
+        return 'OUTLINED ICON';
+      case FILLED_UI_ICON:
+        return 'FILLED ICON';
+      case SOCIAL_MEDIA_ICON:
+        return 'SOCIAL MEDIA ICON';
+      case ASSET_ICON:
+        return 'ASSET ICON';
+    }
+  };
+
   return (
     <>
       <TextField
@@ -787,34 +881,57 @@ const IconTokenomy = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <Grid container spacing={2} className={classes.iconWrapper}>
-        <Grid item xs>
-          <Grid container spacing={2}>
-            {iconState.length > 0 &&
-              iconState.map(({ name, element, importName, codeName }, i) => (
-                <Grid
-                  item
-                  key={i}
-                  onClick={() =>
-                    handleClickOpen({ name, element, importName, codeName })
-                  }
-                >
-                  <Paper className={classes.iconItem}>
-                    <div>
-                      {element}
-                      <p style={{ textTransform: 'capitalize' }}>{name}</p>
-                    </div>
-                  </Paper>
-                </Grid>
-              ))}
-            {iconState.length === 0 && (
-              <Typography variant="h6" style={{ textAlign: 'center', width: '100%' }}>
-                Icon not found!
-              </Typography>
-            )}
-          </Grid>
-        </Grid>
-      </Grid>
+      <div className={classes.iconWrapper}>
+        {Object.keys(groupedIcons).map((category, i: number) => (
+          <>
+            <Typography
+              variant="h6"
+              style={{
+                textTransform: 'capitalize',
+                marginBottom: 20,
+                marginTop: i !== 0 ? 35 : 0,
+                color: 'rgb(162 160 160)',
+              }}
+            >
+              {groupedIconsTitle(category)}
+            </Typography>
+            <Grid container spacing={2}>
+              {groupedIcons[category].map(
+                ({ name, element, importName, codeName }, i: number) => (
+                  <Grid
+                    item
+                    key={i}
+                    onClick={() =>
+                      handleClickOpen({
+                        name,
+                        element,
+                        importName,
+                        codeName,
+                      })
+                    }
+                  >
+                    <Paper className={classes.iconItem}>
+                      <div>
+                        {element}
+                        <p style={{ textTransform: 'capitalize' }}>{name}</p>
+                      </div>
+                    </Paper>
+                  </Grid>
+                ),
+              )}
+            </Grid>
+          </>
+        ))}
+
+        {iconState.length === 0 && (
+          <Typography
+            variant="h6"
+            style={{ textAlign: 'center', width: '100%' }}
+          >
+            Icon not found!
+          </Typography>
+        )}
+      </div>
 
       {modalData && (
         <Dialog
