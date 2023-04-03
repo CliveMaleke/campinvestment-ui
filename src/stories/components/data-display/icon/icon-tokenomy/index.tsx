@@ -78,6 +78,14 @@ import SwitchIcon from '@components/data-display/Icon/SwitchIcon';
 import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
 import ResizeIcon from '@components/data-display/Icon/ResizeIcon';
 import EarnIcon from '@components/data-display/Icon/EarnIcon';
+import TransferIcon from '@components/data-display/Icon/TransferIcon';
+import IncreaseUpIcon from '@components/data-display/Icon/IncreaseUpIcon';
+import MultipleCardIcon from '@components/data-display/Icon/MultipleCardIcon';
+import LowInterestIcon from '@components/data-display/Icon/LowInterestIcon';
+import LogoutIcon from '@components/data-display/Icon/LogoutIcon';
+import InstitutionIcon from '@components/data-display/Icon/InstitutionIcon';
+import AddPeopleIcon from '@components/data-display/Icon/AddPeopleIcon';
+
 import TelegramIcon from '@components/data-display/Icon/TelegramIcon';
 import FacebookIcon from '@components/data-display/Icon/FacebookIcon';
 import TwitterIcon from '@components/data-display/Icon/TwitterIcon';
@@ -146,7 +154,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
     marginBottom: 25,
   },
   iconItem: {
-    width: 143,
+    width: 180,
     height: 85,
     marginRight: 5,
     display: 'flex',
@@ -472,6 +480,41 @@ const iconsTokenomy = [
     element: <EarnIcon />,
     importName: 'EarnIcon',
   },
+  {
+    name: 'transfer',
+    element: <TransferIcon />,
+    importName: 'TransferIcon',
+  },
+  {
+    name: 'increase up',
+    element: <IncreaseUpIcon />,
+    importName: 'IncreaseUpIcon',
+  },
+  {
+    name: 'multiple card',
+    element: <MultipleCardIcon />,
+    importName: 'MultipleCardIcon',
+  },
+  {
+    name: 'low interest',
+    element: <LowInterestIcon />,
+    importName: 'LowInterestIcon',
+  },
+  {
+    name: 'logout',
+    element: <LogoutIcon />,
+    importName: 'LogoutIcon',
+  },
+  {
+    name: 'institution',
+    element: <InstitutionIcon />,
+    importName: 'InstitutionIcon',
+  },
+  {
+    name: 'add people',
+    element: <AddPeopleIcon />,
+    importName: 'AddPeopleIcon',
+  },
 ];
 
 const iconsSocialMedia = [
@@ -608,6 +651,12 @@ const iconsAsset = [
     element: <XlmIcon />,
     importName: 'XlmIcon',
     codeName: 'xlm',
+  },
+  {
+    name: 'Synthetic Network (SNX)',
+    element: <SnxIcon />,
+    importName: 'SnxIcon',
+    codeName: 'snx',
   },
   {
     name: 'tezos (XTZ)',
