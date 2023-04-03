@@ -1,0 +1,22 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+import V100 from './v1.0.0.mdx';
+import V111 from './v1.1.1.mdx';
+
+<Meta
+  title="Get Started/Versions"
+  parameters={{
+    fullPage: true,
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<Title>Versions</Title>
+<Subtitle>
+  If you’re curious about what’s new in the {process.env.STORYBOOK_APP_NAME},
+  and what’s changed, this is the right place.
+</Subtitle>
+
+<V111 />
+<V100 />
