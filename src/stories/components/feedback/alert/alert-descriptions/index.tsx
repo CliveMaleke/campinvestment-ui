@@ -292,11 +292,29 @@ const AlertDescriptions = () => (
     <Typography variant="h5" type="semibold">
       Toast
     </Typography>
-    <AlertToastDescriptionGeneral />
-    <AlertToastDescriptionError />
-    <AlertToastDescriptionWarning />
-    <AlertToastDescriptionInfo />
-    <AlertToastDescriptionSuccess />
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px',
+      }}
+    >
+      <div>
+        <AlertToastDescriptionGeneral />
+      </div>
+      <div>
+        <AlertToastDescriptionError />
+      </div>
+      <div>
+        <AlertToastDescriptionWarning />
+      </div>
+      <div>
+        <AlertToastDescriptionInfo />
+      </div>
+      <div>
+        <AlertToastDescriptionSuccess />
+      </div>
+    </div>
 
     <Typography variant="h5" type="semibold">
       Snackbar

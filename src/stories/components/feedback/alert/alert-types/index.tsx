@@ -303,11 +303,29 @@ const AlertTypes = () => (
     <Typography variant="h5" type="semibold">
       Toast
     </Typography>
-    <AlertToastGeneral />
-    <AlertToastError />
-    <AlertToastWarning />
-    <AlertToastInfo />
-    <AlertToastSuccess />
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px',
+      }}
+    >
+      <div>
+        <AlertToastGeneral />
+      </div>
+      <div>
+        <AlertToastError />
+      </div>
+      <div>
+        <AlertToastWarning />
+      </div>
+      <div>
+        <AlertToastInfo />
+      </div>
+      <div>
+        <AlertToastSuccess />
+      </div>
+    </div>
 
     <Typography variant="h5" type="semibold">
       Snackbar
