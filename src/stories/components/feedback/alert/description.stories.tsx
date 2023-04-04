@@ -13,7 +13,7 @@ import AlertIcon from '@components/data-display/Icon/AlertIcon';
 import CloseFilledIcon from '@components/data-display/Icon/CloseFilledIcon';
 import InfoIcon from '@components/data-display/Icon/InfoIcon';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
-import AlertTitle from '@components/lab/AlertTitle';
+import AlertTitle from '@components/feedback/AlertTitle';
 import Button from '@components/inputs/Button';
 
 const useStyles = makeStyles((theme) => ({

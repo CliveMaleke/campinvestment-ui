@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 
 // Components
 import Alert from '@components/feedback/Alert';
-import AlertTitle from '@components/lab/AlertTitle';
+import AlertTitle from '@components/feedback/AlertTitle';
 import { AlertProps } from '@material-ui/lab/Alert';
 import Typography from '@components/data-display/Typography';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';

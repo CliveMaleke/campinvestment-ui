@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 // Components
 import Snackbar from '@components/feedback/Snackbar';
 import Alert from '@components/feedback/Alert';
-import AlertTitle from '@components/lab/AlertTitle';
+import AlertTitle from '@components/feedback/AlertTitle';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
 import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
 import { SnackbarProps } from '@material-ui/core/Snackbar';

@@ -12,7 +12,7 @@ import Slide from '@material-ui/core/Slide';
 import Snackbar from '@components/feedback/Snackbar';
 import SnackbarDescriptionDocs from './description.docs.mdx';
 import Alert from '@components/feedback/Alert';
-import AlertTitle from '@components/lab/AlertTitle';
+import AlertTitle from '@components/feedback/AlertTitle';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
 import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
 import AlertIcon from '@components/data-display/Icon/AlertIcon';

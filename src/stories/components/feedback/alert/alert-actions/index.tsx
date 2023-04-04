@@ -6,7 +6,7 @@ import Alert from '@components/feedback/Alert';
 import { AlertProps } from '@material-ui/lab/Alert';
 import CheckFilledIcon from '@components/data-display/Icon/CheckFilledIcon';
 import CloseIcon from '@components/data-display/Icon/CloseIcon';
-import AlertTitle from '@components/lab/AlertTitle';
+import AlertTitle from '@components/feedback/AlertTitle';
 import Typography from '@components/data-display/Typography';
 import Button from '@components/inputs/Button';
 
