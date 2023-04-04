@@ -145,21 +145,29 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
         },
 
         '&filledError': {
+          display: 'flex',
+          alignItems: 'center',
           backgroundColor: modifyTheme.palette.light.alert.background.error,
           color: colorPrimary,
         },
 
         '&filledWarning': {
+          display: 'flex',
+          alignItems: 'center',
           backgroundColor: modifyTheme.palette.light.alert.background.warning,
           color: colorPrimary,
         },
 
         '&filledInfo': {
+          display: 'flex',
+          alignItems: 'center',
           backgroundColor: modifyTheme.palette.light.alert.background.info,
           color: colorPrimary,
         },
 
         '&filledSuccess': {
+          display: 'flex',
+          alignItems: 'center',
           backgroundColor: modifyTheme.palette.light.alert.background.success,
           color: colorPrimary,
         },
@@ -239,6 +247,8 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
       },
     },
     outlinedError: {
+      display: 'flex',
+      alignItems: 'center',
       '& .MuiAlert-icon': {
         '& svg': {
           color: modifyTheme.palette.light.alert.icon.error,
@@ -246,6 +256,8 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
       },
     },
     outlinedWarning: {
+      display: 'flex',
+      alignItems: 'center',
       '& .MuiAlert-icon': {
         '& svg': {
           color: modifyTheme.palette.light.alert.icon.warning,
@@ -253,6 +265,8 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
       },
     },
     outlinedInfo: {
+      display: 'flex',
+      alignItems: 'center',
       '& .MuiAlert-icon': {
         '& svg': {
           color: modifyTheme.palette.light.alert.icon.info,
@@ -260,6 +274,8 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
       },
     },
     outlinedSuccess: {
+      display: 'flex',
+      alignItems: 'center',
       '& .MuiAlert-icon': {
         '& svg': {
           color: modifyTheme.palette.light.alert.icon.success,
