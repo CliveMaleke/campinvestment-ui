@@ -80,7 +80,7 @@ const Introduction = () => {
         <div className={classes.introLeft}>
           <h1>
             Tokenomy <span className={classes.introName}>UI</span>
-            <span className={classes.introVersion}>v1.0.0</span>
+            <span className={classes.introVersion}>v1.1.1</span>
           </h1>
           <p>
             Tokenomy User Interface Kit provides you with guidelines, components
