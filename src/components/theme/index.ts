@@ -21,7 +21,7 @@ import MuiIconButtonStyled from '../inputs/IconButton/style';
 import MuiTypographyStyled from '../data-display/Typography/style';
 import MuiIconStyled from '../data-display/Icon/style';
 // Feedback
-import MuiAlertStyled from '../feedback/Alert/style';
+// import MuiAlertStyled from '../feedback/Alert/style';
 
 const defaultTheme = createTheme();
 
@@ -52,7 +52,7 @@ const theme = createTheme({
     MuiTypography: MuiTypographyStyled(defaultTheme, modifyTheme),
     MuiSvgIcon: MuiIconStyled(defaultTheme, modifyTheme),
     // Feedback
-    MuiAlert: MuiAlertStyled(defaultTheme, modifyTheme),
+    // MuiAlert: MuiAlertStyled(defaultTheme, modifyTheme),
     // Icon
   },
 });
