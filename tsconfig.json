@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "target": "es6",
-    "module": "es6",
+    "module": "CommonJS",
     "moduleResolution": "node",
   },
   "include": ["src"],
