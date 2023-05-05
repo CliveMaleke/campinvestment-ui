@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core';
 
 // Components
-import Container from '../../../../components/layout/Container';
+import Container from '@components/layout/Container';
 import ContainerDescriptionDocs from './description.docs.mdx';
 
 interface ArgContainer extends ArgStory {

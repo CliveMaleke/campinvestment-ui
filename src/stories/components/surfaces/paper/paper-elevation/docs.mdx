@@ -1,0 +1,25 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import PaperElevation from './index';
+
+<Title>Paper Elevation</Title>
+<Subtitle>
+  The background of an application resembles the flat, opaque texture of a sheet
+  of paper, and an application’s behavior mimics paper’s ability to be re-sized,
+  shuffled, and bound together in multiple sheets.
+</Subtitle>
+
+### Import
+
+```jsx
+import Paper from 'tokenomy-ui/surfaces/Paper';
+```
+
+### Usage
+
+<PaperElevation />
+
+```jsx
+<Paper elevation={0}>Elevation 0</Paper>
+<Paper>Without Elevation</Paper>
+<Paper elevation={3}>Elevation 3</Paper>
+```

@@ -1,0 +1,71 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/Surfaces/Paper" />
+
+<Title>Paper</Title>
+<Subtitle>
+  In Material Design, the physical properties of paper are translated to the screen.
+</Subtitle>
+
+### Import
+
+```jsx
+import Paper from 'tokenomy-ui/surfaces/Paper';
+```
+
+### Usage
+
+```jsx
+<Paper>...</Paper>
+```
+
+### Props
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr>
+        <td align="left"><span className="prop-name">children</span></td>
+        <td align="left"><span className="prop-type">node</span></td>
+        <td align="left"></td>
+        <td align="left">The content of the component.</td>
+      </tr>
+      <tr>
+        <td align="left"><span className="prop-name">classes</span></td>
+        <td align="left"><span className="prop-type">object</span></td>
+        <td align="left"></td>
+        <td align="left">Override or extend the styles applied to the component. See <a href="https://v4.mui.com/api/paper/#css" target="_blank">CSS API</a> below for more details.</td>
+      </tr>
+      <tr>
+        <td align="left"><span className="prop-name">component</span></td>
+        <td align="left"><span className="prop-type">elementType</span></td>
+        <td align="left"><span className="prop-default">'div'</span></td>
+        <td align="left">The component used for the root node. Either a string to use a HTML element or a component.</td>
+      </tr>
+      <tr>
+        <td align="left"><span className="prop-name">elevation</span></td>
+        <td align="left"><span className="prop-type">number</span></td>
+        <td align="left"><span className="prop-default">1</span></td>
+        <td align="left">Shadow depth, corresponds to <code>dp</code> in the spec. It accepts values between 0 and 24 inclusive.</td>
+      </tr>
+      <tr>
+        <td align="left"><span className="prop-name">square</span></td>
+        <td align="left"><span className="prop-type">bool</span></td>
+        <td align="left"><span className="prop-default">false</span></td>
+        <td align="left">If <code>true</code>, rounded corners are disabled.</td>
+      </tr>
+      <tr>
+        <td align="left"><span className="prop-name">variant</span></td>
+        <td align="left"><span className="prop-type">'elevation'<br/>|&nbsp;'outlined'</span></td>
+        <td align="left"><span className="prop-default">'elevation'</span></td>
+        <td align="left">The variant to use.</td>
+      </tr>
+    </tbody>
+</table>
