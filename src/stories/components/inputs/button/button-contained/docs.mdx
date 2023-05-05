@@ -1,0 +1,104 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { TabsState } from '@storybook/components';
+import { ButtonContained as Button } from './index';
+
+<Title>Contained Button</Title>
+<Subtitle>
+  Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.
+</Subtitle>
+
+### Import
+
+```jsx
+import Button from 'tokenomy-ui/inputs/Button';
+```
+
+### Usage
+
+<TabsState initial="primary">
+  <div id="primary" title="Primary"><div>
+<Button variant="contained" className="MuiButton-sizeExtraLarge2x" style={{ marginTop: 20 }}>Extra Large 2x</Button>
+
+```jsx
+<Button variant="contained" className="MuiButton-sizeExtraLarge2x">Extra Large 2x</Button>
+```
+<Button variant="contained" className="MuiButton-sizeExtraLarge">Extra Large</Button>
+
+```jsx
+<Button variant="contained" className="MuiButton-sizeExtraLarge">Extra Large</Button>
+```
+<Button variant="contained" size="large">Large</Button>
+
+```jsx
+<Button variant="contained" size="large">Large</Button>
+```
+<Button variant="contained">Medium</Button>
+
+```jsx
+<Button variant="contained">Medium</Button>
+```
+<Button variant="contained" size="small">Small</Button>
+
+```jsx
+<Button variant="contained" size="small">Small</Button>
+```
+
+  </div></div>
+  <div id="secondary" title="Secondary"><div>
+<Button variant="contained" color="secondary" className="MuiButton-sizeExtraLarge2x" style={{ marginTop: 20 }}>Extra Large 2x</Button>
+
+```jsx
+<Button variant="contained" color="secondary" className="MuiButton-sizeExtraLarge2x">Extra Large 2x</Button>
+```
+<Button variant="contained" color="secondary" className="MuiButton-sizeExtraLarge">Extra Large</Button>
+
+```jsx
+<Button variant="contained" color="secondary" className="MuiButton-sizeExtraLarge">Extra Large</Button>
+```
+<Button variant="contained" color="secondary" size="large">Large</Button>
+
+```jsx
+<Button variant="contained" color="secondary" size="large">Large</Button>
+```
+<Button variant="contained" color="secondary">Medium</Button>
+
+```jsx
+<Button variant="contained" color="secondary">Medium</Button>
+```
+<Button variant="contained" color="secondary" size="small">Small</Button>
+
+```jsx
+<Button variant="contained" color="secondary" size="small">Small</Button>
+```
+
+  </div></div>
+  <div id="disabled" title="Disabled"><div>
+<Button variant="contained" disabled className="MuiButton-sizeExtraLarge2x" style={{ marginTop: 20 }}>Extra Large 2x</Button>
+
+```jsx
+<Button variant="contained" disabled className="MuiButton-sizeExtraLarge2x">Extra Large 2x</Button>
+```
+<Button variant="contained" disabled className="MuiButton-sizeExtraLarge">Extra Large</Button>
+
+```jsx
+<Button variant="contained" disabled className="MuiButton-sizeExtraLarge">Extra Large</Button>
+```
+<Button variant="contained" disabled size="large">Large</Button>
+
+```jsx
+<Button variant="contained" disabled size="large">Large</Button>
+```
+<Button variant="contained" disabled>Medium</Button>
+
+```jsx
+<Button variant="contained" disabled>Medium</Button>
+```
+<Button variant="contained" disabled size="small">Small</Button>
+
+```jsx
+<Button variant="contained" disabled size="small">Small</Button>
+```
+
+  </div></div>
+
+</TabsState>
