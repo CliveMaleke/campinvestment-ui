@@ -1,0 +1,33 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { SkeletonText, SkeletonCircle, SkeletonRect } from './index';
+
+<Title>Variants</Title>
+<Subtitle>The component supports 3 shape variants.</Subtitle>
+
+### Import
+
+```jsx
+import Skeleton from 'tokenomy-ui/feedback/Skeleton';
+```
+
+### Usage
+
+<div style={{ maxWidth: 210 }}>
+  <SkeletonText />
+</div>
+
+```jsx
+<Skeleton variant="text" />
+```
+
+<SkeletonCircle />
+
+```jsx
+<Skeleton variant="circle" width={40} height={40} />
+```
+
+<SkeletonRect />
+
+```jsx
+<Skeleton variant="rect" width={210} height={118} />
+```

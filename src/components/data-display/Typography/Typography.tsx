@@ -17,6 +17,7 @@ export interface ITypographyProps extends TypographyProps {
   component?: string;
   href?: string;
   target?: string;
+  variant?: any;
 }
 
 const useStyles = makeStyles({

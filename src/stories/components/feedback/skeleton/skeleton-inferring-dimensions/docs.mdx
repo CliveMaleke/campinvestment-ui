@@ -1,0 +1,48 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import SkeletonAnimations from './index';
+
+<Title>Inferring dimensions</Title>
+<Subtitle>In addition to accepting width and height props, the component can also infer the dimensions.</Subtitle>
+
+### Import
+
+```jsx
+import Typography from 'tokenomy-ui/data-display/Typography';
+import Skeleton from 'tokenomy-ui/feedback/Skeleton';
+import Grid from 'tokenomy-ui/layout/Grid';
+```
+
+### Usage
+
+<SkeletonAnimations />
+
+```jsx
+const variants = ['h1', 'h3', 'body1', 'caption'];
+
+function TypographyDemo(props) {
+  const { loading = false } = props;
+
+  return (
+    <div style={{ marginRight: 20 }}>
+      {variants.map((variant) => (
+        <Typography component="div" key={variant} variant={variant}>
+          {loading ? <Skeleton /> : variant}
+        </Typography>
+      ))}
+    </div>
+  );
+}
+
+const SkeletonAnimations = () => (
+  <Grid container>
+    <Grid item xs>
+      <TypographyDemo loading />
+    </Grid>
+    <Grid item xs>
+      <TypographyDemo />
+    </Grid>
+  </Grid>
+);
+
+export default SkeletonAnimations;
+```

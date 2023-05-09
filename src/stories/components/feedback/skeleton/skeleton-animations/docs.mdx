@@ -1,0 +1,37 @@
+import { Title, Subtitle } from '@storybook/addon-docs/blocks';
+import { SkeletonPulse, SkeletonFalse, SkeletonWave } from './index';
+
+<Title>Animations</Title>
+<Subtitle>By default, the skeleton pulsate, but you can change the animation for a wave or disable it entirely.</Subtitle>
+
+### Import
+
+```jsx
+import Skeleton from 'tokenomy-ui/feedback/Skeleton';
+```
+
+### Usage
+
+<div style={{ maxWidth: 210 }}>
+  <SkeletonPulse />
+</div>
+
+```jsx
+<Skeleton />
+```
+
+<div style={{ maxWidth: 210 }}>
+  <SkeletonFalse />
+</div>
+
+```jsx
+<Skeleton animation={false} />
+```
+
+<div style={{ maxWidth: 210 }}>
+  <SkeletonWave />
+</div>
+
+```jsx
+<Skeleton animation="wave" />
+```
