@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://ui.tokenomy.com/" rel="noopener" target="_blank">
+  <a href="https://main--63b2d35155965648145b7f9e.chromatic.com/" rel="noopener" target="_blank">
   <span style="color: #1fafed;
     margin: 0;
     font-size: 4rem;
@@ -13,7 +13,7 @@
 
 <div align="center">
 
-Quickly build beautiful [React](https://reactjs.org/) apps. Tokenomy User Interface Kit provides you with guidelines, components and templates to boost the user experience of your products. Start with [Tokenomy UI](https://ui.tokenomy.com/?path=/docs/getting-started-intro--page).
+Quickly build beautiful [React](https://reactjs.org/) apps. Tokenomy User Interface Kit provides you with guidelines, components and templates to boost the user experience of your products. Start with [Tokenomy UI](https://main--63b2d35155965648145b7f9e.chromatic.com/?path=/docs/getting-started-intro--page).
 
 [![npm latest package](https://img.shields.io/npm/v/tokenomy-ui/latest.svg)](https://www.npmjs.com/package/tokenomy-ui)
 [![npm downloads](https://img.shields.io/npm/dm/tokenomy-ui)](https://www.npmjs.com/package/tokenomy-ui)
@@ -53,8 +53,8 @@ ReactDOM.render(<App />, document.querySelector('#app'));
 
 ## Documentation
 
-Check out our [documentation website](https://ui.tokenomy.com/).
+Check out our [documentation website](https://main--63b2d35155965648145b7f9e.chromatic.com/).
 
 ## Changelog
 
-If you have recently updated, please read the [changelog](https://ui.tokenomy.com/) for details of what has changed.
+If you have recently updated, please read the [changelog](https://main--63b2d35155965648145b7f9e.chromatic.com/) for details of what has changed.
