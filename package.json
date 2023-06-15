@@ -42,6 +42,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
     "@storybook/addon-a11y": "^6.5.15",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
@@ -60,6 +62,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "http-server": "^14.1.1",
+    "husky": "^8.0.3",
     "prettier": "^2.8.1",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
@@ -97,5 +100,10 @@
   "_id": "tokenomy-ui@1.0.0",
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "npm:react-docgen-typescript-plugin@1.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }

@@ -1,0 +1,98 @@
+import { Meta, Title, Subtitle } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/Feedback/Backdrop" />
+
+<Title>Backdrop</Title>
+<Subtitle>
+  The backdrop component is used to provide emphasis on a particular element or
+  parts of it.
+</Subtitle>
+
+### Import
+
+```jsx
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+import Button from 'tokenomy-ui/inputs/Button';
+import Backdrop from 'tokenomy-ui/feedback/Backdrop';
+```
+
+### Usage
+
+```jsx
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
+}));
+
+const backdropExample = () => {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState < boolean > false;
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <>
+      <Button variant="contained" onClick={handleToggle}>
+        Show backdrop
+      </Button>
+      <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
+    </>
+  );
+};
+```
+
+### Props
+
+<table>
+  <thead>
+    <tr>
+      <th align="left">Name</th>
+      <th align="left">Type</th>
+      <th align="left">Default</th>
+      <th align="left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><span class="prop-name">children</span></td>
+      <td align="left"><span class="prop-type">node</span></td>
+      <td align="left"></td>
+      <td align="left">The content of the component.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">classes</span></td>
+      <td align="left"><span class="prop-type">object</span></td>
+      <td align="left"></td>
+      <td align="left">Override or extend the styles applied to the component. See <a href="https://v4.mui.com/api/backdrop/#css" target="_blank">CSS API</a> below for more details.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">invisible</span></td>
+      <td align="left"><span class="prop-type">bool</span></td>
+      <td align="left"><span class="prop-default">false</span></td>
+      <td align="left">If <code>true</code>, the backdrop is invisible. It can be used when rendering a popover or a custom select component.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name required">open<abbr title="required">*</abbr></span></td>
+      <td align="left"><span class="prop-type">bool</span></td>
+      <td align="left"></td>
+      <td align="left">If <code>true</code>, the backdrop is open.</td>
+    </tr>
+    <tr>
+      <td align="left"><span class="prop-name">transitionDuration</span></td>
+      <td align="left"><span class="prop-type">number<br />|&nbsp;&#123; appear?: number, enter?: number, exit?: number &#125;</span></td>
+      <td align="left"></td>
+      <td align="left">The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.</td>
+    </tr>
+  </tbody>  
+</table>
