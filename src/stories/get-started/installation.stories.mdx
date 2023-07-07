@@ -32,23 +32,41 @@ import { TabsState } from '@storybook/components';
 <TabsState initial="npm">
   <div id="npm" title="NPM"><div>
 
-```sh
-npm install tokenomy-ui
-```
+<div
+  style={{
+    borderRadius: 4,
+    backgroundColor: 'rgba(245,247,249,1.00)',
+    padding: 15,
+    color: '#333333',
+    fontSize: 14,
+    marginTop: 10,
+  }}
+>
+  npm install tokenomy-ui@{process.env.APP_VERSION}
+</div>
 
   </div></div>
   <div id="yarn" title="YARN"><div>
 
-```sh
-yarn add tokenomy-ui
-```
+<div
+  style={{
+    borderRadius: 4,
+    backgroundColor: 'rgba(245,247,249,1.00)',
+    padding: 15,
+    color: '#333333',
+    fontSize: 14,
+    marginTop: 10,
+  }}
+>
+  yarn add tokenomy-ui@{process.env.APP_VERSION}
+</div>
 
   </div></div>  
 </TabsState>
 
 ### Peer dependencies
 
-<p style={{marginBottom: 50}}>
+<p style={{ marginBottom: 50 }}>
   <a href="https://www.npmjs.com/package/react">
     <code>react</code>
   </a>{' '}

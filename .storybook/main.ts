@@ -1,25 +1,27 @@
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   stories: [
-    "../src/stories/**/*.stories.mdx",
-    "../src/stories/**/*.stories.@(js|jsx|ts|tsx)"
+    '../src/stories/**/*.stories.mdx',
+    '../src/stories/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
-    "@storybook/addon-actions",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     'storybook-addon-designs',
     'storybook-addon-performance/register',
   ],
-  framework: "@storybook/react",
+  framework: '@storybook/react',
   env: (config) => ({
     ...config,
     STORYBOOK_APP_NAME: 'Tokenomy UI',
-    STORYBOOK_APP_URL: 'https://develop--63b2d35155965648145b7f9e.chromatic.com',
+    STORYBOOK_APP_URL:
+      'https://develop--63b2d35155965648145b7f9e.chromatic.com',
   }),
   webpackFinal: async (config) => {
     config.resolve.plugins = [
@@ -28,6 +30,15 @@ module.exports = {
         extensions: config.resolve.extensions,
       }),
     ];
+
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env.APP_VERSION': JSON.stringify(
+          require('../package.json').version,
+        ),
+      }),
+    );
+
     return config;
   },
-}
+};
