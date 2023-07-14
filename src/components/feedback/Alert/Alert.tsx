@@ -2,8 +2,8 @@
 import React from 'react';
 import Alert, { AlertProps } from '@material-ui/lab/Alert';
 import { ThemeProvider, withStyles } from '@material-ui/core';
-import MuiPaletteTheme from '@components/theme/palette';
-import theme from '@components/theme';
+import MuiPaletteTheme from '../../theme/palette';
+import theme from '../../theme';
 
 const colorPrimary = MuiPaletteTheme.light.text.primary;
 
