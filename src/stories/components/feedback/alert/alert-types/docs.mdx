@@ -66,7 +66,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertDefault />
 
 ```jsx
-<Alert className="MuiAlert-alertDefault" icon={<InfoIcon />} {...props}>
+<Alert className="MuiAlert-alertDefault" icon={<InfoIcon />}>
   This is a default alert — check it out!
 </Alert>
 ```
@@ -82,7 +82,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertToastGeneral />
 
 ```jsx
-<Alert className="MuiAlert-toast MuiAlert-standardGeneral" {...props}>
+<Alert className="MuiAlert-toast MuiAlert-standardGeneral">
   This is a general alert — check it out!
 </Alert>
 ```
@@ -90,7 +90,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertToastError />
 
 ```jsx
-<Alert className="MuiAlert-toast" severity="error" {...props}>
+<Alert className="MuiAlert-toast" severity="error">
   This is an error alert — check it out!
 </Alert>
 ```
@@ -98,7 +98,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertToastWarning />
 
 ```jsx
-<Alert className="MuiAlert-toast" severity="warning" {...props}>
+<Alert className="MuiAlert-toast" severity="warning">
   This is a warning alert — check it out!
 </Alert>
 ```
@@ -106,7 +106,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertToastInfo />
 
 ```jsx
-<Alert className="MuiAlert-toast" severity="info" {...props}>
+<Alert className="MuiAlert-toast" severity="info">
   This is an info alert — check it out!
 </Alert>
 ```
@@ -114,7 +114,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertToastSuccess />
 
 ```jsx
-<Alert className="MuiAlert-toast" severity="success" {...props}>
+<Alert className="MuiAlert-toast" severity="success">
   This is a success alert — check it out!
 </Alert>
 ```
@@ -142,7 +142,6 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
     </span>
   }
   icon={false}
-  {...props}
 >
   <AlertTitle>This is a regular snackbar message</AlertTitle>
   <p className="MuiAlert-description">Description</p>
@@ -189,7 +188,6 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
     </span>
   }
   icon={<CloseFilledIcon />}
-  {...props}
 >
   <AlertTitle>This is a error snackbar message</AlertTitle>
   <p className="MuiAlert-description">Description</p>
@@ -236,7 +234,6 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
     </span>
   }
   icon={<AlertIcon />}
-  {...props}
 >
   <AlertTitle>This is a warning snackbar message</AlertTitle>
   <p className="MuiAlert-description">Description</p>
@@ -283,7 +280,6 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
     </span>
   }
   icon={<InfoIcon />}
-  {...props}
 >
   <AlertTitle>This is a info snackbar message</AlertTitle>
   <p className="MuiAlert-description">Description</p>
@@ -330,7 +326,6 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
     </span>
   }
   icon={<CheckFilledIcon />}
-  {...props}
 >
   <AlertTitle>This is a success snackbar message</AlertTitle>
   <p className="MuiAlert-description">Description</p>

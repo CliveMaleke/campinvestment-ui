@@ -27,7 +27,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertOutlinedGeneral />
 
 ```jsx
-<Alert className="MuiAlert-standardOutlinedGeneral" {...props}>
+<Alert className="MuiAlert-standardOutlinedGeneral">
   This is a general alert — check it out!
 </Alert>
 ```
@@ -35,12 +35,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertOutlinedError />
 
 ```jsx
-<Alert
-  variant="outlined"
-  severity="error"
-  icon={<CloseFilledIcon />}
-  {...props}
->
+<Alert variant="outlined" severity="error" icon={<CloseFilledIcon />}>
   This is an error alert — check it out!
 </Alert>
 ```
@@ -48,7 +43,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertOutlinedWarning />
 
 ```jsx
-<Alert variant="outlined" severity="warning" icon={<AlertIcon />} {...props}>
+<Alert variant="outlined" severity="warning" icon={<AlertIcon />}>
   This is a warning alert — check it out!
 </Alert>
 ```
@@ -56,7 +51,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertOutlinedInfo />
 
 ```jsx
-<Alert variant="outlined" severity="info" icon={<InfoIcon />} {...props}>
+<Alert variant="outlined" severity="info" icon={<InfoIcon />}>
   This is an info alert — check it out!
 </Alert>
 ```
@@ -64,12 +59,7 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <AlertOutlinedSuccess />
 
 ```jsx
-<Alert
-  variant="outlined"
-  severity="success"
-  icon={<CheckFilledIcon />}
-  {...props}
->
+<Alert variant="outlined" severity="success" icon={<CheckFilledIcon />}>
   This is a success alert — check it out!
 </Alert>
 ```
