@@ -35,7 +35,7 @@ function GrowTransition(props) {
   return <Grow {...props} />;
 }
 
-export const SnackbarTransitionChange = (props) => {
+export const SnackbarTransitionChange = () => {
   const [state, setState] = React.useState<{
     open: boolean;
     Transition;
@@ -92,7 +92,6 @@ export const SnackbarTransitionChange = (props) => {
         onClose={handleClose}
         TransitionComponent={state.Transition}
         key={state.Transition.name}
-        {...props}
       >
         <Alert
           severity="info"

@@ -1,5 +1,6 @@
 // Vendors
 import React, { FC } from 'react';
+import { Slide } from '@material-ui/core';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
@@ -11,6 +12,7 @@ import { SnackbarProps } from '@material-ui/core/Snackbar';
 import Button from '@components/inputs/Button';
 
 export const SnackbarSimple: FC<SnackbarProps> = (props) => {
+  const toastSlideRef = React.useRef(null);
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -38,34 +40,37 @@ export const SnackbarSimple: FC<SnackbarProps> = (props) => {
           horizontal: 'left',
         }}
         open={open}
-        autoHideDuration={6000}
+        autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
         {...props}
       >
-        <Alert
-          className="MuiAlert-snackbar"
-          severity="success"
-          onClose={handleClose}
-          icon={<CheckFilledIcon fontSize="small" />}
-          action={
-            <span aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </span>
-          }
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">
-            This is a success snackbar message
-          </AlertTitle>
-          Description
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            className="MuiAlert-snackbar"
+            severity="success"
+            onClose={handleClose}
+            icon={<CheckFilledIcon fontSize="small" />}
+            action={
+              <span aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">
+              This is a success snackbar message
+            </AlertTitle>
+            Description
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </>
   );

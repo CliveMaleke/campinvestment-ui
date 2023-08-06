@@ -20,6 +20,7 @@ import {
 ### Import
 
 ```jsx
+import { Slide } from '@material-ui/core';
 import Button from 'tokenomy-ui/inputs/Button';
 import AlertTitle from 'tokenomy-ui/feedback/AlertTitle';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
@@ -36,7 +37,8 @@ import InfoIcon from 'tokenomy-ui/data-display/Icon/InfoIcon';
 <SnackbarCustomizedGeneral />
 
 ```jsx
-export const SnackbarCustomizedGeneral = (props) => {
+export const SnackbarCustomizedGeneral = () => {
+  const toastSlideRef = React.useRef(null);
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -60,33 +62,39 @@ export const SnackbarCustomizedGeneral = (props) => {
         Open general snackbar
       </Button>
       <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
         open={open}
         autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
-        {...props}
       >
-        <Alert
-          onClose={handleClose}
-          className="MuiAlert-snackbar MuiAlert-standardGeneral"
-          action={
-            <span aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </span>
-          }
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">
-            This is a general message!
-          </AlertTitle>
-          Description
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            onClose={handleClose}
+            className="MuiAlert-snackbar MuiAlert-standardGeneral"
+            action={
+              <span aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">
+              This is a general message!
+            </AlertTitle>
+            Description
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </>
   );
@@ -96,7 +104,8 @@ export const SnackbarCustomizedGeneral = (props) => {
 <SnackbarCustomizedError />
 
 ```jsx
-export const SnackbarCustomizedError = (props) => {
+export const SnackbarCustomizedError = () => {
+  const toastSlideRef = React.useRef(null);
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -120,35 +129,41 @@ export const SnackbarCustomizedError = (props) => {
         Open error snackbar
       </Button>
       <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
         open={open}
         autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
-        {...props}
       >
-        <Alert
-          className="MuiAlert-snackbar"
-          onClose={handleClose}
-          severity="error"
-          icon={<CloseFilledIcon fontSize="small" />}
-          action={
-            <span aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </span>
-          }
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">
-            This is a error message!
-          </AlertTitle>
-          Description
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            className="MuiAlert-snackbar"
+            onClose={handleClose}
+            severity="error"
+            icon={<CloseFilledIcon fontSize="small" />}
+            action={
+              <span aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">
+              This is a error message!
+            </AlertTitle>
+            Description
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </>
   );
@@ -158,7 +173,8 @@ export const SnackbarCustomizedError = (props) => {
 <SnackbarCustomizedWarning />
 
 ```jsx
-export const SnackbarCustomizedWarning = (props) => {
+export const SnackbarCustomizedWarning = () => {
+  const toastSlideRef = React.useRef(null);
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -182,34 +198,40 @@ export const SnackbarCustomizedWarning = (props) => {
         Open warning snackbar
       </Button>
       <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
         open={open}
         autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
-        {...props}
       >
-        <Alert
-          onClose={handleClose}
-          severity="warning"
-          icon={<AlertIcon fontSize="small" />}
-          action={
-            <span aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </span>
-          }
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">
-            This is a warning message!
-          </AlertTitle>
-          Description
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            onClose={handleClose}
+            severity="warning"
+            icon={<AlertIcon fontSize="small" />}
+            action={
+              <span aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">
+              This is a warning message!
+            </AlertTitle>
+            Description
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </>
   );
@@ -219,7 +241,8 @@ export const SnackbarCustomizedWarning = (props) => {
 <SnackbarCustomizedInfo />
 
 ```jsx
-export const SnackbarCustomizedInfo = (props) => {
+export const SnackbarCustomizedInfo = () => {
+  const toastSlideRef = React.useRef(null);
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -243,34 +266,40 @@ export const SnackbarCustomizedInfo = (props) => {
         Open info snackbar
       </Button>
       <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
         open={open}
         autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
-        {...props}
       >
-        <Alert
-          onClose={handleClose}
-          severity="info"
-          icon={<InfoIcon fontSize="small" />}
-          action={
-            <span aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </span>
-          }
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">
-            This is a info message!
-          </AlertTitle>
-          Description
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            onClose={handleClose}
+            severity="info"
+            icon={<InfoIcon fontSize="small" />}
+            action={
+              <span aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">
+              This is a info message!
+            </AlertTitle>
+            Description
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </>
   );
@@ -280,7 +309,8 @@ export const SnackbarCustomizedInfo = (props) => {
 <SnackbarCustomizedSuccess />
 
 ```jsx
-export const SnackbarCustomizedSuccess = (props) => {
+export const SnackbarCustomizedSuccess = () => {
+  const toastSlideRef = React.useRef(null);
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -304,34 +334,40 @@ export const SnackbarCustomizedSuccess = (props) => {
         Open success snackbar
       </Button>
       <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
         open={open}
         autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
-        {...props}
       >
-        <Alert
-          onClose={handleClose}
-          severity="success"
-          icon={<CheckFilledIcon fontSize="small" />}
-          action={
-            <span aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </span>
-          }
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">
-            This is a success message!
-          </AlertTitle>
-          Description
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            icon={<CheckFilledIcon fontSize="small" />}
+            action={
+              <span aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">
+              This is a success message!
+            </AlertTitle>
+            Description
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </>
   );

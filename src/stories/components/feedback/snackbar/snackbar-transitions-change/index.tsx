@@ -13,7 +13,7 @@ import { SnackbarProps } from '@material-ui/core/Snackbar';
 import Button from '@components/inputs/Button';
 
 function SlideTransition(props: TransitionProps) {
-  return <Slide {...props} direction="up" />;
+  return <Slide {...props} direction="right" />;
 }
 
 function GrowTransition(props: TransitionProps) {
@@ -21,6 +21,7 @@ function GrowTransition(props: TransitionProps) {
 }
 
 export const SnackbarTransitionChange: FC<SnackbarProps> = (props) => {
+  const toastSlideRef = React.useRef(null);
   const [state, setState] = React.useState<{
     open: boolean;
     Transition: React.ComponentType<
@@ -79,31 +80,34 @@ export const SnackbarTransitionChange: FC<SnackbarProps> = (props) => {
         </Button>
       </div>
       <Snackbar
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         open={state.open}
         onClose={handleClose}
         TransitionComponent={state.Transition}
         key={state.Transition.name}
         {...props}
       >
-        <Alert
-          severity="info"
-          className="MuiAlert-snackbar MuiAlert-standardGeneral"
-          action={
-            <span aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </span>
-          }
-        >
-          I love snacks!
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            severity="info"
+            className="MuiAlert-snackbar MuiAlert-standardGeneral"
+            action={
+              <span aria-label="close" color="inherit" onClick={handleClose}>
+                <CloseIcon fontSize="small" />
+              </span>
+            }
+          >
+            I love snacks!
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </div>
   );

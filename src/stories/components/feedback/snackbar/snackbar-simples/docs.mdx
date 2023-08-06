@@ -9,6 +9,7 @@ import { SnackbarSimple } from './index';
 ### Import
 
 ```jsx
+import { Slide } from '@material-ui/core';
 import Button from 'tokenomy-ui/inputs/Button';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Alert from 'tokenomy-ui/feedback/Alert';
@@ -22,7 +23,7 @@ import CheckFilledIcon from 'tokenomy-ui/data-display/Icon/CheckFilledIcon';
 <SnackbarSimple />
 
 ```jsx
-export const SnackbarSimple = (props) => {
+export const SnackbarSimple = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -51,8 +52,8 @@ export const SnackbarSimple = (props) => {
         }}
         open={open}
         autoHideDuration={4000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
-        {...props}
       >
         <Alert
           className="MuiAlert-snackbar"

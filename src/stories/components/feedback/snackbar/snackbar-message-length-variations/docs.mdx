@@ -21,30 +21,27 @@ import Button from 'tokenomy-ui/inputs/Button';
 <SnackbarMessageShorWithButton />
 
 ```jsx
-export const SnackbarMessageShorWithButton = (props) => {
+export const SnackbarMessageShorWithButton = () => {
   const action = (
     <Button variant="contained" color="primary">
       lorem ipsum dolorem
     </Button>
   );
 
-  return (
-    <SnackbarContent message="I love snacks." action={action} {...props} />
-  );
+  return <SnackbarContent message="I love snacks." action={action} />;
 };
 ```
 
 <SnackbarMessageLong />
 
 ```jsx
-export const SnackbarMessageLong = (props) => {
+export const SnackbarMessageLong = () => {
   return (
     <SnackbarContent
       message={
         'I love candy. I love cookies. I love cupcakes. \
     I love cheesecake. I love chocolate.'
       }
-      {...props}
     />
   );
 };
@@ -53,7 +50,7 @@ export const SnackbarMessageLong = (props) => {
 <SnackbarMessageRegularWithButton />
 
 ```jsx
-export const SnackbarMessageRegularWithButton = (props) => {
+export const SnackbarMessageRegularWithButton = () => {
   const action = (
     <Button variant="contained" color="primary">
       lorem ipsum dolorem
@@ -64,7 +61,6 @@ export const SnackbarMessageRegularWithButton = (props) => {
     <SnackbarContent
       message="I love candy. I love cookies. I love cupcakes."
       action={action}
-      {...props}
     />
   );
 };
@@ -73,7 +69,7 @@ export const SnackbarMessageRegularWithButton = (props) => {
 <SnackbarMessageLongWithButton />
 
 ```jsx
-export const SnackbarMessageLongWithButton = (props) => {
+export const SnackbarMessageLongWithButton = () => {
   const action = (
     <Button variant="contained" color="primary">
       lorem ipsum dolorem
@@ -87,7 +83,6 @@ export const SnackbarMessageLongWithButton = (props) => {
       I love cheesecake. I love chocolate.'
       }
       action={action}
-      {...props}
     />
   );
 };

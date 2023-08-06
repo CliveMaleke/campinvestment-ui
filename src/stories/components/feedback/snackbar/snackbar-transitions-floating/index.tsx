@@ -56,7 +56,7 @@ export const SnackbarTransitionFloating: FC<SnackbarProps> = (props) => {
         </Fab>
         <Snackbar
           open
-          autoHideDuration={6000}
+          autoHideDuration={5000}
           message="Archived"
           action={<button color="inherit">Undo</button>}
           className={classes.snackbar}

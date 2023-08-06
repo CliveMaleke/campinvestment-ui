@@ -1,5 +1,6 @@
 // Vendors
 import React, { FC } from 'react';
+import { Slide } from '@material-ui/core';
 
 // Components
 import Snackbar from '@components/feedback/Snackbar';
@@ -20,6 +21,7 @@ export interface State {
 }
 
 export const SnackbarTransitionConsecutive: FC<SnackbarProps> = (props) => {
+  const toastSlideRef = React.useRef(null);
   const [snackPack, setSnackPack] = React.useState<SnackbarMessage[]>([]);
   const [open, setOpen] = React.useState(false);
   const [messageInfo, setMessageInfo] = React.useState<
@@ -87,27 +89,30 @@ export const SnackbarTransitionConsecutive: FC<SnackbarProps> = (props) => {
           horizontal: 'left',
         }}
         open={open}
-        autoHideDuration={6000}
+        autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
         onExited={handleExited}
         {...props}
       >
-        <Alert
-          className="MuiAlert-snackbar"
-          severity="success"
-          onClose={handleClose}
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">success</AlertTitle>
-          This is a success alert {messageInfo?.message} — check it out!
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            className="MuiAlert-snackbar"
+            severity="success"
+            onClose={handleClose}
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">success</AlertTitle>
+            This is a success alert {messageInfo?.message} — check it out!
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </div>
   );

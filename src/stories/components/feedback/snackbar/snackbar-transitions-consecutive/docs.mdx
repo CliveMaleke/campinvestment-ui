@@ -10,6 +10,7 @@ import { SnackbarTransitionConsecutive } from './index';
 ### Import
 
 ```jsx
+import { Slide } from '@material-ui/core';
 import Button from 'tokenomy-ui/inputs/Button';
 import Snackbar from 'tokenomy-ui/feedback/Snackbar';
 import Alert from 'tokenomy-ui/feedback/Alert';
@@ -21,7 +22,8 @@ import AlertTitle from 'tokenomy-ui/feedback/AlertTitle';
 <SnackbarTransitionConsecutive />
 
 ```jsx
-export const SnackbarTransitionConsecutive = (props) => {
+export const SnackbarTransitionConsecutive = () => {
+  const toastSlideRef = React.useRef(null);
   const [snackPack, setSnackPack] = React.useState([]);
   const [open, setOpen] = React.useState(false);
   const [messageInfo, setMessageInfo] = React.useState(SnackbarMessage);
@@ -85,26 +87,28 @@ export const SnackbarTransitionConsecutive = (props) => {
         }}
         open={open}
         autoHideDuration={5000}
+        TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
         onExited={handleExited}
-        {...props}
       >
-        <Alert
-          className="MuiAlert-snackbar"
-          severity="success"
-          onClose={handleClose}
-        >
-          <AlertTitle className="MuiAlert-snackbarTitle">success</AlertTitle>
-          This is a success alert {messageInfo?.message} — check it out!
-          <div className="MuiButtonWrapper-root">
-            <Button variant="text" onClick={() => {}}>
-              Button 1
-            </Button>
-            <Button variant="text" onClick={() => {}}>
-              Button 2
-            </Button>
-          </div>
-        </Alert>
+        <div ref={toastSlideRef}>
+          <Alert
+            className="MuiAlert-snackbar"
+            severity="success"
+            onClose={handleClose}
+          >
+            <AlertTitle className="MuiAlert-snackbarTitle">success</AlertTitle>
+            This is a success alert {messageInfo?.message} — check it out!
+            <div className="MuiButtonWrapper-root">
+              <Button variant="text" onClick={() => {}}>
+                Button 1
+              </Button>
+              <Button variant="text" onClick={() => {}}>
+                Button 2
+              </Button>
+            </div>
+          </Alert>
+        </div>
       </Snackbar>
     </div>
   );
