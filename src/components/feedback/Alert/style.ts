@@ -27,7 +27,7 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
 
         '&snackbar': {
           padding: '14px 12px 16px',
-          width: '370px',
+          maxWidth: '370px',
         },
 
         '&toast': {
