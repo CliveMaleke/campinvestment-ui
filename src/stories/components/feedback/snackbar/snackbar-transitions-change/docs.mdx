@@ -36,22 +36,17 @@ function GrowTransition(props) {
 }
 
 export const SnackbarTransitionChange = () => {
-  const [state, setState] = React.useState<{
-    open: boolean;
-    Transition;
-  }>({
+  const [state, setState] = React.useState({
     open: false,
     Transition: Fade,
   });
 
-  const handleClick =
-    (Transition) =>
-    () => {
-      setState({
-        open: true,
-        Transition,
-      });
-    };
+  const handleClick = (Transition) => () => {
+    setState({
+      open: true,
+      Transition,
+    });
+  };
 
   const handleClose = () => {
     setState({

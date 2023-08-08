@@ -45,10 +45,7 @@ export const SnackbarCustomizedGeneral = () => {
     setOpen(true);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | React.MouseEvent,
-    reason?: string,
-  ) => {
+  const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -112,10 +109,7 @@ export const SnackbarCustomizedError = () => {
     setOpen(true);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | React.MouseEvent,
-    reason?: string,
-  ) => {
+  const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -181,10 +175,7 @@ export const SnackbarCustomizedWarning = () => {
     setOpen(true);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | React.MouseEvent,
-    reason?: string,
-  ) => {
+  const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -249,10 +240,7 @@ export const SnackbarCustomizedInfo = () => {
     setOpen(true);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | React.MouseEvent,
-    reason?: string,
-  ) => {
+  const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -317,10 +305,7 @@ export const SnackbarCustomizedSuccess = () => {
     setOpen(true);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | React.MouseEvent,
-    reason?: string,
-  ) => {
+  const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }

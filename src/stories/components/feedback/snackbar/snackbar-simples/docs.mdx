@@ -30,10 +30,7 @@ export const SnackbarSimple = () => {
     setOpen(true);
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | React.MouseEvent,
-    reason?: string,
-  ) => {
+  const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -51,7 +48,7 @@ export const SnackbarSimple = () => {
           horizontal: 'left',
         }}
         open={open}
-        autoHideDuration={4000}
+        autoHideDuration={5000}
         TransitionComponent={(props) => <Slide {...props} direction="right" />}
         onClose={handleClose}
       >
