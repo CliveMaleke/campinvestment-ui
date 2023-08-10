@@ -2,7 +2,6 @@ const MuiButtonStyled = (defaultTheme: any, modifyTheme: any) => ({
   root: {
     height: '32px',
     padding: '8px 16px',
-    margin: '4px',
     '& svg': {
       color: 'inherit',
     },
