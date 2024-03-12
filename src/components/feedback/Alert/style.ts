@@ -4,6 +4,8 @@ const MuiAlertStyled = (defaultTheme: any, modifyTheme: any) => {
   return {
     root: {
       padding: '10px 12px',
+      fontFamily:
+        '"Roboto Serif", Georgia, Cambria, Times New Roman, Times, serif',
 
       '&.MuiAlert-': {
         '&alertDefault': {

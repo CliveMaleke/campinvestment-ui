@@ -1,10 +1,20 @@
 // Design resources https://www.figma.com/file/XaZi4D6q7m3HIdxxx2zTCc/TKN-2498-Design-component-library-for-Web?node-id=2425%3A26390&t=nqeL175KXuGabSle-0
 
 interface ColorObject {
-  [key: string]: string
+  [key: string]: string;
 }
 
 // COLOR SCHEMES
+
+// core
+export const primaryBackground: string = '#1A7B99';
+export const primaryForeground: string = '#219EC5';
+export const secondaryBackground: string = '#6F7A55';
+export const secondaryForeground: string = '#8A986A';
+export const tertiaryBackground: string = '#C6B298';
+export const tertiaryForeground: string = '#B49977';
+export const quaternaryBackground: string = '#624E39';
+export const quaternaryForeground: string = '#82684C';
 
 // Black & white
 export const black: string = '#000000';
@@ -89,9 +99,9 @@ export const red90: string = '#460612';
 
 // LIGHT MODE BACKGROUND
 export const backgroundLight: ColorObject = {
-  primary: '#F6F9FF', 
-  secondary: '#FEFEFE', 
-  tertiary: '#E8ECF4', 
+  primary: '#F6F9FF',
+  secondary: '#FEFEFE',
+  tertiary: '#E8ECF4',
 };
 
 // DARK MODE BACKGROUND

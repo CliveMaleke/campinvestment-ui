@@ -10,6 +10,8 @@ const colorPrimary = MuiPaletteTheme.light.text.primary;
 const StyledAlert = withStyles({
   root: {
     padding: '10px 12px',
+    fontFamily:
+    '"Roboto Serif", Georgia, Cambria, Times New Roman, Times, serif',
 
     '&.MuiAlert-': {
       '&alertDefault': {
@@ -216,6 +218,8 @@ const StyledAlert = withStyles({
       },
 
       '&description': {
+        fontFamily:
+          '"Roboto Serif", Georgia, Cambria, Times New Roman, Times, serif',
         marginTop: '8px',
         lineHeight: '18px',
         marginBottom: 0,

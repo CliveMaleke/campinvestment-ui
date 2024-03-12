@@ -6,7 +6,14 @@ declare module '@material-ui/core/Typography/Typography' {
 }
 
 export const MuiTypographyTheme = {
-  fontFamily: ['"Montserrat"', 'sans-serif'].join(','),
+  fontFamily: [
+    '"Roboto Serif"',
+    'Georgia',
+    'Cambria',
+    '"Times New Roman"',
+    'Times',
+    'serif',
+  ].join(','),
   h1: {
     fontSize: '96px',
     fontStyle: 'normal',
@@ -50,7 +57,7 @@ export const MuiTypographyTheme = {
     fontWeight: 500,
   },
   subtitle1: {
-    fontFamily: ['"Manrope"', 'sans-serif'].join(','),
+    // fontFamily: ['"Manrope"', 'sans-serif'].join(','),
     fontSize: '14px',
     fontStyle: 'normal',
     lineHeight: '18px',
